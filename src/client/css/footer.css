@@ -49,11 +49,41 @@ body {
 
 }
 
+.footer-flex-row {
+
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80%;
+}
+
 .footer-flex-column>li {
 
     padding-bottom: 15px;
     padding-top: 15px;
     
+}
+
+.footer-flex-row>li {
+
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+}
+
+.social-media-logo {
+
+    width: 48px;    
+    height: 48px;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.social-media-logo:hover {
+
+    transform: scale(1.05);
+
 }
 
 .footer-text {
