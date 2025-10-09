@@ -1,17 +1,21 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f6f1db;
+    font-family: "Lexend", sans-serif;
 }
+
+/*Carrousel*/
 
 .slider {
     width: 1000px;
     height: 500px;
     border-radius: 15px;
     overflow: hidden;
+    
+    margin: auto;
     margin-top: 10px;
 }
 
@@ -100,4 +104,115 @@ body {
 
 #radio3:checked~ .nav-auto .auto-btn3{
     background-color: #e5e5e5;
+}
+
+/*Bloques*/
+
+.bloques{
+    display: grid;
+    grid-template-columns: 450px 450px 450px; 
+    justify-content: space-around;
+    height: 100px;
+    border-radius: 18px;
+    text-align: center;
+    
+}
+
+.bloque1{
+    display: grid;
+    background-color: #D76719;
+    border-radius: 18px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    height: 100px;
+    
+}
+
+.bloque1 a{
+    text-decoration: none;
+    color: white;
+}
+
+.bloque1 a:hover{
+    color: #F6F1DB;
+}
+
+.bloque2{
+    background-color: #D76719;
+    border-radius: 18px;
+    display: flex;
+    height: 100px;
+    overflow: hidden;
+  
+}
+
+.bloque2 img{
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%;
+    object-fit: cover;
+}
+
+.bloque3{
+    display: flex;
+    align-items: center;
+    background-color: #D76719;
+    border-radius: 18px;
+    height: 100px;
+    color: white;
+    justify-content: start;
+    
+}
+
+.bloque3 label {
+    margin-left: -20px;
+}
+
+.bloque3 input {
+    margin-left: 36px;
+    margin-top: 5px;
+    width: 264px;
+    border-radius: 10px;
+    border: 4px solid #BB4D03;
+    margin-right: -50px;
+   
+   
+}
+
+
+
+.boton {
+    margin-left: 2px;
+    width: 40px;
+    height: 20px;
+    background-color: #BB4D03;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 0px;
+    
+   
+}
+
+.boton img{
+    width: 14px;
+    height: 10px;
+    object-fit: cover;
+}
+
+/*Cards*/
+
+.cards{
+    display: grid;
+    column-gap:50px;
+    row-gap: 50px;
+    grid-template-columns: 350px 350px;
+    justify-content: center;
+    text-align: center;
+    height: 350px;
+}
+
+.card{
+    background-color: aqua;
+    width: 350px;
+    
 }
