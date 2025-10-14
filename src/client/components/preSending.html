@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLogiX - Send Now!</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form>
+                <label for="jatorria">Jatorria:</label>
+                <input type="text" id="jatorria" name="jatorria">
+                <label for="tamaina">Tamaina:</label>
+                <select id="tamaina" name="tamaina">
+                    <option value="txikia">Txikia</option>
+                    <option value="ertaina">Ertaina</option>
+                    <option value="handia">Handia</option>
+                </select>
+                <label for="biltegia">Biltegia:</label>
+                <select id="biltegia" name="biltegia" >
+                    <!--"Option" hauek dinamikoki kargatuko dira.-->
+                </select>
+                <label for="pisua">Pisua:</label>
+                <input type="number" id="pisua" name="pisua" value="100"> kg.
+                <label for="helmuga">Helmuga:</label>
+                <input type="text" id="helmuga" name="helmuga">
+                <fieldset>
+                    <legend>Zerbitzuak</legend>
+                    <input type="checkbox" id="pakete_fragila" name="zerbitzuak" value="pakete_fragila">
+                    <label for="pakete_fragila">Pakete Fragila</label>
+
+                    <input type="checkbox" id="bilteratzea" name="zerbitzuak" value="bilteratzea" checked>
+                    <label for="bilteratzea">Bilteratzea</label>
+
+                    <input type="checkbox" id="bidalketa" name="zerbitzuak" value="bidalketa">
+                    <label for="bidalketa">Bidalketa</label>
+                </fieldset>
+                <button type="submit">Bilatu</button>
+            </form>
+        </section>
+        <section>
+            <!--Hemengo datuak (cards) dinamikoki kargatuko dira.-->
+        </section>
+    </main>
+    <script src="../assets/js/formLoad.js"></script>
+    <script src="../assets/js/formToJSon.js"></script>
+    <script src="../assets/js/cardLoad.js"></script>
+</body>
+
+</html>
