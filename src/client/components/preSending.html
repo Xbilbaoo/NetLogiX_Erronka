@@ -20,22 +20,22 @@
                     <option value="handia">Handia</option>
                 </select>
                 <label for="biltegia">Biltegia:</label>
-                <select id="biltegia" name="biltegia" >
+                <select id="biltegia" name="biltegia">
                     <!--"Option" hauek dinamikoki kargatuko dira.-->
                 </select>
                 <label for="pisua">Pisua:</label>
                 <input type="number" id="pisua" name="pisua" value="100"> kg.
                 <label for="helmuga">Helmuga:</label>
-                <input type="text" id="helmuga" name="helmuga">
+                <input type="text" id="helmuga" name="helmuga" disabled>
                 <fieldset>
                     <legend>Zerbitzuak</legend>
-                    <input type="checkbox" id="pakete_fragila" name="zerbitzuak" value="pakete_fragila">
+                    <input type="checkbox" id="pakete_fragila" name="zerbitzuak" value="1">
                     <label for="pakete_fragila">Pakete Fragila</label>
 
-                    <input type="checkbox" id="bilteratzea" name="zerbitzuak" value="bilteratzea" checked>
+                    <input type="checkbox" id="bilteratzea" name="zerbitzuak" value="1">
                     <label for="bilteratzea">Bilteratzea</label>
 
-                    <input type="checkbox" id="bidalketa" name="zerbitzuak" value="bidalketa">
+                    <input type="checkbox" id="bidalketa" name="zerbitzuak" value="1">
                     <label for="bidalketa">Bidalketa</label>
                 </fieldset>
                 <button type="submit">Bilatu</button>
@@ -45,9 +45,7 @@
             <!--Hemengo datuak (cards) dinamikoki kargatuko dira.-->
         </section>
     </main>
-    <script src="../assets/js/formLoad.js"></script>
-    <script src="../assets/js/formToJSon.js"></script>
-    <script src="../assets/js/cardLoad.js"></script>
+    <script src="../assets/js/preSending/formLoad.js"></script>
 </body>
 
 </html>
