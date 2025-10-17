@@ -22,6 +22,13 @@ DESTINATION_CHECK.addEventListener("click", () => {
 
 })
 
+/**
+ * Funtion to load the names of the warehouses via JSON file.
+ * 
+ * @param {URL of the JSON file} url 
+ * @param {Identifier of the select of the form} selectID 
+ */
+
 async function kargatuBiltegiak(url, selectID) {
 
     try {
