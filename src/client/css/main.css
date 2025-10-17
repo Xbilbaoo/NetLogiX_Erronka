@@ -10,18 +10,15 @@ body {
 /*Carrousel*/
 
 .slider {
-    width: 1000px;
-    height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    
+    width: 100%;
+    height: 400px;
+    overflow: hidden;  
     margin: auto;
-    margin-top: 10px;
 }
 
 .slides {
     width: 500%;
-    height: 500px;
+    height: 400px;
     display: flex;
 }
 
@@ -35,13 +32,14 @@ body {
 }
 
 .slide img {
-    width: 1000px;
-    height: 500px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
 }
 
 .nav-manual {
     position: absolute;
-    width: 1000px;
+    width: 100%;
     margin-top: -40px;
     display: flex;
     justify-content: center;
@@ -78,9 +76,9 @@ body {
 .nav-auto {
     position: absolute;
     display: flex;
-    width: 1000px;
+    width: 100%;
     justify-content: center;
-    margin-top: 460px;
+    margin-top: 360px;
 }
 
 .nav-auto div {
@@ -106,6 +104,12 @@ body {
     background-color: #e5e5e5;
 }
 
+/*Marquee*/
+marquee{
+    color: #BB4D03;
+    font-weight: bold;
+}
+
 /*Bloques*/
 
 .bloques{
@@ -114,8 +118,7 @@ body {
     justify-content: space-around;
     height: 100px;
     border-radius: 18px;
-    text-align: center;
-    
+    text-align: center;  
 }
 
 .bloque1{
@@ -126,7 +129,6 @@ body {
     justify-content: flex-end;
     padding-right: 30px;
     height: 100px;
-    
 }
 
 .bloque1 a{
@@ -140,17 +142,36 @@ body {
 
 .bloque2{
     background-color: #D76719;
-    border-radius: 18px;
+    border-radius: 18px; 
     display: flex;
     height: 100px;
-    overflow: hidden;
-  
+    background-image: url("../IMG/camion.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.bloque2 img{
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+.fondoLink {
+    width: 100%; 
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 0) 50%);
+    border-radius: 15px;
+    opacity: 0.8;
+    padding-top: 35px;
+}
+
+.fondoLink a{
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    transition: all 500ms;
+}
+
+.fondoLink a:hover{
+    text-decoration: none;
+    color: #f6f1db;
+    font-size: 17px;
 }
 
 .bloque3{
@@ -161,7 +182,6 @@ body {
     height: 100px;
     color: white;
     justify-content: start;
-    
 }
 
 .bloque3 label {
@@ -171,31 +191,27 @@ body {
 .bloque3 input {
     margin-left: 36px;
     margin-top: 5px;
-    width: 264px;
+    width: 266px;
     border-radius: 10px;
     border: 4px solid #BB4D03;
     margin-right: -50px;
-   
-   
 }
 
 
 
 .boton {
-    margin-left: 2px;
+    margin-left: 2.2px;
     width: 40px;
     height: 20px;
     background-color: #BB4D03;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     border: 0px;
-    
-   
 }
 
 .boton img{
-    width: 14px;
-    height: 10px;
+    width: 16px;
+    height: 12px;
     object-fit: cover;
 }
 
@@ -203,16 +219,134 @@ body {
 
 .cards{
     display: grid;
-    column-gap:50px;
-    row-gap: 50px;
-    grid-template-columns: 350px 350px;
+    column-gap:60px;
+    row-gap: 60px;
+    grid-template-columns: 500px 500px;
     justify-content: center;
-    text-align: center;
-    height: 350px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    color: #f6f1db;
 }
 
 .card{
-    background-color: aqua;
-    width: 350px;
+    display: grid;
+    background-color: #D76719;
+    border-radius: 15px;
+    text-align:justify;
+    height: auto;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.card figure{
     
+    margin: 0%;
+    justify-content: center;
+    height: 250px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+
+.card img{
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover{
+    transform: scale(1.2);
+}
+
+.titulo1{
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.titulo2{
+    display: none;
+}
+
+.text{
+
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+
+@media (max-width: 1360px) {
+    .bloques{
+        grid-template-columns: 48% 48%; 
+    }
+
+    .bloque2 {
+        margin-top: 10px;
+        grid-area: 2 / 1;
+        grid-column: 1 / span 2; 
+    }
+
+    .cards{
+        column-gap:0;
+        margin-top: 100px;
+        grid-template-columns: 48% 48%;
+        justify-content: space-around;
+    }
+
+    .text{
+        display: block;
+    }
+
+}
+
+@media (max-width: 660px) {
+    .bloques{
+        grid-template-columns: 96%; 
+    }
+
+    .bloque2{
+        margin-top: 10px;
+        height: 100px;
+        grid-area: 2 / 1;
+    }
+
+
+    .bloque3{
+        margin-top: 10px;
+    }
+
+    .bloque3 input {
+        margin-right: -47px;
+    }
+
+
+    .cards{
+        grid-template-columns: 96%;
+        margin-top: 200px;
+    }
+
+    .titulo1{
+        display: none;
+    }
+
+    .titulo2{
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: #f6f1db;
+        margin: 30px;
+    }
+    
+
+    .card p{
+        display: none;
+    }
+
+    .bi{
+        display: none;
+    }
+
 }
