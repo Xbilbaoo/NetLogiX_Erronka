@@ -114,12 +114,56 @@
 
     .grid-container {
 
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: auto auto auto;
         width: 100%;
         background-color: #d76719;
 
     }
+
+    .separator {
+
+        width: 97%;
+        height: 3px;
+        background-color: #BB4D03;
+        margin: auto;
+        margin-top: 10px;
+        color: #BB4D03;
+        border: #BB4D03;
+
+    }
+
+    .big {
+
+        grid-column: 1 / span 3;
+
+    }
+
+    #first-down.grid-item {
+
+        grid-column: 1 / span 2;
+
+    }
+
+    .footer-flex {
+
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+    }
+    
+    .footer-flex>li {
+
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+    }
+
+    
 }
 
 @media screen and (min-width: 1361px) {
