@@ -6,6 +6,5 @@
     <title>NetLogiX S.L</title>
 </head>
 <body>
-    <?phpheader("/components/footer.html");?>
 </body>
 </html>

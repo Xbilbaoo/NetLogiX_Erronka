@@ -1,1 +1,7 @@
-@import "footer.css"
+@import "footer.css";
+
+body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    background-color: #F6F1DB;
+}
