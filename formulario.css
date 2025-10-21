@@ -1,0 +1,332 @@
+@media screen and (min-width: 650px) {
+
+    .header {
+        background-color: #f6f1db;
+        border: 2px solid #D76719;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 10px;
+    }
+    
+    .logo img {
+        display: flex;
+        max-height: 100px;
+        max-width: 100px;
+    }
+    
+    .dropdown {
+        display: flex;
+        gap: 30px;
+        border-bottom: 3px solid #D76719;
+        padding-bottom: 2px;
+        
+    }
+    
+    .dropdown a {
+        color: #D76719;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 15px;
+    }
+    
+    .dropdown a:hover {
+        color: #883900;
+    }
+    
+    .dropbtn {
+        display: none;
+    }
+    .dropdown-content .ekis {
+        display: none;
+    }
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F6F1DB;
+            padding: 20px;
+        }
+
+        .formularioa {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            width: 800px;
+            justify-self: center;
+        }
+
+        .titulua {
+            text-align: center;
+            color: #D76719;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .labelak {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .formu-input, .formu-select, .formu-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 2px solid #D76719;  
+        }
+        
+        .formu-select {
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .formu-textarea {
+            min-height: 100px;
+        }
+
+        .servicios-fieldset {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .servicios-legend {
+            color: #D76719;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        .checkbox-input {
+            width: auto;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #D76719;
+        }
+
+        .checkbox-label {
+            display: inline;
+            margin-top: 0;
+            margin-right: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .boton-enviar {
+            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #D76719;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 2px solid #D76719;  
+        }
+        
+        .boton-enviar:hover {
+            background-color: #b85414;
+        }
+
+    }
+
+    @media (max-width: 650px) {
+    .header {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 20px;
+        background-color: #f6f1db; 
+        border: 2px solid #D76719;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo img {
+            display: flex;
+            max-height: 100px;
+            max-width: 100px;
+        }
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 27px;
+  font-size: 16px;
+  border: none;
+  padding-left: 300px;
+  padding-top: 35px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position:absolute;
+  padding-left: 87.1px;
+  top: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: -10px;
+  top: 30px;
+  font-size: 25px;
+}
+
+.dropdown-content .ekis {
+  position: absolute;
+  right: 0px; 
+  top: -40px; 
+  background-color: #f9f9f9;
+  width: 168px;  
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #D76719;
+  font-size: 25px;
+ justify-content: end;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.img_menu{
+  height: 40px;
+  width: 40px;
+  margin-right: 10%;
+}
+
+.formularioa {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            width: 300px;
+            justify-self: center;
+        }
+
+        .titulua {
+            text-align: center;
+            color: #D76719;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .labelak {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .formu-input, .formu-select, .formu-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 2px solid #D76719;  
+        }
+        
+        .formu-select {
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .formu-textarea {
+            min-height: 100px;
+        }
+
+        .servicios-fieldset {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .servicios-legend {
+            color: #D76719;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        .checkbox-input {
+            width: auto;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #D76719;
+        }
+
+        .checkbox-label {
+            display: flex;
+            margin-top: 0;
+            margin-right: 10px;
+            font-weight: 550;
+            cursor: pointer;
+        }
+
+        .boton-enviar {
+            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #D76719;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 2px solid #D76719;  
+        }
+        
+        .boton-enviar:hover {
+            background-color: #b85414;
+        }
+
+
+
+}
+
