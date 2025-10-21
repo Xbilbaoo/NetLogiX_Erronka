@@ -1,0 +1,201 @@
+@import "bootstrap";
+
+//Kolore nagusiak
+$primary:  #002F6C;
+$secondary: #D0021B;
+$tertiary: #4A90E2;
+
+//Logotipoaren estiloa
+.logo{
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+//Irudien estilo orokorra
+img{
+  height: 100%;
+  width: 100%;
+}
+
+//Esteken estilo orokorra
+a{
+  font-family: Marcellus , bold;
+}
+
+//Tituluaren estiloa
+.title{
+  font-size: 30px;
+}
+
+//NABIGAZIO BARRA
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+//Navigazio esteken estiloa
+.nav-link{
+  font-size: 18px;
+  padding: 15px;
+  &:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease ;
+  }
+}
+
+.container-fluid{
+  padding: 0%;
+}
+
+.bg-navbar{
+  background-color: $primary;
+  color:white;
+  a{
+    color: white;
+  }
+  .nav-link.active{
+    color: white;
+    font-weight:bold;
+  }
+}
+
+//Nabigazio barra txikitzean duen estiloa
+.collapse{
+  font-size: 20px;
+  background-color: $primary;
+  transition: none;
+  border: none;
+}
+
+//Nabigazio barra zabaltzeko botoia
+
+//Botoiaren barruko marrak
+.navbar-toggler .custom-toggler-icon {
+  display: inline-block;
+  position: relative;
+  width: 27px;
+  height: 24px;
+}
+
+
+.navbar-toggler .custom-toggler-icon {
+  position: relative;;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 20%;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  div {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 20%;
+  }
+
+  &:hover {
+    &::before,
+    &::after,
+    div {
+      background-color: $secondary !important;
+    }
+  }
+}
+
+.custom-shadow{
+  &:hover{
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.829));
+  }
+}
+
+//Marra bakoitzaren kokapena
+.navbar-toggler .custom-toggler-icon::before {
+  top: 12%; //lehenengo marra
+}
+
+.navbar-toggler .custom-toggler-icon div {
+  top: 50%; //bigarren marra
+  transform: translateY(-50%);
+}
+
+.navbar-toggler .custom-toggler-icon::after {
+  bottom: 12%; //hirugarren marra
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+//Dropdown
+.dropdown-menu{
+  background-color: $primary;
+  border-color: $primary;
+  .nav-link:hover{
+    background-color: $secondary;
+  }
+}
+
+.navbar-collapse.show .nav-item:hover {
+  margin-right: 0;
+  background-color: $secondary; // Cambia por el color que desees
+  transition: background-color 0.3s ease-in-out; // Agrega una transición suave
+}
+
+.dropdown-menu .dropdown-item.active {
+  background-color: $primary !important;
+  color: white !important;
+  text-decoration: none;
+  &:hover{
+    background-color: $secondary !important;
+  }
+}
+
+.nav-item.dropdown .nav-link.dropdown-toggle {
+  color: white !important;
+}
+
+.nav-item.dropdown .nav-link.dropdown-toggle:hover {
+  color: white !important;
+}
+
+//PANTAILA TXIKIENTZAKO ESTILO ALDAKETAK
+@media (max-width:1000px) {
+  //Nabigazio barra txikitzen denean linkak tamaña ez aldatzeko
+  .nav-link:hover{
+    transform:none;
+    transition: none;
+  }
+
+  .dropdown-menu{
+    border-color: white;
+    .dropdown-item{
+      padding: 10px;
+    }
+  }
+}
+
+
+
