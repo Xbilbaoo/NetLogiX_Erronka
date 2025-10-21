@@ -197,8 +197,6 @@ marquee{
     margin-right: -50px;
 }
 
-
-
 .boton {
     margin-left: 2.2px;
     width: 40px;
@@ -246,7 +244,6 @@ marquee{
     overflow: hidden;
     object-fit: cover;
 }
-
 
 .card img{
     width: 100%;
@@ -302,6 +299,7 @@ marquee{
 
 }
 
+
 @media (max-width: 660px) {
     .bloques{
         grid-template-columns: 96%; 
@@ -313,7 +311,6 @@ marquee{
         grid-area: 2 / 1;
     }
 
-
     .bloque3{
         margin-top: 10px;
     }
@@ -321,7 +318,6 @@ marquee{
     .bloque3 input {
         margin-right: -47px;
     }
-
 
     .cards{
         grid-template-columns: 96%;
@@ -339,7 +335,6 @@ marquee{
         color: #f6f1db;
         margin: 30px;
     }
-    
 
     .card p{
         display: none;
