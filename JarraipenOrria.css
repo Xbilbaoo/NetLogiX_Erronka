@@ -1,0 +1,192 @@
+@media screen and (min-width: 549px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f6f1db;
+        padding: 20px;
+    }
+    
+    .header {
+        background-color: #f6f1db;
+        border: 2px solid #D76719;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 10px;
+    }
+    
+    .logo img {
+        display: flex;
+        max-height: 100px;
+        max-width: 100px;
+    }
+    
+    .dropdown {
+        display: flex;
+        gap: 30px;
+        border-bottom: 3px solid #D76719;
+        padding-bottom: 2px;
+        
+    }
+    
+    .dropdown a {
+        color: #D76719;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 15px;
+    }
+    
+    .dropdown a:hover {
+        color: #883900;
+    }
+    
+    .dropbtn {
+        display: none;
+    }
+    .dropdown-content .ekis {
+        display: none;
+    }
+    .imgjarra{
+      max-width: 50px;
+    max-height: 50px;
+    }
+      .container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .dots {
+    flex-grow: 1;
+    text-align: left;
+  }
+  .img_menu{
+  height: 40px;
+  width: 40px;
+  margin-right: 10%;
+}
+form{
+   font-size: 25px;
+}
+input, select{
+  font-size: 15px;
+}
+}
+        
+/*Pantalla Txikia*/
+@media (max-width: 550px) {
+    .header {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 20px;
+        background-color: #f6f1db; 
+        border: 2px solid #D76719;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo img {
+            display: flex;
+            max-height: 100px;
+            max-width: 100px;
+        }
+    .imgjarra{
+      max-width: 50px;
+    max-height: 50px;
+    }
+      .container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .dots {
+    flex-grow: 1;
+    text-align: left;
+  }
+  .img_menu{
+  height: 40px;
+  width: 40px;
+  margin-right: 10%;
+}
+form{
+   font-size: 25px;
+}
+input, select{
+  font-size: 15px;
+}
+
+
+/*Dropdown Menua*/
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 27px;
+  font-size: 16px;
+  border: none;
+  padding-left: 300px;
+  padding-top: 35px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position:absolute;
+  padding-left: 87.1px;
+  top: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: -10px;
+  top: 30px;
+  font-size: 25px;
+}
+
+.dropdown-content .ekis {
+  position: absolute;
+  right: 0px; 
+  top: -40px; 
+  background-color: #f9f9f9;
+  width: 168px;  
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #D76719;
+  font-size: 25px;
+ justify-content: end;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.img_menu{
+  height: 40px;
+  width: 40px;
+  margin-right: 10%;
+}
+
+
+
+
+
+}

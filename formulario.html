@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>   
+
+    <header class="header">
+        <div class="logo">
+            <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
+        </div>
+        <div class="dropdown">
+   <button class="dropbtn">
+    <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+  </button>
+  <div class="dropdown-content">
+  <a class="ekis" href="index.html">X</a>
+  <a href="index.html">Home</a>
+  <a href="JarraipenOrria.html">Jarraipena</a>
+  <a href="#">Link3</a>
+  <a href="#">Link4</a>
+  </div>
+</div>
+    </header>
+<br> 
+<form class="formularioa">
+        <h1 class="titulua">Formularioa</h1>
+        
+        <label for="izen" class="labelak">Izen-Abizenak</label>
+        <input type="text" id="izen" name="izen" class="formu-input" required>
+        
+        <label for="emaila" class="labelak">Emaila</label>
+        <input type="email" id="emaila" name="emaila" class="formu-input" required>
+        
+        <label for="tlf" class="labelak">Tlf. Zenbakia</label>
+        <input type="tel" id="tlf" name="tlf" class="formu-input" required>
+        
+        <label for="empresa" class="labelak">Empresa</label>
+        <input type="text" id="empresa" name="empresa" class="formu-input">
+        
+        <label for="zerbitzuak" class="labelak">Zerbitzuak</label>
+        <select id="zerbitzuak" name="zerbitzuak" class="formu-select" required>
+            <option value="">Oinarrizko entrega</option>
+            <option value="">Entrega azkarra</option>
+            <option value="">Hurrengo eguneko entrega</option>
+        </select>
+        
+        <fieldset class="servicios-fieldset">
+            <legend class="servicios-legend">Serbitzu Gehigarriak</legend>
+            <input type="checkbox" id="serbitzu1" name="serbitzu1" class="checkbox-input">
+            <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
+            
+            <input type="checkbox" id="serbitzu2" name="serbitzu2" class="checkbox-input">
+            <label for="serbitzu2" class="checkbox-label">Babes extra</label>
+            
+            <input type="checkbox" id="serbitzu3" name="serbitzu3" class="checkbox-input">
+            <label for="serbitzu3" class="checkbox-label">Jakinarazpen automatikoak</label>
+            
+            <input type="checkbox" id="serbitzu4" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu4" class="checkbox-label">Segurtasunak</label>
+        </fieldset>
+        
+        <label for="jatorria" class="labelak">Jatorria</label>
+        <input type="text" id="jatorria" name="jatorria" class="formu-input" required>
+        
+        <label for="helmuga" class="labelak">Helmuga</label>
+        <input type="text" id="helmuga" name="helmuga" class="formu-input" required>
+        
+        <label for="data" class="labelak">Data</label>
+        <input type="date" id="data" name="data" class="formu-input">
+        
+        <label for="pisua" class="labelak">Pisua(kg)</label>
+        <select id="pisua" name="pisua" class="formu-select">
+            <option value="">Pisu arina</option>
+            <option value="">Pisu erdia</option>
+            <option value="">Pisu handia</option>
+            <option value="">Gehiegizko pisua</option>
+        </select>
+        
+        <label for="descripcion" class="labelak">Paketerai buruz:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" class="formu-textarea"></textarea>
+        
+        <label for="comentarios" class="labelak">Iruzkin Gehigarriak</label>
+        <textarea id="comentarios" name="comentarios" rows="4" class="formu-textarea"></textarea>
+        
+        <button type="submit" class="boton-enviar">BIDALI</button>
+    </form>
+</body>
+<script src="index.js"></script>
+
+</html>
