@@ -163,7 +163,31 @@
 
     }
 
-    
+    #last.footer-flex {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .copy-text {
+
+        margin: 0;
+        
+    }
+    .copy {
+
+        font-size: 10px;
+    }
+
+    .social-media-logo {
+
+        height: 32px;
+        width: 32px;
+
+
+    }
 }
 
 @media screen and (min-width: 1361px) {
