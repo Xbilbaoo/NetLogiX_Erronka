@@ -1,0 +1,15 @@
+@import "footer.css";
+
+body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    color: #FFFFFF;
+    background-color: #F6F1DB;
+}
+
+p, a {
+
+    color: #FFFFFF;
+    text-decoration: none;
+
+}
