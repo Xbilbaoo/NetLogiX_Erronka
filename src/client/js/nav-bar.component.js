@@ -6,5 +6,6 @@ function itxiNavbar() {
     navbarCollapse.classList.remove('show')
   }
 }
-  
+
+
 
