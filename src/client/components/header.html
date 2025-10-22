@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/nav-bar.component.css">
+  <link rel="stylesheet" href="../css/header.css">
   <title>Document</title>
 </head>
-
 <body>
-  <nav class="navbar bg-navbar navbar-expand-lg" id="navbar">
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo-container">
+        <img src="../assets/IMG/logo.png" alt="logo" class="nav-logo">
+      <span class="nav-title">NetLogiX</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Hasiera</a>
+        <a href="#">Guri Buruz</a>
+        <div class="dropdown" id="dropdown-menu">
+          Bidalketak
+          <div class="dropdown-content">
+            <a href="#">Bidali Orain</a>
+            <a href="#">Bidalketaren Jarraipena</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!--<nav class="navbar bg-navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
       <div class="logo">
         <img src="../../../assets/img/logo.png" alt="">
@@ -60,11 +75,10 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <script src="../js/nav-bar.component.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-</body>
+  </nav>-->
 
+  <script src="../js/nav-bar.component.js"></script>
+
+</body>
 </html>
+  
