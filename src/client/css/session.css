@@ -1,0 +1,118 @@
+.popup-container {
+
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.login-box {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #f2f1ec;
+    position: relative;
+    padding: 10px;
+    width: 450px;
+    height: 450px;
+    margin: auto;
+    border: #BB4D03 solid 3px;
+    border-radius: 10px;
+    color: #D76719;
+    top: 50px;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    padding-top: 30px;
+
+}
+
+.popup-title {
+
+    cursor: default;
+}
+
+.session-form {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.form-group {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+
+    margin-left: 2px;
+}
+
+
+.form-group input{
+
+    border: #BB4D03 2px solid;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 400px;
+    height: 25px;
+
+}
+
+.login-button {
+
+    border: #D76719 solid 2px;
+    background-color: #D76719;
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.login-button:hover {
+
+    border: #BB4D03 solid 2px;
+    background-color: #BB4D03;
+    color: #F6F1DB;
+}
+
+.login-box p {
+
+    margin-top: 20px;
+    color: #BB4D03;
+    font-weight: bold;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+}
+
+.register_link {
+
+    color: #D76719;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.register_link:hover {
+
+    color: #BB4D03;
+}
+
+.login-logo {
+
+    height: 166px;
+    width: 166px;
+    opacity: 0.85;
+    margin-top: 13px;
+}

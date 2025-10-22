@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!--Carrousel-->
     <div class="slider">
@@ -55,19 +56,41 @@
 
     <br>
     <br>
+    <div class="popup-container">
+        <div class="login-box">
+            <h2 class="popup-title">Iniciar Sesión</h2>
+            <form action="#" class="session-form" method="POST">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <br>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Saioa Hasi</button>
+                <button type="close" class="login-button">Atzera</button>
+            </form>
 
+            <p>Bezero berria zara? <a href="#" class="register_link">Erregistratu</a></p>
+
+            <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+        </div>
+    </div>
     <!--Bloques-->
     <section class="bloques">
 
         <div class="bloque1">
-            <a href="#" >Bidali Orain ==></a>
+            <a id="send">Bidali Orain ==></a>
         </div>
 
         <div class="bloque2">
             <div class="fondoLink">
                 <a href="#"><b>Nuestra historia</b></a>
             </div>
-           
+
         </div>
 
         <div class="bloque3">
@@ -93,16 +116,19 @@
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
-                Gure planeta:
-            </b></h3>
+                    Gure planeta:
+                </b></h3>
             <a href="#" class="titulo2"><b>
-                Gure planeta
-            </b></a>
+                    Gure planeta
+                </b></a>
             <p class="text">
-                Ez galdu karbonoa murrizteko gure ekimenak klima-aldaketari aurre egiteko eta gure hiriak iraunkorragoak izan daitezen
-            <br><br>             
-                Badakigu zein garrantzitsua den gure bezeroentzat haien bidalketetatik eratorritako karbono-isuriak ezagutzea.
-                Horregatik jartzen dugu zure eskura Karbonoaren Kalkulagailua, sektorean liderra den eta Smart Freight Centre-k egiaztatutako tresna digitala.
+                Ez galdu karbonoa murrizteko gure ekimenak klima-aldaketari aurre egiteko eta gure hiriak iraunkorragoak
+                izan daitezen
+                <br><br>
+                Badakigu zein garrantzitsua den gure bezeroentzat haien bidalketetatik eratorritako karbono-isuriak
+                ezagutzea.
+                Horregatik jartzen dugu zure eskura Karbonoaren Kalkulagailua, sektorean liderra den eta Smart Freight
+                Centre-k egiaztatutako tresna digitala.
             </p>
         </div>
 
@@ -111,17 +137,20 @@
                 <img src="./IMG/berrikuntzaren_abangoardian.jpeg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
-            <h3 class="titulo1"><b>              
-                Logistikako berrikuntzaren abangoardian:
-            </b></h3>
+            <h3 class="titulo1"><b>
+                    Logistikako berrikuntzaren abangoardian:
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
-            <a href="#"class="titulo2"><b>              
-                Logistikako berrikuntzaren abangoardian
-            </b></a>
-            <p class="text">      
-                Berrikuntza praktikoetan inbertitzea funtsezkoa da buruan mantentzeko eta hain azkar aldatzen den merkatu global lehiakorrean balioa gehitzeko.
-                Bezeroa ardatz duen berrikuntza-ikuspegiaren bidez, gure sektoreak bultzatzen dituzten teknologia, prozesu eta irtenbide aitzindariak garatzen ditugu.
-                Hornidura-kateak optimizatzen ditugu, errentagarritasuna identifikatzen dugu eta etorkizuneko erronkei eta aukerei elkarlanean aurre egiteko prestatzen dugu.
+            <a href="#" class="titulo2"><b>
+                    Logistikako berrikuntzaren abangoardian
+                </b></a>
+            <p class="text">
+                Berrikuntza praktikoetan inbertitzea funtsezkoa da buruan mantentzeko eta hain azkar aldatzen den
+                merkatu global lehiakorrean balioa gehitzeko.
+                Bezeroa ardatz duen berrikuntza-ikuspegiaren bidez, gure sektoreak bultzatzen dituzten teknologia,
+                prozesu eta irtenbide aitzindariak garatzen ditugu.
+                Hornidura-kateak optimizatzen ditugu, errentagarritasuna identifikatzen dugu eta etorkizuneko erronkei
+                eta aukerei elkarlanean aurre egiteko prestatzen dugu.
             </p>
         </div>
 
@@ -131,14 +160,16 @@
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
-                Mugikortasunaren etorkizuna:
-            </b></h3>
+                    Mugikortasunaren etorkizuna:
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
-                Mugikortasunaren etorkizuna
-            </b></a>
+                    Mugikortasunaren etorkizuna
+                </b></a>
             <p class="text">
-                Asko inbertitzen dugu ikerketan eta berrikuntzan, gure bezeroei CASEn oinarritutako automobilgintzako logistikaren alderdi guztietan lagun diezaiekegula bermatzeko. Gure esperientziak, ezagutzek eta berrikuntzarekiko konpromisoak automobilaren hornitzaile logistiko nagusi bihurtzen gaituzte.
+                Asko inbertitzen dugu ikerketan eta berrikuntzan, gure bezeroei CASEn oinarritutako automobilgintzako
+                logistikaren alderdi guztietan lagun diezaiekegula bermatzeko. Gure esperientziak, ezagutzek eta
+                berrikuntzarekiko konpromisoak automobilaren hornitzaile logistiko nagusi bihurtzen gaituzte.
                 Automobilgintzako eta logistikako sektoreen arteko lankidetza garapena bultzatzen ari da.
             </p>
         </div>
@@ -148,15 +179,18 @@
                 <img src="./IMG/Gaur_biharko_energia-erronkak.jpg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
-            <h3 class="titulo1" ><b>
-                Gaur biharko energia-erronkak konpontzea:
-            </b></h3>
+            <h3 class="titulo1"><b>
+                    Gaur biharko energia-erronkak konpontzea:
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
-                Gaur biharko energia-erronkak konpontzea
-            </b></a>
+                    Gaur biharko energia-erronkak konpontzea
+                </b></a>
             <p class="text">
-                Gure espezialistek irtenbide globalak eskaintzen dituzte, betiere segurtasunean eta araudia betetzean oinarrituak, bikaintasun operatiboarekin eta zerbitzuak ematearekin dugun konpromisoak babestuta. Gure eragiketa-prozesu estandarizatuei, HSSEri (osasuna, segurtasuna, babesa eta ingurumena) eta txostenak egiteari esker,
+                Gure espezialistek irtenbide globalak eskaintzen dituzte, betiere segurtasunean eta araudia betetzean
+                oinarrituak, bikaintasun operatiboarekin eta zerbitzuak ematearekin dugun konpromisoak babestuta. Gure
+                eragiketa-prozesu estandarizatuei, HSSEri (osasuna, segurtasuna, babesa eta ingurumena) eta txostenak
+                egiteari esker,
                 zerbitzu koherentea eta kalitatezkoa eskain dezakegu mundu osoan.
             </p>
         </div>
@@ -223,28 +257,33 @@
             <ul class="footer-flex" id="last">
                 <li>
                     <a href="#" class="footer-social-media">
-                        <img class="social-media-logo" src="./components/img/footer/socialMedia/twitter.png" alt="Twitter logo">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/twitter.png"
+                            alt="Twitter logo">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="footer-social-media">
-                        <img class="social-media-logo" src="./components/img/footer/socialMedia/linkedin.png" alt="LinkedIn logo">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/linkedin.png"
+                            alt="LinkedIn logo">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="footer-social-media">
-                        <img class="social-media-logo" src="./components/img/footer/socialMedia/facebook.png" alt="Facebook logo">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/facebook.png"
+                            alt="Facebook logo">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="footer-social-media">
-                        <img class="social-media-logo" src="./components/img/footer/socialMedia/instagram.png" alt="Instagram logo">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/instagram.png"
+                            alt="Instagram logo">
                     </a>
                 </li>
             </ul>
         </div>
     </footer>
 
-    <script src = "./js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

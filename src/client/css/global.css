@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import "footer.css";
 @import "main.css";
+@import "session.css";
 
 * {
     
@@ -13,6 +15,12 @@ body {
     color: #FFFFFF;
     background-color: #F6F1DB;
 }
+
+/*.popup-container {
+    
+    display: none;
+
+}*/
 
 p, a {
 

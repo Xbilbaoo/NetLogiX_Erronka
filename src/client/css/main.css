@@ -134,6 +134,7 @@ marquee{
 .bloque1 a{
     text-decoration: none;
     color: white;
+    cursor: default;
 }
 
 .bloque1 a:hover{
