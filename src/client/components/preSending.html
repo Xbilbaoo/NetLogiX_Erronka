@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLogiX - Send Now!</title>
+    <link rel="stylesheet" href="../css/preSending.css">
 </head>
 
 <body>
     <main>
         <section>
-            <form>
+            <form class="search-form">
                 <label for="jatorria">Jatorria:</label>
                 <input type="text" id="jatorria" name="jatorria">
                 <label for="tamaina">Tamaina:</label>
@@ -19,25 +20,34 @@
                     <option value="ertaina">Ertaina</option>
                     <option value="handia">Handia</option>
                 </select>
-                <label for="biltegia">Biltegia:</label>
-                <select id="biltegia" name="biltegia">
-                    <!--"Option" hauek dinamikoki kargatuko dira.-->
-                </select>
+                <div class="warehouse" id="biltegia">
+                    <label for="biltegia">Biltegia:</label>
+                    <select name="biltegia">
+                        <!--"Option" hauek dinamikoki kargatuko dira.-->
+                    </select>
+                </div>
                 <label for="pisua">Pisua:</label>
-                <input type="number" id="pisua" name="pisua" value="100"> kg.
+                <input type="number" id="pisua" name="pisua" placeholder="0"> kg.
                 <label for="helmuga">Helmuga:</label>
                 <input type="text" id="helmuga" name="helmuga" disabled>
-                <fieldset>
-                    <legend>Zerbitzuak</legend>
-                    <input type="checkbox" id="pakete_fragila" name="zerbitzuak" value="1">
-                    <label for="pakete_fragila">Pakete Fragila</label>
+                    <div class="pill-group">
+                        <h3>Zerbitzuak</h3>
+                        <hr class="divider">
+                        <span class="checkbox-pill">
+                            <input type="checkbox" id="pakete_fragila" name="pakete_fragila">
+                            <label for="pakete_fragila">Pakete fragila</label>
+                        </span>
 
-                    <input type="checkbox" id="bilteratzea" name="zerbitzuak" value="1">
-                    <label for="bilteratzea">Bilteratzea</label>
+                        <span class="checkbox-pill">
+                            <input type="checkbox" id="biltegiratze" name="biltegiratze">
+                            <label for="biltegiratze">Biltegiratzea</label>
+                        </span>
 
-                    <input type="checkbox" id="bidalketa" name="zerbitzuak" value="1">
-                    <label for="bidalketa">Bidalketa</label>
-                </fieldset>
+                        <span class="checkbox-pill">
+                            <input type="checkbox" id="bidalketa" name="bidalketa">
+                            <label for="bidalketa">Bidalketa</label>
+                        </span>
+                    </div>
                 <button type="submit">Bilatu</button>
             </form>
         </section>
@@ -45,7 +55,7 @@
             <!--Hemengo datuak (cards) dinamikoki kargatuko dira.-->
         </section>
     </main>
-    <script src="../assets/js/preSending/formLoad.js"></script>
+    <script src="../js/preSending/formLoad.js"></script>
 </body>
 
 </html>
