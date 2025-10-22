@@ -1,16 +1,36 @@
+#send {
+
+    transition: all 500ms;
+
+}
+
+#send:hover {
+
+    cursor: pointer;
+    color: #F6F1DB;
+    font-size: large;
+
+}
 .popup-container {
 
-    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
     position: fixed;
+    pointer-events: none;
+    opacity: 0;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
     z-index: 2;
+
 }
 
 .login-box {
-    
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -19,16 +39,14 @@
     padding: 10px;
     width: 450px;
     height: 450px;
-    margin: auto;
     border: #BB4D03 solid 3px;
     border-radius: 10px;
     color: #D76719;
-    top: 50px;
-    z-index: 1;
     align-items: center;
     justify-content: center;
     align-content: flex-start;
     padding-top: 30px;
+    z-index: 3;
 
 }
 
@@ -58,7 +76,7 @@
 }
 
 
-.form-group input{
+.form-group input {
 
     border: #BB4D03 2px solid;
     border-radius: 5px;
@@ -115,4 +133,11 @@
     width: 166px;
     opacity: 0.85;
     margin-top: 13px;
+}
+
+.load {
+
+    pointer-events: auto;
+    opacity: 1;
+
 }

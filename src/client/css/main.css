@@ -1,11 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: #f6f1db;
-    font-family: "Lexend", sans-serif;
-}
 
 /*Carrousel*/
 
@@ -129,16 +121,6 @@ marquee{
     justify-content: flex-end;
     padding-right: 30px;
     height: 100px;
-}
-
-.bloque1 a{
-    text-decoration: none;
-    color: white;
-    cursor: default;
-}
-
-.bloque1 a:hover{
-    color: #F6F1DB;
 }
 
 .bloque2{
