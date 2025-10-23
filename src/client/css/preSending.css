@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 
 * {
+
     margin: 0;
     padding: 0;
     background-color: #F6F1EC;
@@ -51,6 +52,19 @@
 
 }
 
+<<<<<<< HEAD
+=======
+.divider {
+
+    width: 100%;
+    height: 3px;
+    background-color: #BB4D03;
+    border: #BB4D03;
+    border-radius: 999px;
+
+}
+
+>>>>>>> 34a0f6486759b74a8279e6f852b882343efc556b
 /* Pill checkbox styles */
 .pill-group {
 
@@ -61,8 +75,8 @@
     width: 90%;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 8px;
     border: #BB4D03 3px solid;
+<<<<<<< HEAD
     padding: 30px;
     justify-self: end;
     border-radius: 10px;
@@ -94,6 +108,13 @@
 
     margin-bottom: 15px;
     margin-right: 15px;
+=======
+    justify-content: center;
+    width: 30%;
+    padding: 30px;
+    justify-self: end;
+
+>>>>>>> 34a0f6486759b74a8279e6f852b882343efc556b
 }
 
 .checkbox-pill input[type="checkbox"] {
