@@ -12,43 +12,50 @@
     <main>
         <section>
             <form class="search-form">
-                <label for="jatorria">Jatorria:</label>
-                <input type="text" id="jatorria" name="jatorria">
-                <label for="tamaina">Tamaina:</label>
-                <select id="tamaina" name="tamaina">
-                    <option value="txikia">Txikia</option>
-                    <option value="ertaina">Ertaina</option>
-                    <option value="handia">Handia</option>
-                </select>
-                <div class="warehouse" id="biltegia">
-                    <label for="biltegia">Biltegia:</label>
-                    <select name="biltegia">
-                        <!--"Option" hauek dinamikoki kargatuko dira.-->
+                <div class="input-group">
+                    <label class="search-label" for="jatorria">Jatorria:</label>
+                    <input type="text" id="jatorria" name="jatorria">
+                    <label class="search-label" for="tamaina">Tamaina:</label>
+                    <select id="tamaina" name="tamaina">
+                        <option value="txikia">Txikia</option>
+                        <option value="ertaina">Ertaina</option>
+                        <option value="handia">Handia</option>
                     </select>
-                </div>
-                <label for="pisua">Pisua:</label>
-                <input type="number" id="pisua" name="pisua" placeholder="0"> kg.
-                <label for="helmuga">Helmuga:</label>
-                <input type="text" id="helmuga" name="helmuga" disabled>
-                    <div class="pill-group">
-                        <h3>Zerbitzuak</h3>
-                        <hr class="divider">
-                        <span class="checkbox-pill">
-                            <input type="checkbox" id="pakete_fragila" name="pakete_fragila">
-                            <label for="pakete_fragila">Pakete fragila</label>
-                        </span>
-
-                        <span class="checkbox-pill">
-                            <input type="checkbox" id="biltegiratze" name="biltegiratze">
-                            <label for="biltegiratze">Biltegiratzea</label>
-                        </span>
-
-                        <span class="checkbox-pill">
-                            <input type="checkbox" id="bidalketa" name="bidalketa">
-                            <label for="bidalketa">Bidalketa</label>
-                        </span>
+                    <div class="warehouse" id="warehouse-div">
+                        <label class="search-label" for="biltegia">Biltegia:</label>
+                        <select name="biltegia" id="biltegia">
+                            <!--"Option" hauek dinamikoki kargatuko dira.-->
+                        </select>
                     </div>
-                <button type="submit">Bilatu</button>
+                    <label class="search-label" for="pisua">Pisua:</label>
+                    <input type="number" id="pisua" name="pisua" placeholder="0"> kg.
+                    <label class="search-label" for="helmuga">Helmuga:</label>
+                    <input type="text" id="helmuga" name="helmuga" disabled>
+                </div>
+
+                <div class="pill-group">
+                    <h3 class="pill-group-title">Zerbitzuak</h3>
+                    <hr class="divider">
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="pakete_fragila" name="pakete_fragila">
+                        <label for="pakete_fragila">Pakete fragila</label>
+                    </span>
+
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="biltegiratze" name="biltegiratze">
+                        <label for="biltegiratze">Biltegiratzea</label>
+                    </span>
+
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="bidalketa" name="bidalketa">
+                        <label for="bidalketa">Bidalketa Azkarra</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="aseguru" name="aseguru">
+                        <label for="aseguru">Asegurua</label>
+                    </span>
+                </div>
+                <button type="submit" class="search-button">Bilatu</button>
             </form>
         </section>
         <section>

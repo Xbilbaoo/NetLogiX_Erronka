@@ -1,26 +1,15 @@
-const WAREHOUSES_URL = "/src/client/json/preSending/loadForm/warehouses.json"
+const WAREHOUSES_URL = "/src/client/json/preSending/warehouses.json"
 
 const DESTINATION_CHECK = document.getElementById("bidalketa")
 const WAREHOUSE_CHECK = document.getElementById("biltegiratze")
 const DESTINATION_TF = document.getElementById("helmuga")
 const WAREHOUSE_SELECT = document.getElementById("biltegia")
+const WAREHOUSE_DIV = document.getElementById("warehouse-div")
 
 
 kargatuBiltegiak(WAREHOUSES_URL, WAREHOUSE_SELECT)
 
 DESTINATION_CHECK.addEventListener("click", () => {
-
-/**
- * if(DESTINATION_TF.disabled) {
- *      
- *      DESTINATION_TF.disabled = false
- * 
- * } else {
- *      
- *      DESTINATION_TF.disabled = true
- * 
- * } 
- */
 
     DESTINATION_TF.disabled = !DESTINATION_TF.disabled
 
@@ -28,13 +17,13 @@ DESTINATION_CHECK.addEventListener("click", () => {
 
 WAREHOUSE_CHECK.addEventListener("click", () => {
 
-    if(WAREHOUSE_SELECT.style.display == "inline-block") {
+    if(WAREHOUSE_DIV.style.display == "inline-block") {
 
-        WAREHOUSE_SELECT.style.display = "none"
+        WAREHOUSE_DIV.style.display = "none"
 
     } else {
 
-        WAREHOUSE_SELECT.style.display = "inline-block"
+        WAREHOUSE_DIV.style.display = "inline-block"
 
     }
 })
@@ -47,7 +36,7 @@ WAREHOUSE_CHECK.addEventListener("click", () => {
  * @param {Identifier of the select of the form} selectID 
  */
 
-async function kargatuBiltegiak(url, selectID) {
+async function kargatuBiltegiak(url, element) {
 
     try {
          
@@ -60,14 +49,15 @@ async function kargatuBiltegiak(url, selectID) {
         }
 
         const options = await response.json()
-        const select = document.getElementById(selectID)
+
+        
 
         options.forEach(item => {
             
             const option = document.createElement("option")
             option.value = item.id
             option.textContent = item.izena
-            select.appendChild(option)
+            element.appendChild(option)
 
         })
 

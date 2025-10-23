@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     background-color: #F6F1EC;
     box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
 
 }
 
@@ -17,6 +20,30 @@
     background-color: #F2F1EC;
     border: #BB4D03 5px solid;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto;  
+
+}
+
+.input-group {
+    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #F2F1EC;
+    
+}
+
+.search-label {
+
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 20%;
+    color: #D76719;
+    background-color: #F2F1EC;
+
 }
 .warehouse {
 
@@ -24,20 +51,49 @@
 
 }
 
-
-
 /* Pill checkbox styles */
 .pill-group {
+
     display: flex;
-    gap: 8px;
-    align-items: center;
+    flex-direction: row;
+    align-items: baseline;
+    align-content: flex-start;
+    width: 90%;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 8px;
     border: #BB4D03 3px solid;
-    
-    width: 30%;
     padding: 30px;
     justify-self: end;
+    border-radius: 10px;
+
+}
+
+.pill-group-title {
+
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.divider {
+    width: 100%;
+    height: 3px;
+    background-color: #BB4D03;
+    border: #BB4D03;
+    border-radius: 999px;
+    margin-bottom: 20px;
+
+}
+
+.checkbox-pill {
+
+    margin-bottom: 15px;
+    margin-right: 15px;
 }
 
 .checkbox-pill input[type="checkbox"] {
@@ -51,6 +107,7 @@
     overflow: hidden;
     white-space: nowrap;
     border: 0;
+
 }   
 
 .checkbox-pill label {
@@ -73,4 +130,20 @@
     box-shadow: 0 6px 18px rgba(6, 182, 212, 0.12);
     transform: translateY(-1px);
     font-weight: bold;
+}
+
+.search-button {
+
+    background-color: #BB4D03;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    grid-column: 2/3;
+    height: 40%;
+    width: 100px;
+    justify-self: end;
+    align-self: end;
 }
