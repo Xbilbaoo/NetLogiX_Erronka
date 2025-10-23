@@ -114,6 +114,7 @@ marquee{
 }
 
 .bloque1{
+    
     display: grid;
     background-color: #D76719;
     border-radius: 18px;

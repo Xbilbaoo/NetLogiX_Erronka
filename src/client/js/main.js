@@ -1,7 +1,7 @@
 var counter = 1
 const cardTitles = document.querySelectorAll(".titulo2")
 const cardTexts = document.querySelectorAll(".text")
-var mediaQuery = window.matchMedia("(max-width: 660px)")
+const mediaQuery = window.matchMedia("(max-width: 660px)")
 
 console.log(cardTitles)
 setInterval(function () {
@@ -18,14 +18,19 @@ mediaQuery.addListener(checkMedia)
 document.querySelectorAll(".send-button").forEach(item => {
 
     item.addEventListener('click', () => {
-        document.getElementById("session-popup").classList.add('load');
+        
+        document.getElementById("session-popup").classList.add('load')
         document.getElementById("login-box").classList.add
+
     });
 })
 
 document.getElementById("close").addEventListener('click', () => {
-    document.getElementById("session-popup").classList.remove('load');
+    
+    document.getElementById("session-popup").classList.remove('load')
+
 });
+
 function checkMedia(media) {
 
     if (media.matches) {
