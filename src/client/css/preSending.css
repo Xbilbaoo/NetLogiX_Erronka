@@ -1,4 +1,5 @@
 * {
+
     margin: 0;
     padding: 0;
     background-color: #F6F1EC;
@@ -24,7 +25,15 @@
 
 }
 
+.divider {
 
+    width: 100%;
+    height: 3px;
+    background-color: #BB4D03;
+    border: #BB4D03;
+    border-radius: 999px;
+
+}
 
 /* Pill checkbox styles */
 .pill-group {
@@ -32,12 +41,12 @@
     gap: 8px;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 8px;
     border: #BB4D03 3px solid;
-    
+    justify-content: center;
     width: 30%;
     padding: 30px;
     justify-self: end;
+
 }
 
 .checkbox-pill input[type="checkbox"] {
