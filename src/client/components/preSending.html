@@ -13,24 +13,35 @@
         <section>
             <form class="search-form">
                 <div class="input-group">
-                    <label class="search-label" for="jatorria">Jatorria:</label>
-                    <input type="text" id="jatorria" name="jatorria">
-                    <label class="search-label" for="tamaina">Tamaina:</label>
-                    <select id="tamaina" name="tamaina">
-                        <option value="txikia">Txikia</option>
-                        <option value="ertaina">Ertaina</option>
-                        <option value="handia">Handia</option>
-                    </select>
+                    <div class="group left">
+                        <label class="search-label" for="jatorria">Jatorria:</label>
+                        <input type="text" id="jatorria" name="jatorria">
+                    </div>
+
+                    <div class="group">
+                        <label class="search-label" for="tamaina">Tamaina:</label>
+                        <select id="tamaina" name="tamaina">
+                            <option value="txikia">Txikia</option>
+                            <option value="ertaina">Ertaina</option>
+                            <option value="handia">Handia</option>
+                        </select>
+                    </div>
+                    <div class="group left">
+                        <label class="search-label" for="pisua">Pisua:</label>
+                        <input type="number" id="pisua" name="pisua" placeholder="0">&nbsp;kg.
+                    </div>
                     <div class="warehouse" id="warehouse-div">
                         <label class="search-label" for="biltegia">Biltegia:</label>
                         <select name="biltegia" id="biltegia">
                             <!--"Option" hauek dinamikoki kargatuko dira.-->
                         </select>
                     </div>
-                    <label class="search-label" for="pisua">Pisua:</label>
-                    <input type="number" id="pisua" name="pisua" placeholder="0"> kg.
-                    <label class="search-label" for="helmuga">Helmuga:</label>
-                    <input type="text" id="helmuga" name="helmuga" disabled>
+
+                    <div class="group left destination">
+                        <label class="search-label" for="helmuga">Helmuga:</label>
+                        <input type="text" id="helmuga" name="helmuga">
+                    </div>
+
                 </div>
 
                 <div class="pill-group">
@@ -38,7 +49,7 @@
                     <hr class="divider">
                     <span class="checkbox-pill">
                         <input type="checkbox" id="pakete_fragila" name="pakete_fragila">
-                        <label for="pakete_fragila">Pakete fragila</label>
+                        <label for="pakete_fragila">Auzkorra</label>
                     </span>
 
                     <span class="checkbox-pill">
@@ -53,6 +64,14 @@
                     <span class="checkbox-pill">
                         <input type="checkbox" id="aseguru" name="aseguru">
                         <label for="aseguru">Asegurua</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="segurtasuna" name="segurtasuna">
+                        <label for="segurtasuna">Segurtasun Armatua</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="eko" name="eko">
+                        <label for="eko">Eko Friendly</label>
                     </span>
                 </div>
                 <button type="submit" class="search-button">Bilatu</button>

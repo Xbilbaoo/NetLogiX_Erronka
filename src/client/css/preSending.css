@@ -10,6 +10,12 @@
 
 }
 
+div {
+    
+    background-color: #F2F1EC;
+
+}
+
 .search-form {
 
     position: relative;
@@ -26,12 +32,31 @@
 
 }
 
+.group {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left {
+
+    width: 64%;
+}
+
 .input-group {
     
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #F2F1EC;
+    justify-content: space-between;
+    
+}
+
+.input-group input{
+
+    border: #BB4D03 2px solid;
+    border-radius: 5px;
     
 }
 
@@ -46,14 +71,18 @@
     background-color: #F2F1EC;
 
 }
+
 .warehouse {
 
     display: none;
+    justify-self: flex-end;
 
 }
 
-<<<<<<< HEAD
-=======
+.destination {
+    width: 100%;
+    justify-content: flex-start;
+}
 .divider {
 
     width: 100%;
@@ -64,7 +93,6 @@
 
 }
 
->>>>>>> 34a0f6486759b74a8279e6f852b882343efc556b
 /* Pill checkbox styles */
 .pill-group {
 
@@ -76,10 +104,10 @@
     justify-content: center;
     flex-wrap: wrap;
     border: #BB4D03 3px solid;
-<<<<<<< HEAD
     padding: 30px;
     justify-self: end;
     border-radius: 10px;
+    background-color: #F6F1EC;
 
 }
 
@@ -108,13 +136,6 @@
 
     margin-bottom: 15px;
     margin-right: 15px;
-=======
-    justify-content: center;
-    width: 30%;
-    padding: 30px;
-    justify-self: end;
-
->>>>>>> 34a0f6486759b74a8279e6f852b882343efc556b
 }
 
 .checkbox-pill input[type="checkbox"] {

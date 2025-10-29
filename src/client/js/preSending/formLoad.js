@@ -1,6 +1,5 @@
 const WAREHOUSES_URL = "/src/client/json/preSending/warehouses.json"
 
-const DESTINATION_CHECK = document.getElementById("bidalketa")
 const WAREHOUSE_CHECK = document.getElementById("biltegiratze")
 const DESTINATION_TF = document.getElementById("helmuga")
 const WAREHOUSE_SELECT = document.getElementById("biltegia")
@@ -8,12 +7,6 @@ const WAREHOUSE_DIV = document.getElementById("warehouse-div")
 
 
 kargatuBiltegiak(WAREHOUSES_URL, WAREHOUSE_SELECT)
-
-DESTINATION_CHECK.addEventListener("click", () => {
-
-    DESTINATION_TF.disabled = !DESTINATION_TF.disabled
-
-})
 
 WAREHOUSE_CHECK.addEventListener("click", () => {
 
@@ -26,6 +19,9 @@ WAREHOUSE_CHECK.addEventListener("click", () => {
         WAREHOUSE_DIV.style.display = "inline-block"
 
     }
+
+    DESTINATION_TF.disabled = !DESTINATION_TF.disabled
+
 })
 
 
