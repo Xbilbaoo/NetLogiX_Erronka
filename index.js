@@ -32,5 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownContent.style.display = 'none';
     }
 });
+            
+    document.getElementById("tlf").addEventListener("keypress", (l) => {
+        const caracter = String.fromCharCode(l.charCode); // Obtiene el carácter
+
+        // Comprueba si NO es un número (si lo es, es distinto de una letra)
+        if (isNaN(parseInt(caracter)) ) {
+            l.preventDefault(); // Evita que se escriba la letra
+        }
+
+    
+    })
+
     
 });
