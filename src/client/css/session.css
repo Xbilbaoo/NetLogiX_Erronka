@@ -11,6 +11,7 @@
     font-size: large;
 
 }
+
 .popup-container {
 
     display: flex;
@@ -84,6 +85,11 @@
     width: 400px;
     height: 25px;
 
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 2px solid #D76719;
 }
 
 .login-button {
