@@ -11,6 +11,27 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="">
+        </div>
+        <div class="Iniciarsesion">
+            <a class="saioa-hasi"><img src="./assets/img/header/session-logo.png" alt="logo de una persona"></a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+            <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="index.html">Home</a>
+                <a href="JarraipenOrria.html">Jarraipena</a>
+                <a href="formulario.html">Formularioa</a>
+                <a href="aboutus.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+            </div>
+        </div>
+    </header>
     <!--Carrousel-->
     <div class="slider">
 
@@ -21,15 +42,15 @@
 
             <!--Imagenes-->
             <div class="slide first">
-                <img src="./IMG/slide1.jpg">
+                <img src="./assets/img/carrousel/slide1.jpg">
             </div>
 
             <div class="slide">
-                <img src="./IMG/slide2.jpg">
+                <img src="./assets/img/carrousel/slide2.jpg">
             </div>
 
             <div class="slide">
-                <img src="./IMG/slide3.avif">
+                <img src="./assets/img/carrousel/slide3.avif">
             </div>
 
             <div class="nav-auto">
@@ -76,7 +97,7 @@
             <button type="close" class="login-button" id="close">Atzera</button>
             <p>Bezero berria zara? <a href="pages/register.html" class="register_link">Erregistratu</a></p>
 
-            <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+            <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
         </div>
     </div>
     <!--Bloques-->
@@ -98,7 +119,7 @@
                 <label for="Bilatu">Bidalketaren Jarraipena:</label>
                 <br>
                 <input type="search" name="zenbaki" placeholder="Pakete zenbakia">
-                <button type="submit" class="boton"><img src="./IMG/lupa.png"> </button>
+                <button type="submit" class="boton"><img src="./assets/img/landing/lupa.png"> </button>
             </form>
         </div>
 
@@ -112,7 +133,7 @@
 
         <div class="card bat">
             <figure id="imagen">
-                <img src="./IMG/Gure_planeta.webp">
+                <img src="./assets/img/landing/Gure_planeta.webp">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -134,7 +155,7 @@
 
         <div class="card bi">
             <figure>
-                <img src="./IMG/berrikuntzaren_abangoardian.jpeg">
+                <img src="./assets/img/landing/berrikuntzaren_abangoardian.jpeg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -156,7 +177,7 @@
 
         <div class="card hiru">
             <figure>
-                <img src="./IMG/Mugikortasunaren_etorkizuna.png">
+                <img src="./assets/img/landing/Mugikortasunaren_etorkizuna.png">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -176,7 +197,7 @@
 
         <div class="card lau">
             <figure>
-                <img src="./IMG/Gaur_biharko_energia-erronkak.jpg">
+                <img src="./assets/img/landing/Gaur_biharko_energia-erronkak.jpg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -283,6 +304,7 @@
         </div>
     </footer>
 
+    <script src="js/header.js"></script>
     <script src="js/main.js"></script>
 </body>
 

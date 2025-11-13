@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import "header.css";
 @import "footer.css";
-@import "main.css";
 @import "session.css";
-@import "aboutUS.css";
+@import "main.css";
+
+
+
 
 * {
     
@@ -29,4 +32,9 @@ p, a {
 .cards {
 
     margin-bottom: 50px;
+}
+
+.saioa-hasi {
+
+    cursor: pointer;
 }
