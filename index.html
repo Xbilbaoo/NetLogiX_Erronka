@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLogiX</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./img/image.png" type="image/x-icon">
 
 </head>
 <body>
@@ -13,20 +14,21 @@
             <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
         </div>
         <div class="Iniciarsesion">
-            <a href="InicionSesiada.html"> Iniciar Sesion</a>
+            <a href="InicionSesiada.html"><img src="./img/descarga-removebg-preview.png"></a>
         </div>
         <div class="dropdown">
-   <button class="dropbtn">
-    <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
-  </button>
-  <div class="dropdown-content">
-  <a class="ekis" href="index.html">X</a>
-  <a href="index.html">Home</a>
-  <a href="JarraipenOrria.html">Jarraipena</a>
-  <a href="formulario.html">Formularioa</a>
-  <a href="#">Link4</a>
-  </div>
-</div>
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+            <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="index.html">Home</a>
+                <a href="JarraipenOrria.html">Jarraipena</a>
+                <a href="formulario.html">Formularioa</a>
+                <a href="aboutus.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a href="InicionSesiada.html" >Iniciar Sesion</a></div>
+            </div>
+        </div>
     </header>
 
     <script src="index.js"></script> 

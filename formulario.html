@@ -12,18 +12,21 @@
         <div class="logo">
             <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
         </div>
+        <div class="Iniciarsesion">
+            <a href="InicionSesiada.html"> Iniciar Sesion</a>
+        </div>
         <div class="dropdown">
-   <button class="dropbtn">
-    <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
-  </button>
-  <div class="dropdown-content">
-  <a class="ekis" href="index.html">X</a>
-  <a href="index.html">Home</a>
-  <a href="JarraipenOrria.html">Jarraipena</a>
-  <a href="#">Link3</a>
-  <a href="#">Link4</a>
-  </div>
-</div>
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+            <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="index.html">Home</a>
+                <a href="JarraipenOrria.html">Jarraipena</a>
+                <a href="formulario.html">Formularioa</a>
+                <a href="aboutus.html">Guri Buruz</a>
+            </div>
+        </div>
     </header>
 <br> 
 <form class="formularioa">
@@ -42,7 +45,7 @@
         <input type="text" id="empresa" name="empresa" class="formu-input">
         
         <label for="zerbitzuak" class="labelak">Zerbitzuak</label>
-        <select id="zerbitzuak" name="zerbitzuak" class="formu-select">
+        <select id="zerbitzuak" name="zerbitzuak" class="formu-select" required>
             <option value="">Oinarrizko entrega</option>
             <option value="">Entrega azkarra</option>
             <option value="">Hurrengo eguneko entrega</option>
@@ -54,13 +57,21 @@
             <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
             
             <input type="checkbox" id="serbitzu2" name="serbitzu2" class="checkbox-input">
-            <label for="serbitzu2" class="checkbox-label">Babes extra</label>
+            <label for="serbitzu2" class="checkbox-label">Auzkorra</label>
             
             <input type="checkbox" id="serbitzu3" name="serbitzu3" class="checkbox-input">
-            <label for="serbitzu3" class="checkbox-label">Jakinarazpen automatikoak</label>
+            <label for="serbitzu3" class="checkbox-label">Bidalketa azkarra  </label>
             
             <input type="checkbox" id="serbitzu4" name="serbitzu4" class="checkbox-input">
-            <label for="serbitzu4" class="checkbox-label">Segurtasunak</label>
+            <label for="serbitzu4" class="checkbox-label">Segurtasun Armatua</label>
+
+            <input type="checkbox" id="serbitzu5" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu5" class="checkbox-label">Eko Friendly</label>
+
+            <input type="checkbox" id="serbitzu6" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu6" class="checkbox-label">Biltegiratzea</label>
+
+            
         </fieldset>
         
         <label for="jatorria" class="labelak">Jatorria</label>
@@ -69,8 +80,11 @@
         <label for="helmuga" class="labelak">Helmuga</label>
         <input type="text" id="helmuga" name="helmuga" class="formu-input" required>
         
+        <label for="data" class="labelak">Data</label>
+        <input type="date" id="data" name="data" class="formu-input">
+        
         <label for="pisua" class="labelak">Pisua(kg)</label>
-        <select id="pisua" name="pisua" class="formu-select" required>
+        <select id="pisua" name="pisua" class="formu-select">
             <option value="">Pisu arina</option>
             <option value="">Pisu erdia</option>
             <option value="">Pisu handia</option>
