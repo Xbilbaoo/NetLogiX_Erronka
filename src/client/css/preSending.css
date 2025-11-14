@@ -10,9 +10,9 @@
 
 }
 
-div {
-    
-    background-color: #F2F1EC;
+body {
+
+    background-color: #F6F1EC;
 
 }
 
@@ -39,9 +39,14 @@ div {
 
 }
 
-.left {
+.group .left {
 
     width: 64%;
+}
+
+.group .left .destination {
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .input-group {
@@ -79,10 +84,7 @@ div {
 
 }
 
-.destination {
-    width: 100%;
-    justify-content: flex-start;
-}
+
 .divider {
 
     width: 100%;

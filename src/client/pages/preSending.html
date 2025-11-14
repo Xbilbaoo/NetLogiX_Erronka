@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLogiX - Send Now!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* FORMULARIOA */
+        .search-form {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .group.left {
+            text-align: left;
+        }
+
+        .search-label {
+            font-weight: bold;
+            color: #c4621f;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 12px;
+            border: 2px solid #c4621f;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #d4731f;
+            box-shadow: 0 0 8px rgba(196, 98, 31, 0.3);
+        }
+
+        .warehouse {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ZERBITZUAK SEKZIOA */
+        .pill-group {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .pill-group-title {
+            color: #c4621f;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px solid #c4621f;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .checkbox-pill {
+            display: inline-block;
+            margin: 8px;
+            position: relative;
+        }
+
+        .checkbox-pill input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-pill label {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 3px solid #c4621f;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            color: #333;
+            user-select: none;
+        }
+
+        .checkbox-pill label:hover {
+            background: #fff5ee;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(196, 98, 31, 0.2);
+        }
+
+        .checkbox-pill.selected label,
+        .checkbox-pill input[type="checkbox"]:checked+label {
+            background: #c4621f;
+            color: white;
+        }
+
+        /* BILATU BOTOIA */
+        .search-button {
+            width: 100%;
+            padding: 15px;
+            background: #c4621f;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-button:hover {
+            background: #d4731f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 98, 31, 0.4);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        /* CARD-AK SEKZIOA */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card.best-option {
+            border: 3px solid #FFD700;
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 100%);
+        }
+
+        .best-badge {
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: #FFD700;
+            color: #333;
+            padding: 5px 40px;
+            font-weight: bold;
+            transform: rotate(45deg);
+            font-size: 0.85em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid #e0e0e0;
+        }
+
+        .company-info {
+            flex: 1;
+        }
+
+        .company-name {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.4em;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stars {
+            font-size: 1.1em;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .card-body {
+            margin-bottom: 20px;
+        }
+
+        .delivery-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .info-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .price-label {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .price-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .select-button {
+            width: 100%;
+            padding: 12px;
+            background: #c4621f;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .select-button:hover {
+            background: #d4731f;
+            transform: scale(1.05);
+        }
+
+        /* LOADING */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 15px;
+            grid-column: 1 / -1;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #c4621f;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* ONGI ETORRI MEZUA */
+        .welcome-message {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            grid-column: 1 / -1;
+        }
+
+        .welcome-message h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .welcome-message p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        /* EZ DAGO EMAITZARIK */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 15px;
+            grid-column: 1 / -1;
+        }
+
+        .no-results p {
+            font-size: 1.3em;
+            color: #666;
+        }
+
+        /* FILTERS */
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-count {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .sort-options {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sort-options label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .sort-options select {
+            padding: 8px 12px;
+            border: 2px solid #c4621f;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        /* TOAST NOTIFICATION */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: #48A14D;
+        }
+
+        .toast.error {
+            background: #C1666B;
+        }
+
+        /* SERVICE BADGES */
+        .service-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .service-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .service-badge.available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .input-group {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-pill {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .checkbox-pill label {
+                display: block;
+                text-align: center;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .search-form {
+                padding: 20px;
+            }
+
+            .filters {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .sort-options {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .company-name {
+                font-size: 1.1em;
+            }
+
+            .price-value {
+                font-size: 1.5em;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <h1>NetLogiX</h1>
+            <p>Zure paketea modu azkar eta eraginkorrean bidali</p>
+        </div>
+
+        <section>
+            <form class="search-form" id="searchForm">
+                <div class="input-group">
+                    <div class="group left">
+                        <label class="search-label" for="jatorria">📍 Jatorria:</label>
+                        <input type="text" id="jatorria" name="jatorria" placeholder="Sartu jatorriko helbidea" value="Bilbao">
+                    </div>
+                    <div class="group">
+                        <label class="search-label" for="tamaina">📦 Tamaina:</label>
+                        <select id="tamaina" name="tamaina">
+                            <option value="txikia" selected>Txikia (30x20x10cm)</option>
+                            <option value="ertaina">Ertaina (50x40x30cm)</option>
+                            <option value="handia">Handia (80x60x40cm)</option>
+                        </select>
+                    </div>
+                    <div class="group left">
+                        <label class="search-label" for="pisua">⚖️ Pisua:</label>
+                        <input type="number" id="pisua" name="pisua" placeholder="0" min="0.1" step="0.1" value="2">&nbsp;kg.
+                    </div>
+                    <div class="warehouse" id="warehouse-div">
+                        <label class="search-label" for="biltegia">🏭 Biltegia:</label>
+                        <select name="biltegia" id="biltegia">
+                        </select>
+                    </div>
+                    <div class="group left destination">
+                        <label class="search-label" for="helmuga">🏁 Helmuga:</label>
+                        <input type="text" id="helmuga" name="helmuga" placeholder="Sartu helburuko helbidea" value="Donostia">
+                    </div>
+                </div>
+                <div class="pill-group">
+                    <h3 class="pill-group-title">Zerbitzu gehigarriak</h3>
+                    <hr class="divider">
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="pakete_fragila" name="pakete_fragila" checked>
+                        <label for="pakete_fragila">🧪 Auzkorra</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="biltegiratze" name="biltegiratze" checked>
+                        <label for="biltegiratze">📦 Biltegiratzea</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="bidalketa" name="bidalketa" checked>
+                        <label for="bidalketa">⚡ Bidalketa Azkarra</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="aseguru" name="aseguru" checked>
+                        <label for="aseguru">🛡️ Asegurua</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="segurtasuna" name="segurtasuna" checked>
+                        <label for="segurtasuna">🔒 Segurtasun Armatua</label>
+                    </span>
+                    <span class="checkbox-pill">
+                        <input type="checkbox" id="eko" name="eko">
+                        <label for="eko">🌱 Eko Friendly</label>
+                    </span>
+                </div>
+                <button type="submit" class="search-button">
+                    🔍 Bilatu
+                </button>
+            </form>
+        </section>
+
+        <div class="filters" id="filters" style="display: none;">
+            <div class="results-count" id="results-count"></div>
+            <div class="sort-options">
+                <label for="sort">Ordenatu:</label>
+                <select id="sort">
+                    <option value="zerbitzuak">Zerbitzu gehigarrien arabera</option>
+                    <option value="prezio">Prezio txikienetik handienera</option>
+                    <option value="denbora">Denbora laburrenetik luzeenera</option>
+                    <option value="rating">Puntuazio altuenetik baxuenera</option>
+                </select>
+            </div>
+        </div>
+
+        <section class="cards" id="cards">
+            <div class="welcome-message">
+                <h2>👋 Ongi etorri NetLogiX-era!</h2>
+                <p>Bete goiko formularioa zure paketearen emaitzak ikusteko.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ========== FORMLOAD.JS ==========
+
+        // Biltegien datuak
+        const biltegiak = [
+            { id: 'A', izena: 'Biltegi A - Bilbo' },
+            { id: 'B', izena: 'Biltegi B - Donostia' },
+            { id: 'C', izena: 'Biltegi C - Gasteiz' },
+            { id: 'D', izena: 'Biltegi D - Iruñea' }
+        ];
+
+        // Zerbitzuen prezioak
+        const zerbitzuPrezioak = {
+            pakete_fragila: 5.00,
+            biltegiratze: 10.00,
+            bidalketa: 8.00,
+            aseguru: 15.00,
+            segurtasuna: 12.00,
+            eko: 3.00
+        };
+
+        // Biltegiak kargatu hasieran
+        document.addEventListener('DOMContentLoaded', () => {
+            kargatuBiltegiak();
+            setupFormValidation();
+            setupCheckboxStyles();
+            setupSorting();
+            
+            // Initialize checkboxes
+            document.querySelectorAll('.checkbox-pill input[type="checkbox"]').forEach(checkbox => {
+                if (checkbox.checked) {
+                    checkbox.parentElement.classList.add('selected');
+                }
+            });
+        });
+
+        function kargatuBiltegiak() {
+            const biltegiaSelect = document.getElementById('biltegia');
+
+            biltegiak.forEach(biltegia => {
+                const option = document.createElement('option');
+                option.value = biltegia.id;
+                option.textContent = biltegia.izena;
+                biltegiaSelect.appendChild(option);
+            });
+        }
+
+        function setupFormValidation() {
+            const form = document.getElementById('searchForm');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = {
+                    jatorria: document.getElementById('jatorria').value.trim(),
+                    tamaina: document.getElementById('tamaina').value,
+                    pisua: parseFloat(document.getElementById('pisua').value) || 0,
+                    biltegia: document.getElementById('biltegia').value,
+                    helmuga: document.getElementById('helmuga').value.trim(),
+                    zerbitzuak: getSelectedServices()
+                };
+
+                if (!validateForm(formData)) {
+                    return;
+                }
+
+                bilatuEmaitzak(formData);
+            });
+        }
+
+        function getSelectedServices() {
+            const services = [];
+            const checkboxes = document.querySelectorAll('.checkbox-pill input[type="checkbox"]');
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    services.push({
+                        id: checkbox.id,
+                        name: checkbox.nextElementSibling.textContent,
+                        price: zerbitzuPrezioak[checkbox.id] || 0
+                    });
+                }
+            });
+
+            return services;
+        }
+
+        function validateForm(data) {
+            if (!data.jatorria) {
+                showToast('Mesedez, sartu jatorria', 'error');
+                document.getElementById('jatorria').focus();
+                return false;
+            }
+
+            if (!data.helmuga) {
+                showToast('Mesedez, sartu helmuga', 'error');
+                document.getElementById('helmuga').focus();
+                return false;
+            }
+
+            if (data.pisua <= 0) {
+                showToast('Mesedez, sartu baliozko pisua', 'error');
+                document.getElementById('pisua').focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        function setupCheckboxStyles() {
+            const checkboxPills = document.querySelectorAll('.checkbox-pill');
+
+            checkboxPills.forEach(pill => {
+                const checkbox = pill.querySelector('input[type="checkbox"]');
+                const label = pill.querySelector('label');
+
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        pill.classList.add('selected');
+                    } else {
+                        pill.classList.remove('selected');
+                    }
+                });
+
+                label.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                });
+            });
+        }
+
+        function bilatuEmaitzak(formData) {
+            console.log('Searching with data:', formData);
+            const event = new CustomEvent('searchSubmitted', {
+                detail: formData
+            });
+            document.dispatchEvent(event);
+        }
+
+        // ========== CARDLOAD.JS ==========
+
+        // Enpresa datuak
+        const enpresak = [
+            {
+                id: 1,
+                izena: 'Express Logistics',
+                logoUrl: 'https://via.placeholder.com/80x80/FF6B35/FFFFFF?text=EL',
+                denbora: '24h',
+                prezioa: 12.50,
+                rating: 4.8,
+                iruzkinak: 234,
+                deskribapena: 'Bidalketa azkarrak eta fidagarriak',
+                zerbitzuak: ['pakete_fragila', 'bidalketa', 'aseguru', 'segurtasuna']
+            },
+            {
+                id: 2,
+                izena: 'FastShip Pro',
+                logoUrl: 'https://via.placeholder.com/80x80/004E89/FFFFFF?text=FS',
+                denbora: '48h',
+                prezioa: 8.75,
+                rating: 4.5,
+                iruzkinak: 189,
+                deskribapena: 'Prezio merkeak eta kalitate handia',
+                zerbitzuak: ['pakete_fragila', 'biltegiratze', 'bidalketa']
+            },
+            {
+                id: 3,
+                izena: 'QuickTransport',
+                logoUrl: 'https://via.placeholder.com/80x80/1A936F/FFFFFF?text=QT',
+                denbora: '72h',
+                prezioa: 6.20,
+                rating: 4.6,
+                iruzkinak: 312,
+                deskribapena: 'Ingurumenarekiko kontzientea',
+                zerbitzuak: ['pakete_fragila', 'eko', 'aseguru']
+            },
+            {
+                id: 4,
+                izena: 'Global Cargo',
+                logoUrl: 'https://via.placeholder.com/80x80/C1666B/FFFFFF?text=GC',
+                denbora: '24h',
+                prezioa: 15.00,
+                rating: 4.9,
+                iruzkinak: 567,
+                deskribapena: 'Nazioarteko bidalketak',
+                zerbitzuak: ['pakete_fragila', 'biltegiratze', 'bidalketa', 'aseguru', 'segurtasuna', 'eko']
+            },
+            {
+                id: 5,
+                izena: 'EcoTransit',
+                logoUrl: 'https://via.placeholder.com/80x80/48A14D/FFFFFF?text=ET',
+                denbora: '96h',
+                prezioa: 5.50,
+                rating: 4.3,
+                iruzkinak: 145,
+                deskribapena: 'Ingurumenarekiko errespetuzkoa',
+                zerbitzuak: ['eko', 'biltegiratze']
+            }
+        ];
+
+        let currentResults = [];
+        let currentSort = 'zerbitzuak';
+
+        document.addEventListener('searchSubmitted', (event) => {
+            const formData = event.detail;
+            console.log('Processing search with:', formData);
+            showLoadingState();
+
+            // Use a shorter timeout for better UX
+            setTimeout(() => {
+                try {
+                    const results = getFilteredResults(formData);
+                    currentResults = results;
+                    renderCards(results, formData);
+                    updateFilters(results.length);
+                } catch (error) {
+                    console.error('Error processing search:', error);
+                    showToast('Errorea gertatu da emaitzak prozesatzean', 'error');
+                    renderCards([], formData);
+                }
+            }, 800); // Reduced from 1000ms to 800ms
+        });
+
+        function showLoadingState() {
+            const cardsSection = document.getElementById('cards');
+            cardsSection.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Emaitzak bilatzen...</p>
+                </div>
+            `;
+        }
+
+        function getFilteredResults(formData) {
+            let results = [...enpresak];
+
+            const tamainaMultiplier = {
+                'txikia': 1.0,
+                'ertaina': 1.3,
+                'handia': 1.6
+            };
+
+            const multiplier = tamainaMultiplier[formData.tamaina] || 1.0;
+            const pisuaPrice = formData.pisua * 0.5;
+            const zerbitzuakTotal = formData.zerbitzuak.reduce((total, z) => total + z.price, 0);
+
+            results = results.map(enpresa => ({
+                ...enpresa,
+                prezioFinala: (enpresa.prezioa * multiplier + pisuaPrice + zerbitzuakTotal).toFixed(2),
+                selectedServicesCount: calculateSelectedServicesCount(enpresa, formData.zerbitzuak)
+            }));
+
+            // Sort by current sort option
+            sortResults(results, currentSort);
+
+            return results;
+        }
+
+        function calculateSelectedServicesCount(enpresa, selectedServices) {
+            if (!selectedServices || selectedServices.length === 0) return 0;
+            
+            const selectedServiceIds = selectedServices.map(service => service.id);
+            return enpresa.zerbitzuak.filter(service => selectedServiceIds.includes(service)).length;
+        }
+
+        function sortResults(results, sortBy) {
+            switch (sortBy) {
+                case 'zerbitzuak':
+                    results.sort((a, b) => b.selectedServicesCount - a.selectedServicesCount || parseFloat(a.prezioFinala) - parseFloat(b.prezioFinala));
+                    break;
+                case 'prezio':
+                    results.sort((a, b) => parseFloat(a.prezioFinala) - parseFloat(b.prezioFinala));
+                    break;
+                case 'denbora':
+                    results.sort((a, b) => {
+                        const aTime = parseInt(a.denbora);
+                        const bTime = parseInt(b.denbora);
+                        return aTime - bTime;
+                    });
+                    break;
+                case 'rating':
+                    results.sort((a, b) => b.rating - a.rating);
+                    break;
+            }
+        }
+
+        function renderCards(results, formData) {
+            const cardsSection = document.getElementById('cards');
+
+            if (results.length === 0) {
+                cardsSection.innerHTML = `
+                    <div class="no-results">
+                        <p>Ez da emaitzarik aurkitu zure bilaketarako.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cardsSection.innerHTML = results.map((enpresa, index) =>
+                createCardHTML(enpresa, index === 0, formData.zerbitzuak)
+            ).join('');
+
+            addCardEventListeners();
+        }
+
+        function createCardHTML(enpresa, isBest, selectedServices) {
+            const selectedServiceIds = selectedServices ? selectedServices.map(service => service.id) : [];
+            
+            return `
+                <div class="card ${isBest ? 'best-option' : ''}" data-enpresa-id="${enpresa.id}">
+                    ${isBest ? '<div class="best-badge">Aukera onena</div>' : ''}
+                    <div class="card-header">
+                        <img src="${enpresa.logoUrl}" alt="${enpresa.izena}" class="company-logo">
+                        <div class="company-info">
+                            <h3 class="company-name">${enpresa.izena}</h3>
+                            <div class="rating">
+                                <span class="stars">${getStarsHTML(enpresa.rating)}</span>
+                                <span class="rating-text">${enpresa.rating} (${enpresa.iruzkinak})</span>
+                            </div>
+                            <div class="service-badges">
+                                ${getServiceBadgesHTML(enpresa, selectedServiceIds)}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="delivery-info">
+                            <div class="info-item">
+                                <span class="info-label">⏱️ Denbora:</span>
+                                <span class="info-value">${enpresa.denbora}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">📦 Oinarrizko prezioa:</span>
+                                <span class="info-value">${enpresa.prezioa}€</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">✅ Zerbitzu hautatuak:</span>
+                                <span class="info-value">${enpresa.selectedServicesCount}/${selectedServiceIds.length}</span>
+                            </div>
+                        </div>
+                        <div class="price-section">
+                            <div class="price-label">Prezio totala:</div>
+                            <div class="price-value">${enpresa.prezioFinala}€</div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="select-button" data-enpresa-id="${enpresa.id}">
+                            ✅ Hautatu
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getServiceBadgesHTML(enpresa, selectedServiceIds) {
+            const serviceLabels = {
+                pakete_fragila: 'Auzkorra',
+                biltegiratze: 'Biltegiratzea',
+                bidalketa: 'Bidalketa Azkarra',
+                aseguru: 'Asegurua',
+                segurtasuna: 'Segurtasun Armatua',
+                eko: 'Eko Friendly'
+            };
+            
+            let badgesHTML = '';
+            
+            enpresa.zerbitzuak.forEach(serviceId => {
+                const isSelected = selectedServiceIds.includes(serviceId);
+                badgesHTML += `<span class="service-badge ${isSelected ? 'available' : ''}">${serviceLabels[serviceId]}</span>`;
+            });
+            
+            return badgesHTML;
+        }
+
+        function getStarsHTML(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let starsHTML = '';
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '⭐';
+            }
+
+            if (hasHalfStar) {
+                starsHTML += '✨';
+            }
+
+            return starsHTML;
+        }
+
+        function addCardEventListeners() {
+            const buttons = document.querySelectorAll('.select-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const empresaId = parseInt(button.dataset.empresaId);
+                    selectEmpresa(empresaId);
+                });
+            });
+        }
+
+        function selectEmpresa(empresaId) {
+            const enpresa = enpresak.find(e => e.id === empresaId);
+
+            if (!enpresa) return;
+
+            const card = document.querySelector(`[data-enpresa-id="${empresaId}"]`);
+            const prezioFinala = card.querySelector('.price-value').textContent;
+
+            const jatorria = document.getElementById('jatorria').value;
+            const helmuga = document.getElementById('helmuga').value;
+            const pisua = document.getElementById('pisua').value;
+            const tamaina = document.getElementById('tamaina').value;
+
+            showToast(`"${enpresa.izena}" enpresarekin eskaera egin da`, 'success');
+
+            console.log('Enpresa hautatuta:', {
+                enpresa: enpresa,
+                prezioFinala: prezioFinala,
+                jatorria: jatorria,
+                helmuga: helmuga,
+                pisua: pisua,
+                tamaina: tamaina
+            });
+        }
+
+        function updateFilters(resultsCount) {
+            const filters = document.getElementById('filters');
+            const resultsCountElement = document.getElementById('results-count');
+            
+            if (resultsCount > 0) {
+                filters.style.display = 'flex';
+                resultsCountElement.textContent = `${resultsCount} emaitza aurkitu dira`;
+            } else {
+                filters.style.display = 'none';
+            }
+        }
+
+        function setupSorting() {
+            const sortSelect = document.getElementById('sort');
+            
+            sortSelect.addEventListener('change', () => {
+                currentSort = sortSelect.value;
+                
+                if (currentResults.length > 0) {
+                    sortResults(currentResults, currentSort);
+                    renderCards(currentResults);
+                }
+            });
+        }
+
+        function showToast(message, type) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add(type, 'show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Auto-submit form on page load for testing
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
