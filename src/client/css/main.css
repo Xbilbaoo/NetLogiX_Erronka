@@ -1,6 +1,6 @@
+/* ======== PANTALLAS GRANDES (DESKTOP / TABLET) ======== */
 
 /*Carrousel*/
-
 .slider {
     width: 100%;
     height: 400px;
@@ -28,7 +28,7 @@
     height: 400px;
     object-fit: cover;
 }
-
+/* Botones manuales */
 .nav-manual {
     position: absolute;
     width: 100%;
@@ -64,7 +64,7 @@
 #radio3:checked~ .first{
     margin-left: -40%;
 }
-
+/* Botones automaticos */
 .nav-auto {
     position: absolute;
     display: flex;
@@ -95,15 +95,12 @@
 #radio3:checked~ .nav-auto .auto-btn3{
     background-color: #e5e5e5;
 }
-
 /*Marquee*/
 marquee{
     color: #BB4D03;
     font-weight: bold;
 }
-
 /*Bloques*/
-
 .bloques{
     display: grid;
     grid-template-columns: 450px 450px 450px; 
@@ -112,7 +109,7 @@ marquee{
     border-radius: 18px;
     text-align: center;  
 }
-
+/* Bloque1 */
 .bloque1{
     
     display: grid;
@@ -123,7 +120,7 @@ marquee{
     padding-right: 30px;
     height: 100px;
 }
-
+/* Bloque2 */
 .bloque2{
     background-color: #D76719;
     border-radius: 18px; 
@@ -133,7 +130,7 @@ marquee{
     background-size: cover;
     background-position: center;
 }
-
+/* Fondo bloque2 */
 .fondoLink {
     width: 100%; 
     height: 100%;
@@ -157,7 +154,7 @@ marquee{
     color: #f6f1db;
     font-size: 17px;
 }
-
+/* Bloque3 */
 .bloque3{
     display: flex;
     align-items: center;
@@ -258,7 +255,7 @@ marquee{
     display: block;
 }
 
-
+/* ======== PANTALLAS MEDIANAS ======== */
 @media (max-width: 1360px) {
     .bloques{
         grid-template-columns: 48% 48%; 
@@ -283,7 +280,7 @@ marquee{
 
 }
 
-
+/* ======== PANTALLAS PEQUEÑAS ======== */
 @media (max-width: 660px) {
     .bloques{
         grid-template-columns: 96%; 
