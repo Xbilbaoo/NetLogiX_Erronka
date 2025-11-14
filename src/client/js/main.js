@@ -20,7 +20,16 @@ mediaQuery.addListener(checkMedia)
 document.querySelectorAll(".send-button").forEach(item => {
 
     item.addEventListener('click', () => {
-        
+
+        document.getElementById("session-popup").classList.add('load')
+        document.getElementById("login-box").classList.add
+
+    });
+})
+document.querySelectorAll(".saioa-hasi").forEach(item => {
+
+    item.addEventListener('click', () => {
+
         document.getElementById("session-popup").classList.add('load')
         document.getElementById("login-box").classList.add
 
@@ -28,7 +37,7 @@ document.querySelectorAll(".send-button").forEach(item => {
 })
 
 document.getElementById("close").addEventListener('click', () => {
-    
+
     document.getElementById("session-popup").classList.remove('load')
 
 });
@@ -65,4 +74,12 @@ function checkMedia(media) {
         })
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+
+>>>>>>> 22b6941758a2d8884430c8619782ee79341946a2
