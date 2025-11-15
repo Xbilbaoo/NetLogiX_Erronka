@@ -129,7 +129,7 @@ marquee{
     border-radius: 18px; 
     display: flex;
     height: 100px;
-    background-image: url("../IMG/camion.jpg");
+    background-image: url("../assets/img/landing/camion.jpg");
     background-size: cover;
     background-position: center;
 }

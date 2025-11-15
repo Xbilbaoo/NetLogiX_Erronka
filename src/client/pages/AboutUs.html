@@ -6,10 +6,33 @@
     <title>NetLogix - About Us</title> <!-- Título que veremos en la pestaña -->
     
     <!-- Enlace al documento CSS -->
-    <link rel="stylesheet" href="../css/global.css">
+     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/aboutUs.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="NetLogiX Logo">
+        </div>
+        <div class="Iniciarsesion">
+            <a class="saioa-hasi"><img src="../assets/img/header/session-logo.png" alt="logo de una persona"></a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+           <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="./index.html">Home</a>
+                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../client/pages/formulario.html">Formularioa</a>
+                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+            </div>
+        </div>
+    </header>
+
+    <script src="../js/main.js"></script>
     <!-- Container que incluira la card de la pagina -->
     <div class="container">
 
@@ -19,7 +42,7 @@
                 <div class="card-history">
                     <!-- Imagen de nuestro primer dia repartiendo -->
                     <figure class="card-image">
-                            <img class="camioneta" src="../IMG/camion-antiguo-de-reparto.jpg" alt="camioneta vintage">
+                            <img class="camioneta" src="../assets/img/AboutUs/camion-antiguo-de-reparto.jpg" alt="camioneta vintage">
                     </figure>
                     
                     <!-- Texto que relata nuestra historia -->
@@ -66,6 +89,7 @@
     </div>
 
     <!-- Enlace al script JS donde se maneja el menú desplegable -->
-    <script src="index.js"></script> 
+    <script src="../js/header.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

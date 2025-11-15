@@ -1,27 +1,15 @@
 <?php
+declare(strict_types=1);
 
-use Model\DB\Connection;
+require_once __DIR__ . '/Connection.php';
 
-require_once "DB/Connection.php";
-
-class User extends Connection {
-
-    public function getUsers() {
-
-        $query = $this->getCon()->query("SELECT * FROM Erabiltzaileak");
-        
-        $users = [];
-
-        while($row = $query->fetch_assoc()) {
-
-            $users[] = $row;
-
-        }
-
-        $query->close();
-
-        return $users;
-
-    }
+class UserModel {
+  public static function findByEmail(string $email): ?array {
+    $pdo = DB::pdo();
+    $stmt = $pdo->prepare('SELECT ID, Email, psswd FROM Erabiltzaileak WHERE Email = :email LIMIT 1');
+    $stmt->execute([':email' => $email]);
+    $row = $stmt->fetch();
+    return $row ?: null;
+  }
 }
-?>
+
