@@ -1,17 +1,14 @@
+/* ======== UNION CSS ======== */
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import "header.css";
 @import "footer.css";
 @import "session.css";
 @import "main.css";
 
-
-
-
-* {
-    
+/* ======== ESTILOS BASE ======== */
+* { 
     margin: 0;
     padding: 0;
-
 }
 
 body {
@@ -23,18 +20,14 @@ body {
 }
 
 p, a {
-
     color: #FFFFFF;
     text-decoration: none;
-
 }
 
 .cards {
-
     margin-bottom: 50px;
 }
 
 .saioa-hasi {
-
     cursor: pointer;
 }
