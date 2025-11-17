@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ekisBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        if (window.innerWidth <= 530) {
+        if (window.innerWidth <= 800) {
             dropdownContent.style.display = 'none';
         }
     });
