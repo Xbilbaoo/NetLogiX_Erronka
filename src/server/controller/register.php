@@ -1,11 +1,6 @@
 <?php
-// src/server/controller/register.php
-declare(strict_types=1);
 
-require_once __DIR__ . '/session.php';
-require_once __DIR__ . '/../model/Connection.php';
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   http_response_code(405);
   exit('Method not allowed');
 }
@@ -58,5 +53,19 @@ header('Location: /NetLogiX_Erronka-landing/src/client/index.html?register=ok');
 } catch (Throwable $e) {
   header('Location: /NetLogiX_Erronka-landing/src/client/pages/register.html?err=server');
   exit;
+}*/
+
+header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405); // 405 Method Not Allowed
+    echo json_encode(['success' => false, 'message' => 'Método no permitido. Se esperaba POST.']);
+    exit;
 }
 
+$input = json_decode(file_get_contents('php://input'), true);
+
+$username = $input['username'] ?? null;
+$password = $input['password'] ?? null;
+
+?>
