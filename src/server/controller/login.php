@@ -1,37 +1,96 @@
 <?php
-// src/server/controller/login.php
-declare(strict_types=1);
 
-require_once __DIR__ . '/session.php';
-require_once __DIR__ . '/../model/Connection.php';
+require_once __DIR__ . '/../model/User.php';
 
+// Usamos el namespace del modelo
+use Model\User;
+
+/**
+ * Endpoint de Login
+ * Recibe: JSON con "username" y "password".
+ * Devuelve: JSON con "success", "token" y "user" (si es exitoso).
+ */
+
+// 1. Configurar cabeceras para responder con JSON
+header('Content-Type: application/json');
+
+// 2. Asegurarse de que el método es POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-  http_response_code(405);
-  exit('Method not allowed');
+    http_response_code(405); // 405 Method Not Allowed
+    echo json_encode(['success' => false, 'message' => 'Método no permitido. Se esperaba POST.']);
+    exit;
 }
 
-$email = trim($_POST['email'] ?? ''); // tu form usa "username"
-$pass  = $_POST['password'] ?? '';
-
-if ($email === '' || $pass === '') {
-  header('Location: /src/client/index.html?login=missing');
-  exit;
+// 3. Obtener el cuerpo (body) de la petición
+// Intentamos JSON primero; si no hay JSON, usamos $_POST (form-encoded)
+$rawBody = file_get_contents('php://input');
+error_log('DEBUG: rawBody = ' . var_export($rawBody, true));
+error_log('DEBUG: $_POST = ' . var_export($_POST, true));
+$input = json_decode($rawBody, true);
+error_log('DEBUG: decoded input = ' . var_export($input, true));
+if (!is_array($input)) {
+    // Fallback a datos tradicionales de formulario
+    $input = $_POST;
+    error_log('DEBUG: Using $_POST fallback');
 }
 
-$pdo = DB::pdo();
-$st = $pdo->prepare('SELECT ID, Email, psswd FROM Erabiltzaileak WHERE Email = :email LIMIT 1');
-$st->execute([':email' => $email]);
-$user = $st->fetch();
+// 4. Normalizar claves y validar que tenemos usuario y contraseña
+// Soportamos tanto `username` como `email` desde el cliente
+$username = $input['username'] ?? $input['email'] ?? null;
+$password = $input['password'] ?? null;
 
-if (!$user || !password_verify($pass, $user['psswd'])) {
-  header('Location: /src/client/index.html?login=invalid');
-  exit;
+if (empty($username) || empty($password)) {
+    http_response_code(400); // 400 Bad Request
+    echo json_encode(['success' => false, 'message' => 'Faltan los campos "username" o "password".']);
+    exit;
 }
 
-session_regenerate_id(true);
-$_SESSION['uid'] = (int)$user['ID'];
-$_SESSION['email'] = $user['Email'];
+// --- ESTE ES EL ORDEN CORRECTO ---
+// 5. Validar credenciales contra la BD
+// (Aquí NO se comprueba ningún token, solo usuario y contraseña)
+try {
+    $userData = User::hasPermission($username, $password);
 
-header('Location: ../../../formulario.html?login=ok');
-exit;
+    if ($userData) {
+        // ¡Éxito! Las credenciales son correctas.
+        
+        // 6. CREAR el Token (JWT)
+        // (Este es un token de EJEMPLO. En producción se usaría una librería JWT real)
+        $header = base64_encode(json_encode(['alg' => 'NONE', 'typ' => 'JWT']));
+        $payload = base64_encode(json_encode([
+            'id' => $userData['id'],
+            'username' => $userData['username'],
+            'role' => $userData['role'],
+            'iat' => time(), // Issued at
+            'exp' => time() + 3600 // Expira en 1 hora
+        ]));
+        $token = "$header.$payload."; // El punto final es la firma (vacía en este ejemplo)
 
+        // 7. Devolver la respuesta exitosa con el token
+        http_response_code(200);
+        echo json_encode([
+            'success' => true,
+            'token' => $token,
+            'user' => [
+                'id' => (int) $userData['id'],
+                'username' => $userData['username'],
+                'first_name' => $userData['first_name'],
+                'last_name' => $userData['last_name'],
+                'role' => $userData['role']
+            ]
+        ]);
+        exit;
+
+    } else {
+        // Credenciales incorrectas
+        http_response_code(401); // 401 Unauthorized
+        echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas.']);
+        exit;
+    }
+
+} catch (Exception $e) {
+    // Error de base de datos u otro
+    http_response_code(500); // 500 Internal Server Error
+    echo json_encode(['success' => false, 'message' => 'Error interno del servidor: ' . $e->getMessage()]);
+    exit;
+}

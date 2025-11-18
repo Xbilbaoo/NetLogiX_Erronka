@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById("tlf").addEventListener("keypress", (l) => {
+    /*document.getElementById("tlf").addEventListener("keypress", (l) => {
         const caracter = String.fromCharCode(l.charCode); // Obtiene el carácter
 
         // Comprueba si NO es un número (si lo es, es distinto de una letra)
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
-    })
+    })*/
 
 
 });

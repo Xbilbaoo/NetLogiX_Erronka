@@ -1,5 +1,4 @@
 <?php
-
 namespace Model\DB;
 
 class Connection
@@ -71,3 +70,4 @@ class Connection
         }
     }
 }
+?>

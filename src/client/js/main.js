@@ -74,6 +74,68 @@ function checkMedia(media) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Si el usuario ya tiene un token, lo mandamos al escritorio
+    if (localStorage.getItem('authToken')) {
+        window.location.href = 'desktop.html';
+        return;
+    }
+
+    const loginForm = document.getElementById('login-form');
+    const loginButton = document.getElementById('login-btn');
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Mostramos un estado de carga
+        loginButton.disabled = true;
+        loginButton.textContent = 'Saioa hasten...';
+
+        const username = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            // Llamamos a nuestra nueva API de login
+            const response = await fetch('../server/controller/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const text = await response.text();
+                console.error('Server returned non-JSON:', text);
+                alert('Error del servidor. Por favor, intenta de nuevo.');
+                return;
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                // ¡Éxito! Guardamos el token y los datos del usuario en localStorage
+                localStorage.setItem('authToken', data.token);
+                localStorage.setItem('userInfo', JSON.stringify(data.user));
+
+                // Redirigimos al escritorio
+                window.location.href = 'pages/formulario.html';
+            } else {
+                console.error('Login failed:', data.message);
+                alert('Error: ' + (data.message || 'Credenciales incorrectas'));
+            }
+        } catch (error) {
+            console.error('Error en el fetch:', error);
+            alert('Error de conexión. Por favor, intenta de nuevo.');
+        } finally {
+            // Restauramos el botón
+            loginButton.disabled = false;
+            loginButton.textContent = 'Saioa hasi';
+        }
+    });
+});
+
 
 
 
