@@ -1,5 +1,5 @@
 <?php
-// server/model/DB/Connection.php
+// src/server/model/Connection.php
 declare(strict_types=1);
 
 class DB {
@@ -20,3 +20,4 @@ class DB {
     return $pdo;
   }
 }
+

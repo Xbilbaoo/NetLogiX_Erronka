@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>NetLogix - About Us</title> <!-- Título que veremos en la pestaña -->
-    
-    <!-- Enlace al documento CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/formulario.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/aboutUs.css">
     <link rel="stylesheet" href="../css/footer.css">
 
 </head>
-<body>
+<body>   
+
     <header class="header">
         <div class="logo">
             <img src="../assets/img/logo.png" alt="NetLogiX Logo">
@@ -23,70 +22,87 @@
             <button class="dropbtn" onclick="toggleDropdown()"> 
                 <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
             </button>
-           <div class="dropdown-content" id="myDropdown"> 
+            <div class="dropdown-content" id="myDropdown"> 
                 <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
-                <a href="./index.html">Home</a>
-                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
-                <a href="../client/pages/formulario.html">Formularioa</a>
-                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+                <a href="index.html">Home</a>
+                <a href="JarraipenOrria.html">Jarraipena</a>
+                <a href="formulario.html">Formularioa</a>
+                <a href="aboutus.html">Guri Buruz</a>
                 <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
             </div>
         </div>
     </header>
+<br> 
+<form class="formularioa">
+        <h1 class="titulua">Formularioa</h1>
+        
+        <label for="izen" class="labelak">Izen-Abizenak</label>
+        <input type="text" id="izen" name="izen" class="formu-input" required>
+        
+        <label for="emaila" class="labelak">Emaila</label>
+        <input type="email" id="emaila" name="emaila" class="formu-input" required>
+        
+        <label for="tlf" class="labelak">Tlf. Zenbakia</label>
+        <input type="tel" id="tlf" name="tlf" class="formu-input" required>
+        
+        <label for="empresa" class="labelak">Empresa</label>
+        <input type="text" id="empresa" name="empresa" class="formu-input">
+        
+        <label for="zerbitzuak" class="labelak">Zerbitzuak</label>
+        <select id="zerbitzuak" name="zerbitzuak" class="formu-select" required>
+            <option value="">Oinarrizko entrega</option>
+            <option value="">Entrega azkarra</option>
+            <option value="">Hurrengo eguneko entrega</option>
+        </select>
+        
+        <fieldset class="servicios-fieldset">
+            <legend class="servicios-legend">Serbitzu Gehigarriak</legend>
+            <input type="checkbox" id="serbitzu1" name="serbitzu1" class="checkbox-input">
+            <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
+            
+            <input type="checkbox" id="serbitzu2" name="serbitzu2" class="checkbox-input">
+            <label for="serbitzu2" class="checkbox-label">Auzkorra</label>
+            
+            <input type="checkbox" id="serbitzu3" name="serbitzu3" class="checkbox-input">
+            <label for="serbitzu3" class="checkbox-label">Bidalketa azkarra  </label>
+            
+            <input type="checkbox" id="serbitzu4" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu4" class="checkbox-label">Segurtasun Armatua</label>
 
-    <script src="../js/main.js"></script>
-    <!-- Container que incluira la card de la pagina -->
-    <div class="container">
-        <div class="content">
-            <!-- Card -->
-            <div class="card-section">
-                <div class="card-history">
-                  
-                    <figure class="card-image">
-                            <img class="camioneta" src="../assets/img/AboutUs/camion-antiguo-de-reparto.jpg" alt="camioneta vintage">
-                    </figure>
-                    
-                    <div class="card-text">
-                        <h3>Nuestra Historia</h3>
-                        <p>En el corazón de la red, donde la información fluye a la velocidad de la luz y la eficiencia es la clave, se erige "NetLogiX", una empresa que ha tejido su legado a través de un siglo de experiencia en transporte y logística. Fundada por un visionario que entendió el poder de la conexión, la compañía ha evolucionado desde sus inicios en la era del telégrafo hasta convertirse en un líder en la era digital.</p>
+            <input type="checkbox" id="serbitzu5" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu5" class="checkbox-label">Eko Friendly</label>
 
-                        <p>La historia de NetLogiX es una narrativa de innovación y adaptación. En sus primeros años, la empresa se especializó en la gestión de flujos de información, conectando a las empresas a través de redes de comunicación. Con la llegada de Internet, NetLogiX abrazó la revolución digital, transformando sus operaciones y expandiendo sus servicios. La compañía se convirtió en un pionero en la implementación de sistemas de seguimiento y gestión de la cadena de suministro, permitiendo a sus clientes optimizar sus operaciones y reducir costos.</p>
-                    </div>
-                </div>
-            </div> 
+            <input type="checkbox" id="serbitzu6" name="serbitzu4" class="checkbox-input">
+            <label for="serbitzu6" class="checkbox-label">Biltegiratzea</label>
 
-            <!-- Mapa y contacto -->
-            <div class="map-section">
-                <div class="map-container">
-                    <!-- Mapa -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.966660475135!2d-2.5525322232696523!3d43.16822398366175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e2d0061fa08f3%3A0xdf1b40830a8a1b00!2sHospital%20de%20Zaldibar!5e0!3m2!1ses!2ses!4v1759737830352!5m2!1ses!2ses" 
-                        width="600" 
-                        height="450" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-                <!-- Bloques decorativos  -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon location-icon"></div>
-                        <div class="line-connector"></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon email-icon"></div>
-                        <div class="line-connector"></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon phone-icon"></div>
-                        <div class="line-connector"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            
+        </fieldset>
+        
+        <label for="jatorria" class="labelak">Jatorria</label>
+        <input type="text" id="jatorria" name="jatorria" class="formu-input" required>
+        
+        <label for="helmuga" class="labelak">Helmuga</label>
+        <input type="text" id="helmuga" name="helmuga" class="formu-input" required>
+        
+        <label for="data" class="labelak">Data</label>
+        <input type="date" id="data" name="data" class="formu-input">
+        
+        <label for="pisua" class="labelak">Pisua(kg)</label>
+        <select id="pisua" name="pisua" class="formu-select">
+            <option value="">Pisu arina</option>
+            <option value="">Pisu erdia</option>
+            <option value="">Pisu handia</option>
+            <option value="">Gehiegizko pisua</option>
+        </select>
+        
+        <label for="descripcion" class="labelak">Paketerai buruz:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" class="formu-textarea"></textarea>
+        
+        <label for="comentarios" class="labelak">Iruzkin Gehigarriak</label>
+        <textarea id="comentarios" name="comentarios" rows="4" class="formu-textarea"></textarea>
+        
+        <button type="submit" class="boton-enviar">BIDALI</button>
+    </form>
 
     <footer class="grid-container">
         <div class="grid-item">
@@ -170,9 +186,7 @@
             </ul>
         </div>
     </footer>
-
-    <!-- Enlace al script JS donde se maneja el menú desplegable -->
-    <script src="../js/header.js"></script>
-    <script src="../js/main.js"></script>
 </body>
+<script src="index.js"></script>
+
 </html>
