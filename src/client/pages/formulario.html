@@ -1,106 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="../css/formulario.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="../css/formulario.css">
 </head>
-<body>   
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
+    </div>
+    <div class="Iniciarsesion">
+      <a href="InicionSesiada.html"> Iniciar Sesion</a>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="toggleDropdown()">
+        <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a class="ekis" href="#" onclick="toggleDropdown()">X</a>
+        <a href="./index.html">Home</a>
+        <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
+        <a href="../client/pages/formulario.html">Formularioa</a>
+        <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+        <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+      </div>
+    </div>
+  </header>
 
-    <header class="header">
-        <div class="logo">
-            <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
-        </div>
-        <div class="Iniciarsesion">
-            <a href="InicionSesiada.html"> Iniciar Sesion</a>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn" onclick="toggleDropdown()"> 
-                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
-            </button>
-            <div class="dropdown-content" id="myDropdown"> 
-                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
-                <a href="./index.html">Home</a>
-                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
-                <a href="../client/pages/formulario.html">Formularioa</a>
-                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
-                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
-            </div>
-        </div>
-    </header>
-<br> 
-<form class="formularioa">
-        <h1 class="titulua">Formularioa</h1>
-        
-        <label for="izen" class="labelak">Izen-Abizenak</label>
-        <input type="text" id="izen" name="izen" class="formu-input" required>
-        
-        <label for="emaila" class="labelak">Emaila</label>
-        <input type="email" id="emaila" name="emaila" class="formu-input" required>
-        
-        <label for="tlf" class="labelak">Tlf. Zenbakia</label>
-        <input type="tel" id="tlf" name="tlf" class="formu-input" required>
-        
-        <label for="empresa" class="labelak">Empresa</label>
-        <input type="text" id="empresa" name="empresa" class="formu-input">
-        
-        <label for="zerbitzuak" class="labelak">Zerbitzuak</label>
-        <select id="zerbitzuak" name="zerbitzuak" class="formu-select" required>
-            <option value="">Oinarrizko entrega</option>
-            <option value="">Entrega azkarra</option>
-            <option value="">Hurrengo eguneko entrega</option>
-        </select>
-        
-        <fieldset class="servicios-fieldset">
-            <legend class="servicios-legend">Serbitzu Gehigarriak</legend>
-            <input type="checkbox" id="serbitzu1" name="serbitzu1" class="checkbox-input">
-            <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
-            
-            <input type="checkbox" id="serbitzu2" name="serbitzu2" class="checkbox-input">
-            <label for="serbitzu2" class="checkbox-label">Auzkorra</label>
-            
-            <input type="checkbox" id="serbitzu3" name="serbitzu3" class="checkbox-input">
-            <label for="serbitzu3" class="checkbox-label">Bidalketa azkarra  </label>
-            
-            <input type="checkbox" id="serbitzu4" name="serbitzu4" class="checkbox-input">
-            <label for="serbitzu4" class="checkbox-label">Segurtasun Armatua</label>
+  <br>
+  <form class="formularioa" method="post" action="../../server/controller/insert_formulario.php">
+    <h1 class="titulua">Formularioa</h1>
 
-            <input type="checkbox" id="serbitzu5" name="serbitzu4" class="checkbox-input">
-            <label for="serbitzu5" class="checkbox-label">Eko Friendly</label>
+    <label for="izen" class="labelak">Izen-Abizenak</label>
+    <input type="text" id="izen" name="izen" class="formu-input" required>
 
-            <input type="checkbox" id="serbitzu6" name="serbitzu4" class="checkbox-input">
-            <label for="serbitzu6" class="checkbox-label">Biltegiratzea</label>
+    <label for="emaila" class="labelak">Emaila</label>
+    <input type="email" id="emaila" name="emaila" class="formu-input" required>
 
-            
-        </fieldset>
-        
-        <label for="jatorria" class="labelak">Jatorria</label>
-        <input type="text" id="jatorria" name="jatorria" class="formu-input" required>
-        
-        <label for="helmuga" class="labelak">Helmuga</label>
-        <input type="text" id="helmuga" name="helmuga" class="formu-input" required>
-        
-        <label for="data" class="labelak">Data</label>
-        <input type="date" id="data" name="data" class="formu-input">
-        
-        <label for="pisua" class="labelak">Pisua(kg)</label>
-        <select id="pisua" name="pisua" class="formu-select">
-            <option value="">Pisu arina</option>
-            <option value="">Pisu erdia</option>
-            <option value="">Pisu handia</option>
-            <option value="">Gehiegizko pisua</option>
-        </select>
-        
-        <label for="descripcion" class="labelak">Paketerai buruz:</label>
-        <textarea id="descripcion" name="descripcion" rows="4" class="formu-textarea"></textarea>
-        
-        <label for="comentarios" class="labelak">Iruzkin Gehigarriak</label>
-        <textarea id="comentarios" name="comentarios" rows="4" class="formu-textarea"></textarea>
-        
-        <button type="submit" class="boton-enviar">BIDALI</button>
-    </form>
+    <label for="tlf" class="labelak">Tlf. Zenbakia</label>
+    <input type="tel" id="tlf" name="tlf" class="formu-input" required>
+
+    <label for="empresa" class="labelak">Empresa</label>
+    <input type="text" id="empresa" name="empresa" class="formu-input">
+
+    <label for="zerbitzuak" class="labelak">Zerbitzuak</label>
+    <select id="zerbitzuak" name="zerbitzuak" class="formu-select" required>
+      <option value="Oinarrizko entrega">Oinarrizko entrega</option>
+      <option value="Entrega azkarra">Entrega azkarra</option>
+      <option value="Hurrengo eguneko entrega">Hurrengo eguneko entrega</option>
+    </select>
+
+    <fieldset class="servicios-fieldset">
+      <legend class="servicios-legend">Serbitzu Gehigarriak</legend>
+
+      <input type="checkbox" id="serbitzu1" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
+
+      <input type="checkbox" id="serbitzu2" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu2" class="checkbox-label">Auzkorra</label>
+
+      <input type="checkbox" id="serbitzu3" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu3" class="checkbox-label">Bidalketa azkarra</label>
+
+      <input type="checkbox" id="serbitzu4" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu4" class="checkbox-label">Segurtasun Armatua</label>
+
+      <input type="checkbox" id="serbitzu5" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu5" class="checkbox-label">Eko Friendly</label>
+
+      <input type="checkbox" id="serbitzu6" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <label for="serbitzu6" class="checkbox-label">Biltegiratzea</label>
+    </fieldset>
+
+    <label for="jatorria" class="labelak">Jatorria</label>
+    <input type="text" id="jatorria" name="jatorria" class="formu-input" required>
+
+    <label for="helmuga" class="labelak">Helmuga</label>
+    <input type="text" id="helmuga" name="helmuga" class="formu-input" required>
+
+    <label for="data" class="labelak">Data</label>
+    <input type="date" id="data" name="data" class="formu-input">
+
+    <label for="pisua" class="labelak">Pisua(kg)</label>
+    <select id="pisua" name="pisua" class="formu-select">
+      <option value="Pisu arina">Pisu arina</option>
+      <option value="Pisu erdia">Pisu erdia</option>
+      <option value="Pisu handia">Pisu handia</option>
+      <option value="Gehiegizko pisua">Gehiegizko pisua</option>
+    </select>
+
+    <label for="descripcion" class="labelak">Paketerai buruz:</label>
+    <textarea id="descripcion" name="descripcion" rows="4" class="formu-textarea"></textarea>
+
+    <label for="comentarios" class="labelak">Iruzkin Gehigarriak</label>
+    <textarea id="comentarios" name="comentarios" rows="4" class="formu-textarea"></textarea>
+
+    <button type="submit" class="boton-enviar">BIDALI</button>
+  </form>
+
+  <!-- Autocompletar solo datos del registro -->
+<script>
+(async function(){
+  const base = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
+  const meUrl = base + '/src/server/controller/me.php';
+
+  try {
+    const res = await fetch(meUrl, { credentials:'include' });
+    const data = await res.json();
+    if (!res.ok || !data.authenticated) return;
+
+    const p = data.profile || {};
+    const kiz = (p.kizena || '').trim();
+    const eiz = (p.eizena || '').trim();
+    const kab = (p.kabizena || '').trim();
+    let empresa = (p.empresa || '').trim();
+
+    // Lista de palabras que NO son apellidos frecuentes en tu caso y pueden ser empresa
+    const maybeCompany = new Set(['payos', 'zornotza', 'buyo']); // añade más si necesitas
+
+    // Si empresa está vacía pero Eizena/Kabizena parecen empresa, muévelas a empresa
+    const eizIsCompany = eiz && maybeCompany.has(eiz.toLowerCase());
+    const kabIsCompany = kab && maybeCompany.has(kab.toLowerCase());
+    if (!empresa) {
+      if (eizIsCompany) { empresa = eiz; }
+      if (!empresa && kabIsCompany) { empresa = kab; }
+    }
+
+    // Construir nombre SOLO con partes que no sean empresa
+    const parts = [];
+    if (kiz) parts.push(kiz);
+    if (eiz && eiz.toLowerCase() !== empresa.toLowerCase()) parts.push(eiz);
+    if (kab && kab.toLowerCase() !== empresa.toLowerCase()) parts.push(kab);
+    const nombre = parts.join(' ').trim();
+
+    // Pintar y bloquear cuando hay valor
+    setRO('izen', nombre);
+    setRO('emaila', p.emaila);
+    setRO('tlf', p.tlf);
+    setRO('empresa', empresa); // si queda vacío, no se bloquea para que lo completes
+
+  } catch (e) {
+    console.error('No se pudo cargar el perfil', e);
+  }
+
+  function setRO(id, val){
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (val != null && val !== '') {
+      el.value = val;
+      el.readOnly = true;
+      el.classList.add('prefilled');
+      el.setAttribute('aria-readonly','true');
+    }
+  }
+})();
+</script>
+<script>
+(function(){
+  const form = document.querySelector('form.formularioa');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Construye URL absoluta a insert_consulta.php
+    const base = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
+    const url  = base + '/src/server/controller/insert_formulario.php';
+
+    // Recoge valores del formulario por id
+    const payload = {
+      jatorria:  document.getElementById('jatorria')?.value.trim() || '',
+      helmuga:   document.getElementById('helmuga')?.value.trim() || '',
+      biltegia:  document.getElementById('biltegia')?.value?.trim() || '', // crea input si lo necesitas
+      tamaina:   document.getElementById('tamaina')?.value?.trim() || '',  // crea input si lo necesitas
+      pisua:     document.getElementById('pisua')?.value || '',
+      data:      document.getElementById('data')?.value || '' // Eskaera_Data
+    };
+
+    // Validación rápida en cliente
+    if (!payload.jatorria || !payload.helmuga) {
+      alert('Jatorria eta Helmuga derrigorrezkoak dira');
+      return;
+    }
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+      });
+      const text = await res.text();
+      let data; try { data = JSON.parse(text); } catch { alert('Erantzun baliogabea:\n' + text); return; }
+
+      if (res.ok && data.success) {
+        alert('Eskaera gehituta. ID: ' + data.id);
+        form.reset(); // si quieres vaciar tras enviar
+      } else {
+        alert(data.message || 'Ezin izan da gehitu');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Ezin izan da konektatu zerbitzarira');
+    }
+  });
+})();
+</script>
+
+
+
+
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
-
 </html>
