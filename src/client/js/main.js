@@ -74,7 +74,5 @@ function checkMedia(media) {
         })
 
     }
+
 }
-
-
-

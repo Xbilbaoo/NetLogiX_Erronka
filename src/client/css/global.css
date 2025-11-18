@@ -1,4 +1,4 @@
-/* ======== UNION CSS ======== */
+/* CSS global */
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import "header.css";
 @import "footer.css";
@@ -6,8 +6,8 @@
 @import "main.css";
 
 
-/* ======== ESTILOS BASE ======== */
-* { 
+* {
+    
     margin: 0;
     padding: 0;
 }

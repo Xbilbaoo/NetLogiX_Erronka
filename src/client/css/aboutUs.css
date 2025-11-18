@@ -12,17 +12,19 @@ body {
 }
 
 /* ======== PANTALLAS PEQUEÑAS ======== */
+@media (max-width: 650px) {
 
     .container {
         padding: 10px;
     }
 
-    /* card */
+    /* Card */
     .card-history {
         display: flex;
         flex-direction: column;
         background: #fff;
-        border: 3px solid #D76719;;
+        border: 3px solid #D76719;
+        ;
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -84,58 +86,59 @@ body {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
-/* ======== PANTALLAS GRANDES ======== */
-@media (min-width: 650px) {
+    /* ======== PANTALLAS GRANDES ======== */
+    @media (min-width: 650px) {
 
-    .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 30px 50px;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 50px;
+        }
 
-    /* Card */
-    .card-history {
-        flex-direction: row;
-        align-items: flex-start;
-        height: auto;
+        /* Card */
+        .card-history {
+            flex-direction: row;
+            align-items: flex-start;
+            height: auto;
 
-        justify-content: space-between;
-        gap: 40px;
-        padding: 30px;
-    }
+            justify-content: space-between;
+            gap: 40px;
+            padding: 30px;
+        }
 
-    .card-history figure {
-        flex: 1;
-        overflow-y: auto;
-        border-radius: 5px;
-        align-self: center;
-        height: 350px;
-        margin: 0%;
-        justify-content: center;
-        overflow: hidden;
-        object-fit: cover;
-    }
+        .card-history figure {
+            flex: 1;
+            overflow-y: auto;
+            border-radius: 5px;
+            align-self: center;
+            height: 350px;
+            margin: 0%;
+            justify-content: center;
+            overflow: hidden;
+            object-fit: cover;
+        }
 
-    /* Text */
-    .card-text {
-        flex: 1;
-    }
+        /* Text */
+        .card-text {
+            flex: 1;
+        }
 
-    /* Titulo */
-    .card-text h3 {
-        font-size: 26px;
-        margin-bottom: 15px;
-    }
+        /* Titulo */
+        .card-text h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
 
-    /* Mapa */
-    .map-section {
-        gap: 30px;
-        margin-top: 50px;
-    }
+        /* Mapa */
+        .map-section {
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-    /* Iframe */
-    .map-container iframe {
-        width: 600px;
-        height: 450px;
+        /* Iframe */
+        .map-container iframe {
+            width: 600px;
+            height: 450px;
+        }
     }
 }
