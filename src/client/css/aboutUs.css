@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Body base */
 body {
     font-family: "Lexend", sans-serif;
     background-color: #f6f1db;
@@ -14,6 +15,7 @@ body {
 /* ======== PANTALLAS PEQUEÑAS ======== */
 @media (max-width: 650px) {
 
+    /* el container del card en pantalla pequeña */
     .container {
         padding: 10px;
     }
@@ -29,8 +31,6 @@ body {
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         gap: 15px;
-        transition: transform 0.3s ease;
-        overflow: hidden;
     }
 
     .card-history figure {
@@ -40,7 +40,7 @@ body {
         border-radius: 5px;
     }
 
-    /* Imagen */
+    /* Imagen de la camioneta en pantalla pequeña */
     .camioneta {
         width: 100%;
         height: 100%;
@@ -48,27 +48,28 @@ body {
         transition: transform 0.3s ease;
     }
 
+    /* El hover de la camioneta en pantalla pequeña */
     .camioneta:hover {
         transform: scale(1.1);
     }
 
-    /* Titulo */
+    /* El texto que va tener la card "Nuestra Historia" en pantalla pequeña */
     .card-text h3 {
         font-size: 22px;
         margin-bottom: 10px;
         color: #000000;
     }
 
-    /* Texto */
+    /* El texto que se va referir a nuestra empresa en pantalla pequeña */
     .card-text p {
-        font-size: 16px;
-        line-height: 1.8;
+        font-size: 15px;
+        line-height: 1.7;
         margin-bottom: 12px;
         color: #000000;
 
     }
 
-    /* Mapa */
+    /* La seccion del mapa en pantalla pequeña */
     .map-section {
         margin-top: 30px;
         display: flex;
@@ -77,14 +78,14 @@ body {
         gap: 15px;
     }
 
-    /* Iframe */
+    /* El iframe en pantalla pequeña */
     .map-container iframe {
         width: 100%;
         height: 300px;
         border: 0;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
     }
+}
 
     /* ======== PANTALLAS GRANDES ======== */
     @media (min-width: 650px) {
