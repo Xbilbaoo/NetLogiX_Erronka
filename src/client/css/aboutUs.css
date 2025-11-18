@@ -12,7 +12,7 @@ body {
     color: #2c3e50;
 }
 
-/* ======== PANTALLAS PEQUEÑAS (MÓVILES) ======== */
+/* ======== PANTALLAS PEQUEÑAS ======== */
 @media (max-width: 650px) {
 
     /* el container del card en pantalla pequeña */
@@ -20,12 +20,13 @@ body {
         padding: 10px;
     }
 
-    /* el card en pantalla pequeña */
+    /* Card */
     .card-history {
         display: flex;
         flex-direction: column;
         background: #fff;
-        border: 3px solid #2c3e50;
+        border: 3px solid #D76719;
+        ;
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -86,109 +87,59 @@ body {
     }
 }
 
-/* ======== PANTALLAS GRANDES (DESKTOP / TABLET) ======== */
-@media (min-width: 650px) {
+    /* ======== PANTALLAS GRANDES ======== */
+    @media (min-width: 650px) {
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 50px;
+        }
 
-    /* Body de la pantalla grande */
+        /* Card */
+        .card-history {
+            flex-direction: row;
+            align-items: flex-start;
+            height: auto;
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f6f1db;
-        padding: 20px;
-    }
+            justify-content: space-between;
+            gap: 40px;
+            padding: 30px;
+        }
 
-    /* Container en tamaño grande*/
-    .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 30px 50px;
-    }
+        .card-history figure {
+            flex: 1;
+            overflow-y: auto;
+            border-radius: 5px;
+            align-self: center;
+            height: 350px;
+            margin: 0%;
+            justify-content: center;
+            overflow: hidden;
+            object-fit: cover;
+        }
 
-    /* Card en tamaño grande*/
-    .card-history {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        height: auto;
+        /* Text */
+        .card-text {
+            flex: 1;
+        }
 
-        justify-content: space-between;
-        gap: 40px;
-        background: #fff;
-        border: 3px solid #2c3e50;
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        overflow: hidden;
-    }
+        /* Titulo */
+        .card-text h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
 
-    .card-history figure {
-        flex: 1;
-        overflow-y: auto;
-        border-radius: 5px;
-        align-self: center;
-        height: 350px;
-        margin: 0%;
-        justify-content: center;
-        overflow: hidden;
-        object-fit: cover;
-    }
+        /* Mapa */
+        .map-section {
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-    /* Imagen de la camioneta en pantalla grande */
-    .camioneta {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.3s ease;
-    }
-
-    /* El hover de la camioneta en pantalla grande */
-
-    .camioneta:hover {
-        transform: scale(1.2);
-    }
-
-    /* Texto generico del card en pantalla grande */
-    .card-text {
-        flex: 1;
-    }
-
-    /* titulo del card "Nuestra Historia en pantalla grande*/
-    .card-text h3 {
-        font-size: 26px;
-        margin-bottom: 15px;
-        color: #000000;
-    }
-
-    /* Texto del card que representa nuestra historia en pantalla grande */
-    .card-text p {
-        font-size: 16px;
-        line-height: 1.8;
-        margin-bottom: 12px;
-        color: #000000;
-    }
-
-    /* La seccion del mapa en pantalla grande */
-    .map-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-top: 50px;
-    }
-
-    /* El iframe del mapa en pantalla grande */
-    .map-container iframe {
-        width: 600px;
-        height: 450px;
-        border: 0;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        /* Iframe */
+        .map-container iframe {
+            width: 600px;
+            height: 450px;
+        }
     }
 }
