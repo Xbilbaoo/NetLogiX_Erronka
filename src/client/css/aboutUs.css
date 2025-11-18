@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body base */
 body {
     font-family: "Lexend", sans-serif;
     background-color: #f6f1db;
@@ -13,133 +12,129 @@ body {
 }
 
 /* ======== PANTALLAS PEQUEÑAS ======== */
-@media (max-width: 650px) {
 
-    /* el container del card en pantalla pequeña */
+.container {
+    padding: 10px;
+}
+
+/* card */
+.card-history {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 3px solid #D76719;
+    ;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.card-history figure {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* Imagen */
+.camioneta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.camioneta:hover {
+    transform: scale(1.1);
+}
+
+/* Titulo */
+.card-text h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Texto */
+.card-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    color: #000000;
+
+}
+
+/* Mapa */
+.map-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Iframe */
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ======== PANTALLAS GRANDES ======== */
+@media (min-width: 650px) {
+
     .container {
-        padding: 10px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 30px 50px;
     }
 
     /* Card */
     .card-history {
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        border: 3px solid #D76719;
-        ;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        gap: 15px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 30px;
     }
 
     .card-history figure {
-        width: 100%;
-        height: 220px;
-        overflow: hidden;
+        flex: 1;
+        overflow-y: auto;
         border-radius: 5px;
-    }
-
-    /* Imagen de la camioneta en pantalla pequeña */
-    .camioneta {
-        width: 100%;
-        height: 100%;
+        align-self: center;
+        height: 350px;
+        margin: 0%;
+        justify-content: center;
+        overflow: hidden;
         object-fit: cover;
-        transition: transform 0.3s ease;
     }
 
-    /* El hover de la camioneta en pantalla pequeña */
-    .camioneta:hover {
-        transform: scale(1.1);
+    /* Text */
+    .card-text {
+        flex: 1;
     }
 
-    /* El texto que va tener la card "Nuestra Historia" en pantalla pequeña */
+    /* Titulo */
     .card-text h3 {
-        font-size: 22px;
-        margin-bottom: 10px;
-        color: #000000;
+        font-size: 26px;
+        margin-bottom: 15px;
     }
 
-    /* El texto que se va referir a nuestra empresa en pantalla pequeña */
-    .card-text p {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 12px;
-        color: #000000;
-
-    }
-
-    /* La seccion del mapa en pantalla pequeña */
+    /* Mapa */
     .map-section {
-        margin-top: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        gap: 30px;
+        margin-top: 50px;
     }
 
-    /* El iframe en pantalla pequeña */
+    /* Iframe */
     .map-container iframe {
-        width: 100%;
-        height: 300px;
-        border: 0;
-        border-radius: 10px;
-    }
-}
-
-    /* ======== PANTALLAS GRANDES ======== */
-    @media (min-width: 650px) {
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px 50px;
-        }
-
-        /* Card */
-        .card-history {
-            flex-direction: row;
-            align-items: flex-start;
-            height: auto;
-
-            justify-content: space-between;
-            gap: 40px;
-            padding: 30px;
-        }
-
-        .card-history figure {
-            flex: 1;
-            overflow-y: auto;
-            border-radius: 5px;
-            align-self: center;
-            height: 350px;
-            margin: 0%;
-            justify-content: center;
-            overflow: hidden;
-            object-fit: cover;
-        }
-
-        /* Text */
-        .card-text {
-            flex: 1;
-        }
-
-        /* Titulo */
-        .card-text h3 {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-
-        /* Mapa */
-        .map-section {
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        /* Iframe */
-        .map-container iframe {
-            width: 600px;
-            height: 450px;
-        }
+        width: 600px;
+        height: 450px;
     }
 }

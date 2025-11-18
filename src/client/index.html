@@ -19,11 +19,11 @@
             <a class="saioa-hasi"><img src="../client/assets/img/header/session-logo.png" alt="logo de una persona"></a>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" onclick="toggleDropdown()"> 
+            <button class="dropbtn" onclick="toggleDropdown()">
                 <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
             </button>
-            <div class="dropdown-content" id="myDropdown"> 
-                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+            <div class="dropdown-content" id="myDropdown">
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a>
                 <a href="./index.html">Home</a>
                 <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
                 <a href="../client/pages/formulario.html">Formularioa</a>
@@ -47,11 +47,9 @@
 
             <div class="slide">
                 <img src="./assets/img/carrousel/slide2.jpg">
-                <img src="./assets/img/carrousel/slide2.jpg">
             </div>
 
             <div class="slide">
-                <img src="./assets/img/carrousel/slide3.avif">
                 <img src="./assets/img/carrousel/slide3.avif">
             </div>
 
@@ -81,71 +79,66 @@
     <br>
     <br>
     <div class="popup-container" id="session-popup">
-  <div class="login-box" id="login-box">
-    <h2 class="popup-title">Saio Hasi</h2>
+        <div class="login-box" id="login-box">
+            <h2 class="popup-title">Saio Hasi</h2>
 
-    <!-- FORM LOGIN ACTUALIZADO -->
-    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
-      <div class="form-group">
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email" autocomplete="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Contraseña:</label><br>
-        <input type="password" id="password" name="password" autocomplete="current-password" required>
-      </div>
-      <button type="submit" class="login-button">Saioa Hasi</button>
-    </form>
-    <!-- FIN FORM LOGIN ACTUALIZADO -->
+            <!-- FORM LOGIN ACTUALIZADO -->
+            <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label><br>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="login-button">Saioa Hasi</button>
+            </form>
+            <!-- FIN FORM LOGIN ACTUALIZADO -->
 
-    <button type="button" class="login-button" id="close">Atzera</button>
-    <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
-    <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
-  </div>
-</div>
-
-<script>
-document.querySelector('form.session-form')?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.currentTarget;
-  const email = form.email.value.trim();
-  const password = form.password.value;
-
-  const here = location.pathname; // /.../src/client/index.html
-  const base = here.replace(/\/src\/client\/index\.html$/, '');
-  const loginUrl = base + '/src/server/controller/login.php';
-
-  try {
-    const res = await fetch(loginUrl, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      credentials:'include',
-      body: JSON.stringify({ email, password })
-    });
-    const text = await res.text();
-    let data = {};
-    try { data = JSON.parse(text); } catch {}
-    if (res.ok && data.success) {
-      location.href = './pages/formulario.html';
-    } else {
-      alert((data && data.message) || 'Login fallido');
-    }
-  } catch (err) {
-    console.error(err);
-    alert('No se pudo conectar con el servidor');
-  }
-});
-</script>
-
-
-
-
-            <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo>
+            <button type="button" class="login-button" id="close">Atzera</button>
+            <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
+            <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
         </div>
     </div>
 
+    <script>
+        document.querySelector('form.session-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const email = form.email.value.trim();
+            const password = form.password.value;
+
+            const here = location.pathname; // /.../src/client/index.html
+            const base = here.replace(/\/src\/client\/index\.html$/, '');
+            const loginUrl = base + '/src/server/controller/login.php';
+
+            try {
+                const res = await fetch(loginUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({ email, password })
+                });
+                const text = await res.text();
+                let data = {};
+                try { data = JSON.parse(text); } catch { }
+                if (res.ok && data.success) {
+                    location.href = './pages/formulario.html';
+                } else {
+                    alert((data && data.message) || 'Login fallido');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('No se pudo conectar con el servidor');
+            }
+        });
+    </script>
+    </div>
+    </div>
+
     <!--Bloques-->
-    <section class="bloques">
+    <section class=" bloques">
 
         <div class="bloque1">
             <a class="send-button" id="send">Bidali Orain ==></a>
@@ -163,7 +156,6 @@ document.querySelector('form.session-form')?.addEventListener('submit', async (e
                 <label for="Bilatu">Bidalketaren Jarraipena:</label>
                 <br>
                 <input type="search" name="zenbaki" placeholder="Pakete zenbakia">
-                <button type="submit" class="boton"><img src="./assets/img/landing/lupa.png"> </button>
                 <button type="submit" class="boton"><img src="./assets/img/landing/lupa.png"> </button>
             </form>
         </div>
@@ -184,11 +176,11 @@ document.querySelector('form.session-form')?.addEventListener('submit', async (e
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
                     Gure planeta:
-            </b></h3>
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
                     Gure planeta
-            </b></a>
+                </b></a>
             <p class="text">
                 Ez galdu karbonoa murrizteko gure ekimenak klima-aldaketari aurre egiteko eta gure hiriak iraunkorragoak
                 izan daitezen
@@ -208,11 +200,11 @@ document.querySelector('form.session-form')?.addEventListener('submit', async (e
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
                     Logistikako berrikuntzaren abangoardian:
-            </b></h3>
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
                     Logistikako berrikuntzaren abangoardian
-            </b></a>
+                </b></a>
             <p class="text">
                 Berrikuntza praktikoetan inbertitzea funtsezkoa da buruan mantentzeko eta hain azkar aldatzen den
                 merkatu global lehiakorrean balioa gehitzeko.
@@ -231,11 +223,11 @@ document.querySelector('form.session-form')?.addEventListener('submit', async (e
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
                     Mugikortasunaren etorkizuna:
-            </b></h3>
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
                     Mugikortasunaren etorkizuna
-            </b></a>
+                </b></a>
             <p class="text">
                 Asko inbertitzen dugu ikerketan eta berrikuntzan, gure bezeroei CASEn oinarritutako automobilgintzako
                 logistikaren alderdi guztietan lagun diezaiekegula bermatzeko. Gure esperientziak, ezagutzek eta
@@ -252,11 +244,11 @@ document.querySelector('form.session-form')?.addEventListener('submit', async (e
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
                     Gaur biharko energia-erronkak konpontzea:
-            </b></h3>
+                </b></h3>
             <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
                     Gaur biharko energia-erronkak konpontzea
-            </b></a>
+                </b></a>
             <p class="text">
                 Gure espezialistek irtenbide globalak eskaintzen dituzte, betiere segurtasunean eta araudia betetzean
                 oinarrituak, bikaintasun operatiboarekin eta zerbitzuak ematearekin dugun konpromisoak babestuta. Gure
