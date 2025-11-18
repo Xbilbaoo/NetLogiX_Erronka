@@ -1,15 +1,4 @@
-@media screen and (min-width: 650px) {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f6f1db;
-        padding: 20px;
-    }
+@media screen and (min-width: 800px) {
     
     .header {
         background-color: #f6f1db;
@@ -69,55 +58,56 @@
     }
     /* Mejora específica del botón "Iniciar Sesion" */
     .iniciarsesionhandi a {
-  color: #D76719;
-  background: #ffc98a1a;       /* sutil fondo ámbar translúcido */
-  padding: 6px 12px;
-  border: 2px solid #D76719;
-  border-radius: 999px;         /* pill */
-  font-weight: 700;             /* más énfasis */
-  transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .05s ease;
-}
+        color: #D76719;
+        background: #ffc98a1a;       /* sutil fondo ámbar translúcido */
+        padding: 6px 12px;
+        border: 2px solid #D76719;
+        border-radius: 999px;         /* pill */
+        font-weight: 700;             /* más énfasis */
+        transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .05s ease;
+    }
 
-.iniciarsesionhandi a:hover {
-  background: #D76719;
-  color: #fff;
-  box-shadow: 0 2px 0 rgba(0,0,0,.08);
-}
+    .iniciarsesionhandi a:hover {
+        background: #D76719;
+        color: #fff;
+        box-shadow: 0 2px 0 rgba(0,0,0,.08);
+    }
 
-.iniciarsesionhandi a:active {
-  transform: translateY(1px);   /* feedback clic */
-}
+    .iniciarsesionhandi a:active {
+        transform: translateY(1px);   /* feedback clic */
+    }
 
-.iniciarsesionhandi a:focus-visible {
-  outline: 3px solid #ffb36f;   /* anillo accesible */
-  outline-offset: 2px;
-}
+    .iniciarsesionhandi a:focus-visible {
+        outline: 3px solid #ffb36f;   /* anillo accesible */
+        outline-offset: 2px;
+    }
 
     
 }
         
 /*Pantalla Txikia*/
-@media (max-width: 650px) {
-     .header {
+@media (max-width: 800px) {
+    .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 0;
         padding: 20px;
-        background-color: #f6f1db;
-        border: 2px solid #D76719;
-        border-radius: 8px;
     }
 
+    /* Icono */
     .logo img {
         max-height: 100px;
         max-width: 100px;
     }
+
     .img_menu {
         height: 40px;
         width: 40px;
     }
+
+    /* Menu */
     .dropdown {
         position: relative;
     }
@@ -142,28 +132,29 @@
         font-size: 25px;
         z-index: 1000;
     }
+
     .dropdown-content.show {
         display: block;
     }
     
     .dropdown-content .ekis {
-    position: absolute;
-    right: 0px; 
-    top: -40px; 
-    background-color: #f9f9f9;
-    width: 40px; 
-    height: 40px;
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    cursor: pointer;
-    border-radius: 3px;
-    font-weight: bold;
-    color: #D76719;
-    font-size: 25px;
-    text-decoration: none;
-}
+        position: absolute;
+        right: 10px; 
+        top: -40px; 
+        background-color: #f9f9f9;
+        width: 40px; 
+        height: 40px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+        cursor: pointer;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #D76719;
+        font-size: 25px;
+        text-decoration: none;
+    }
 
     .dropdown-content a {
         color: black;
@@ -172,22 +163,23 @@
         display: block;
     }
 
-.Iniciarsesion {
+    /* Iniciar sesion */
+    .Iniciarsesion {
         margin-left: 44%;  
-    
-}
+    }
 
-.Iniciarsesion a{
-  display:inline-block;
-  width: 40px;
-  height: 40px;
-  background: #f6f1db url("../assets/img/header/session-logo.png") center/contain no-repeat;
-  border-radius: 12px;
-  overflow: hidden;
-  text-indent: -9999px;
-}
-.iniciarsesionhandi{
-    display: none;
-}
+    .Iniciarsesion a {
+        display:inline-block;
+        width: 40px;
+        height: 40px;
+        background: #f6f1db url("../assets/img/header/session-logo.png") center/contain no-repeat;
+        border-radius: 12px;
+        overflow: hidden;
+        text-indent: -9999px;
+    }
+
+    .iniciarsesionhandi {
+        display: none;
+    }
 
 }
