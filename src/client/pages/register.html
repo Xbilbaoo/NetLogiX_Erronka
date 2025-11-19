@@ -7,37 +7,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="../css/formulario.css">
 </head>
 <body>
-  <div class="card">
-    <div class="brand">
-      <img src="../../assets/img/logo.png" alt="NetLogiX">
-      <h1>Erregistratu</h1>
-    </div>
-    <p class="subtitle">Crea tu cuenta para acceder al formulario</p>
 
-    <form id="register-form" novalidate>
+    <form id="formularioa" novalidate>
+      <h1 class="titulua">Erregistratu</h1>
       <div>
         <label for="cif">CIF</label>
-        <input id="cif" name="cif" type="text" placeholder="B12345678" required
+        <input class="formu-input" id="cif" name="cif" type="text" placeholder="B12345678" required
           pattern="^[A-HJNPQRSUVW]\d{7}[0-9A-J]$" title="CIF válido (ej. B12345678)">
       </div>
 
       <div class="row">
         <div>
           <label for="kizena">Kontaktuaren izena</label>
-          <input id="kizena" name="kizena" type="text" placeholder="Jhon">
+          <input class="formu-input" id="kizena" name="kizena" type="text" placeholder="Jhon">
         </div>
 
         <div>
         <label for="kabizena">Kontaktuaren abizena</label>
-        <input id="kabizena" name="kabizena" type="text" placeholder="Doe">
+        <input class="formu-input" id="kabizena" name="kabizena" type="text" placeholder="Doe">
       </div>
 
       <div>
           <label for="eizena">Enpresa izena</label>
-          <input id="eizena" name="eizena" type="text" placeholder="I.">
+          <input class="formu-input" id="eizena" name="eizena" type="text" placeholder="I.">
         </div>
       </div>
 
@@ -49,12 +44,12 @@
 
       <div>
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="tu@correo.com" required autocomplete="email">
+        <input class="formu-input" id="email" name="email" type="email" placeholder="tu@correo.com" required autocomplete="email">
       </div>
 
       <div>
         <label for="password">Contraseña</label>
-        <input id="password" name="password" type="password" placeholder="Mín. 8 caracteres" required minlength="8"
+        <input class="formu-input" id="password" name="password" type="password" placeholder="Mín. 8 caracteres" required minlength="8"
           pattern="^(?=.*[0-9])(?=.*[A-Za-z]).{8,}$" autocomplete="new-password">
       </div>
 
