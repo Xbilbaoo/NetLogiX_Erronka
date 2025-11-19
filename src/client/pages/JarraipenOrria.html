@@ -24,10 +24,10 @@
             </button>
             <div class="dropdown-content" id="myDropdown"> 
                 <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
-                <a href="./index.html">Home</a>
-                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
-                <a href="../client/pages/formulario.html">Formularioa</a>
-                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+                <a href="../index.html">Home</a>
+                <a href="../../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../../client/pages/formulario.html">Formularioa</a>
+                <a href="../../client/pages/AboutUs.html">Guri Buruz</a>
                 <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
             </div>
         </div>
@@ -41,12 +41,14 @@
   <div class="container">
     <b><label for="estado">Egoera:</label></b>
 
-    <select id="imagen" name="estado" onchange="mostrarImagen()">
-      <option value="vacio">...</option>
-      <option value="Pendiente">Pendiente</option>
-      <option value="Enviado">Enviado</option>
-      <option value="Recibido">Recibido</option>
-    </select>
+    <select id="imagen" name="estado" onchange="mostrarImagen(this.value)">
+  <option value="vacio">...</option>
+  <option value="Pendiente">Pendiente</option>
+  <option value="Enviado">Enviado</option>
+  <option value="Recibido">Recibido</option>
+</select>
+
+<div id="imagenContainer"></div>
   </div>
 
   <div class="container">
@@ -61,6 +63,27 @@
 
  
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 <footer class="grid-container">
         <div class="grid-item">

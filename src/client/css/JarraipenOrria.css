@@ -1,4 +1,4 @@
-
+@media screen and (min-width: 650px) {
     * {
         margin: 0;
         padding: 0;
@@ -8,6 +8,68 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f6f1db;
+        padding: 20px;
+    }
+    
+    .header {
+        background-color: #f6f1db;
+        border: 2px solid #D76719;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 10px;
+    }
+    
+    .logo img {
+        display: flex;
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    /* OCULTAMOS SOLO EL BOTÓN HAMBURGUESA Y LA 'X' */
+    .dropbtn, .img_menu, .dropdown-content .ekis {
+        display: none !important;
+    }
+
+    /* MOSTRAR EL DROPDOWN COMO BARRA DE NAVEGACIÓN HORIZONTAL */
+    .dropdown {
+        display: flex;
+        align-items: center;
+        margin-left: auto; 
+    }
+    
+    /* MOSTRAR dropdown-content como flex horizontal */
+    .dropdown-content {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 20px;
+        background-color: transparent;
+        box-shadow: none;
+        min-width: auto;
+        border-bottom: 3px solid #D76719;
+        padding-bottom: 5px;
+    }
+    
+    /* Estilos de los enlaces de navegación */
+    .dropdown-content a {
+        color: #D76719;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .dropdown-content a:hover {
+        color: #883900;
+    }
+    
+    /* OCULTAR 'Iniciar Sesion' si está duplicado */
+    .Iniciarsesion {
+        display: none;
+
     }
 
     /* Otros estilos de contenido */
@@ -30,6 +92,7 @@
     input, select {
         font-size: 15px;
     }
+}
         
 /*Pantalla Txikia*/
 @media (max-width: 650px) {
@@ -41,21 +104,18 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    }
+  }
 
-    .dots {
-        flex-grow: 1;
-        text-align: left;
-    }
-
-    form{
-        font-size: 25px;
-    }
-
-    input, select{
-        font-size: 15px;
-    }
-
+  .dots {
+    flex-grow: 1;
+    text-align: left;
+  }
+form{
+   font-size: 25px;
+}
+input, select{
+  font-size: 15px;
+}
     .header {
         display: flex;
         flex-direction: row;
@@ -72,12 +132,10 @@
         max-height: 100px;
         max-width: 100px;
     }
-
     .img_menu {
         height: 40px;
         width: 40px;
     }
-
     .dropdown {
         position: relative;
     }
@@ -102,29 +160,28 @@
         font-size: 25px;
         z-index: 1000;
     }
-
     .dropdown-content.show {
         display: block;
     }
     
     .dropdown-content .ekis {
-        position: absolute;
-        right: 0px; 
-        top: -40px; 
-        background-color: #f9f9f9;
-        width: 40px; 
-        height: 40px;
-        padding-right: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end; 
-        cursor: pointer;
-        border-radius: 3px;
-        font-weight: bold;
-        color: #D76719;
-        font-size: 25px;
-        text-decoration: none;
-    }
+    position: absolute;
+    right: 0px; 
+    top: -40px; 
+    background-color: #f9f9f9;
+    width: 40px; 
+    height: 40px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #D76719;
+    font-size: 25px;
+    text-decoration: none;
+}
 
     .dropdown-content a {
         color: black;
@@ -133,3 +190,6 @@
         display: block;
     }
 }
+.Iniciarsesion {
+        margin-left: 40%;  
+    }

@@ -19,11 +19,11 @@
             <a class="saioa-hasi"><img src="../client/assets/img/header/session-logo.png" alt="logo de una persona"></a>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" onclick="toggleDropdown()">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
                 <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
             </button>
-            <div class="dropdown-content" id="myDropdown">
-                <a class="ekis" href="#" onclick="toggleDropdown()">X</a>
+            <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
                 <a href="./index.html">Home</a>
                 <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
                 <a href="../client/pages/formulario.html">Formularioa</a>
@@ -70,75 +70,79 @@
     </div>
 
     <br>
-
     <!--Marquee(Frase en movimiento)-->
     <marquee scrollamount="12">
         Bultzatu zure enpresa txiki edo ertainen arrakasta logistika eta lehen lerroko bidalketa-zerbitzu batzuen bidez.
     </marquee>
-
     <br>
     <br>
     <div class="popup-container" id="session-popup">
-        <div class="login-box" id="login-box">
-            <h2 class="popup-title">Saio Hasi</h2>
+  <div class="login-box" id="login-box">
+    <h2 class="popup-title">Saio Hasi</h2>
 
-            <!-- FORM LOGIN ACTUALIZADO -->
-            <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
-                <div class="form-group">
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña:</label><br>
-                    <input type="password" id="password" name="password" autocomplete="current-password" required>
-                </div>
-                <button type="submit" class="login-button">Saioa Hasi</button>
-            </form>
-            <!-- FIN FORM LOGIN ACTUALIZADO -->
+    <!-- FORM LOGIN ACTUALIZADO -->
+    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-button">Saioa Hasi</button>
+    </form>
+    <!-- FIN FORM LOGIN ACTUALIZADO -->
 
-            <button type="button" class="login-button" id="close">Atzera</button>
-            <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
-            <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
-        </div>
-    </div>
+    <button type="button" class="login-button" id="close">Atzera</button>
+    <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
+    <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
+  </div>
+</div>
 
-    <script>
-        document.querySelector('form.session-form')?.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.currentTarget;
-            const email = form.email.value.trim();
-            const password = form.password.value;
+<script>
+(function(){
+  const p = location.pathname;
+  const first = p.indexOf('/src/');
+  const base  = first >= 0 ? p.slice(0, first) : '';
 
-            const here = location.pathname; // /.../src/client/index.html
-            const base = here.replace(/\/src\/client\/index\.html$/, '');
-            const loginUrl = base + '/src/server/controller/login.php';
+  const form = document.querySelector('form.session-form');
+  if (!form) return;
 
-            try {
-                const res = await fetch(loginUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include',
-                    body: JSON.stringify({ email, password })
-                });
-                const text = await res.text();
-                let data = {};
-                try { data = JSON.parse(text); } catch { }
-                if (res.ok && data.success) {
-                    location.href = './pages/formulario.html';
-                } else {
-                    alert((data && data.message) || 'Login fallido');
-                }
-            } catch (err) {
-                console.error(err);
-                alert('No se pudo conectar con el servidor');
-            }
-        });
-    </script>
-    </div>
-    </div>
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    const password = form.password.value;
+
+    const loginUrl = base + '/src/server/controller/login.php';
+    const destino  = base + '/src/client/pages/formulario.html';
+
+    console.log('POST', loginUrl, '->', destino);
+
+    try {
+      const res = await fetch(loginUrl, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        credentials:'include',
+        body: JSON.stringify({ email, password })
+      });
+      const text = await res.text();
+      let data={}; try{ data = JSON.parse(text);}catch{}
+      if (res.ok && data.success) location.href = destino;
+      else alert((data && data.message) || ('Login fallido ('+res.status+')'));
+    } catch (err) {
+      console.error(err);
+      alert('No se pudo conectar con el servidor');
+    }
+  });
+})();
+</script>
+
+
+
 
     <!--Bloques-->
-    <section class=" bloques">
+    <section class="bloques">
 
         <div class="bloque1">
             <a class="send-button" id="send">Bidali Orain ==></a>
@@ -146,7 +150,7 @@
 
         <div class="bloque2">
             <div class="fondoLink">
-                <a href="./pages/AboutUs.html"><b>Nuestra historia</b></a>
+                <a href="./pages/AboutUs.html"><b>Gure Historia</b></a>
             </div>
 
         </div>
@@ -171,13 +175,11 @@
         <div class="card bat">
             <figure id="imagen">
                 <img src="./assets/img/landing/Gure_planeta.webp">
-                <img src="./assets/img/landing/Gure_planeta.webp">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
                     Gure planeta:
                 </b></h3>
-            <!--Titulo del card en la pantalla pequeña-->
             <a href="#" class="titulo2"><b>
                     Gure planeta
                 </b></a>
@@ -194,7 +196,6 @@
 
         <div class="card bi">
             <figure>
-                <img src="./assets/img/landing/berrikuntzaren_abangoardian.jpeg">
                 <img src="./assets/img/landing/berrikuntzaren_abangoardian.jpeg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
@@ -218,7 +219,6 @@
         <div class="card hiru">
             <figure>
                 <img src="./assets/img/landing/Mugikortasunaren_etorkizuna.png">
-                <img src="./assets/img/landing/Mugikortasunaren_etorkizuna.png">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -239,7 +239,6 @@
         <div class="card lau">
             <figure>
                 <img src="./assets/img/landing/Gaur_biharko_energia-erronkak.jpg">
-                <img src="./assets/img/landing/Gaur_biharko_energia-erronkak.jpg">
             </figure>
             <!--Titulo del card en la pantalla Grande/Mediana-->
             <h3 class="titulo1"><b>
@@ -259,11 +258,8 @@
         </div>
 
     </main>
-
-    <!-- Footer -->
     <footer class="grid-container">
         <div class="grid-item">
-            <!-- Bidalketa atala -->
             <a class="footer-title">Bidalketa</a>
             <hr class="separator">
             <ul class="footer-flex">
@@ -278,7 +274,6 @@
                 </li>
             </ul>
         </div>
-        <!-- Historia atala -->
         <div class="grid-item">
             <a class="footer-title">100 urte zure alboan</a>
             <hr class="separator">
@@ -291,7 +286,6 @@
                 </li>
             </ul>
         </div>
-        <!-- Kontaktu atala -->
         <div class="grid-item">
             <a class="footer-title">Kontaktua</a>
             <hr class="separator">
@@ -307,7 +301,6 @@
                 </li>
             </ul>
         </div>
-        <!-- Copyright atala -->
         <hr class="separator big">
         <div class="grid-item" id="first-down">
             <ul class="footer-flex">
@@ -322,32 +315,27 @@
                 </li>
             </ul>
         </div>
-        <!-- Redes sociales -->
         <div class="grid-item">
             <ul class="footer-flex" id="last">
                 <li>
-                    <!-- Twitter -->
                     <a href="#" class="footer-social-media">
                         <img class="social-media-logo" src="./components/img/footer/socialMedia/twitter.png"
                             alt="Twitter logo">
                     </a>
                 </li>
                 <li>
-                    <!-- Linkeding -->
                     <a href="#" class="footer-social-media">
                         <img class="social-media-logo" src="./components/img/footer/socialMedia/linkedin.png"
                             alt="LinkedIn logo">
                     </a>
                 </li>
                 <li>
-                    <!-- Facebook -->
                     <a href="#" class="footer-social-media">
                         <img class="social-media-logo" src="./components/img/footer/socialMedia/facebook.png"
                             alt="Facebook logo">
                     </a>
                 </li>
                 <li>
-                    <!-- Instagram -->
                     <a href="#" class="footer-social-media">
                         <img class="social-media-logo" src="./components/img/footer/socialMedia/instagram.png"
                             alt="Instagram logo">

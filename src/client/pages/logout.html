@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NetLogiX · Sesión cerrada</title>
+
+  <!-- Reutiliza estilos -->
+  <link rel="stylesheet" href="../css/formulario.css">
+
+  <style>
+    /* Ajustes mínimos para la vista de logout */
+    body { background-color:#f6f1db; font-family:"Lexend",sans-serif; color:#2c3e50; }
+    .logout-card{
+      max-width: 720px; margin: 48px auto; background:#fff; border:2px solid #D76719;
+      border-radius:20px; padding:32px; box-shadow:0 4px 10px rgba(0,0,0,.1);
+      text-align:center;
+    }
+    .logout-title{ color:#D76719; font-weight:700; margin-bottom:12px; font-size:28px; }
+    .logout-text{ margin:8px 0 20px; color:#444; }
+    .mini-btn{
+      font: 600 14px/1 "Lexend", sans-serif;
+      padding:10px 16px; border-radius:10px;
+      border:1px solid #D76719; color:#fff; background:#D76719;
+      cursor:pointer; transition:all .15s ease-in-out;
+    }
+    .mini-btn:hover{ background:#b85414; border-color:#b85414; }
+  </style>
+</head>
+<body>
+  <div class="logout-card">
+    <h1 class="logout-title">Has cerrado sesión</h1>
+    <p class="logout-text">Tu sesión se ha finalizado correctamente.</p>
+    <button id="go-home" class="mini-btn" type="button">Volver al inicio</button>
+  </div>
+
+  <script>
+    // Botón volver al index.html
+    document.getElementById('go-home')?.addEventListener('click', ()=>{
+      // Calcula base antes de /src/
+      const p = location.pathname;
+      const i = p.indexOf('/src/');
+      const base = i>=0 ? p.slice(0,i) : '';
+      location.href = base + '../index.html';
+    });
+  </script>
+</body>
+</html>

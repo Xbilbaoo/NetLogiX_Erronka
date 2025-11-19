@@ -7,9 +7,9 @@
     
     <!-- Enlace al documento CSS -->
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/session.css">
     <link rel="stylesheet" href="../css/aboutUs.css">
     <link rel="stylesheet" href="../css/footer.css">
-
 </head>
 <body>
     <header class="header">
@@ -25,32 +25,59 @@
             </button>
            <div class="dropdown-content" id="myDropdown"> 
                 <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
-                <a href="./index.html">Home</a>
-                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
-                <a href="../client/pages/formulario.html">Formularioa</a>
-                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+                <a href="../index.html">Home</a>
+                <a href="../../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../../client/pages/formulario.html">Formularioa</a>
+                <a href="../../client/pages/AboutUs.html">Guri Buruz</a>
                 <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
             </div>
         </div>
     </header>
+    <div class="popup-container" id="session-popup">
+  <div class="login-box" id="login-box">
+    <h2 class="popup-title">Saio Hasi</h2>
+
+    <!-- FORM LOGIN ACTUALIZADO -->
+    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-button">Saioa Hasi</button>
+    </form>
+    <!-- FIN FORM LOGIN ACTUALIZADO -->
+
+    <button type="button" class="login-button" id="close">Atzera</button>
+    <p>Bezero berria zara? <a href="../pages/register.html" class="register_link">Erregistratu</a></p>
+    <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+  </div>
+</div>
 
     <script src="../js/main.js"></script>
     <!-- Container que incluira la card de la pagina -->
     <div class="container">
+
         <div class="content">
-            <!-- Card -->
+            <!-- Nuestra bibliografia y la historia de nuestra empresa -->
             <div class="card-section">
                 <div class="card-history">
-                  
+                    <!-- Imagen de nuestro primer dia repartiendo -->
                     <figure class="card-image">
                             <img class="camioneta" src="../assets/img/AboutUs/camion-antiguo-de-reparto.jpg" alt="camioneta vintage">
                     </figure>
                     
+                    <!-- Texto que relata nuestra historia -->
                     <div class="card-text">
-                        <h3>Nuestra Historia</h3>
-                        <p>En el corazón de la red, donde la información fluye a la velocidad de la luz y la eficiencia es la clave, se erige "NetLogiX", una empresa que ha tejido su legado a través de un siglo de experiencia en transporte y logística. Fundada por un visionario que entendió el poder de la conexión, la compañía ha evolucionado desde sus inicios en la era del telégrafo hasta convertirse en un líder en la era digital.</p>
+                        <h3>Gure Historia</h3>
+                        <p>
+Sarearen bihotzean, non informazioa argiaren abiaduran dabilen eta eraginkortasuna gakoa den, "NetLogiX" eraikitzen da, garraioan eta logistikan mende bateko esperientziaren bidez bere ondarea ehundu duen enpresa. Konexioaren boterea ulertu zuen ameslari batek sortua, konpainiak bilakaera izan du telegrafoaren aroan hasi zenetik aro digitalean lider bihurtu arte.
 
-                        <p>La historia de NetLogiX es una narrativa de innovación y adaptación. En sus primeros años, la empresa se especializó en la gestión de flujos de información, conectando a las empresas a través de redes de comunicación. Con la llegada de Internet, NetLogiX abrazó la revolución digital, transformando sus operaciones y expandiendo sus servicios. La compañía se convirtió en un pionero en la implementación de sistemas de seguimiento y gestión de la cadena de suministro, permitiendo a sus clientes optimizar sus operaciones y reducir costos.</p>
+NetLogiX-en historia berrikuntzaren eta egokitzapenaren narratiba da. Lehen urteetan, informazio-fluxuen kudeaketan espezializatu zen enpresa, eta komunikazio-sareen bidez konektatu zituen enpresak. Interneten etorrerarekin, NetLogiXk iraultza digitala besarkatu zuen, bere eragiketak eraldatuz eta bere zerbitzuak hedatuz. Konpainia aitzindari bihurtu zen hornidura-katearen jarraipen- eta kudeaketa-sistemen inplementazioan, bezeroei eragiketak optimizatzeko eta kostuak murrizteko aukera emanez.</p>
+
                     </div>
                 </div>
             </div> 
@@ -58,7 +85,7 @@
             <!-- Mapa y contacto -->
             <div class="map-section">
                 <div class="map-container">
-                    <!-- Mapa -->
+                    <!-- Mapa que situa nuestra empresa, que es en Zaldibar -->
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.966660475135!2d-2.5525322232696523!3d43.16822398366175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e2d0061fa08f3%3A0xdf1b40830a8a1b00!2sHospital%20de%20Zaldibar!5e0!3m2!1ses!2ses!4v1759737830352!5m2!1ses!2ses" 
                         width="600" 
@@ -87,7 +114,6 @@
             </div>
         </div>
     </div>
-
     <footer class="grid-container">
         <div class="grid-item">
             <a class="footer-title">Bidalketa</a>

@@ -7,57 +7,91 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/session.css">
   <link rel="stylesheet" href="../css/formulario.css">
-  
+  <link rel="stylesheet" href="../css/footer.css">
+
 </head>
 <body>
   <header class="header">
-    <div class="logo">
-      <img src="https://i.gyazo.com/f384ae32659a22e35663c0873c60240d.png" alt="">
-    </div>
-    <div class="Iniciarsesion">
-      <a href="InicionSesiada.html"> Iniciar Sesion</a>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn" onclick="toggleDropdown()">
-        <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
-      </button>
-      <div class="dropdown-content" id="myDropdown">
-        <a class="ekis" href="#" onclick="toggleDropdown()">X</a>
-        <a href="./index.html">Home</a>
-        <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
-        <a href="../client/pages/formulario.html">Formularioa</a>
-        <a href="../client/pages/AboutUs.html">Guri Buruz</a>
-        <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
-      </div>
-    </div>
-  </header>
-
-  <div class="popup-container" id="session-popup">
-        <div class="login-box" id="login-box">
-            <h2 class="popup-title">Saio Hasi</h2>
-
-            <!-- FORM LOGIN ACTUALIZADO -->
-            <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
-                <div class="form-group">
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña:</label><br>
-                    <input type="password" id="password" name="password" autocomplete="current-password" required>
-                </div>
-                <button type="submit" class="login-button">Saioa Hasi</button>
-            </form>
-            <!-- FIN FORM LOGIN ACTUALIZADO -->
-
-            <button type="button" class="login-button" id="close">Atzera</button>
-            <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
-            <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="NetLogiX Logo">
         </div>
-    </div>
+        <div class="Iniciarsesion">
+            <a class="saioa-hasi"><img src="../assets/img/header/session-logo.png" alt="logo de una persona"></a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+           <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="../index.html">Home</a>
+                <a href="../../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../../client/pages/formulario.html">Formularioa</a>
+                <a href="../../client/pages/AboutUs.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="popup-container" id="session-popup">
+  <div class="login-box" id="login-box">
+    <h2 class="popup-title">Saio Hasi</h2>
+
+    <!-- FORM LOGIN ACTUALIZADO -->
+    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-button">Saioa Hasi</button>
+    </form>
+    <!-- FIN FORM LOGIN ACTUALIZADO -->
+
+    <button type="button" class="login-button" id="close">Atzera</button>
+    <p>Bezero berria zara? <a href="../pages/register.html" class="register_link">Erregistratu</a></p>
+    <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+  </div>
+</div>  
+
   <br>
   <form class="formularioa" method="post" action="../../server/controller/insert_formulario.php">
     <h1 class="titulua">Formularioa</h1>
+    <div class="mini-acciones">
+  <button id="btn-cred" class="mini-btn" type="button">Aldatu zure informazioa</button>
+</div>
+<script>
+(function(){
+  const b = document.getElementById('btn-cred');
+  if (!b) return;
+
+  function basePath(){ const p=location.pathname, i=p.indexOf('/src/'); return i>=0 ? p.slice(0,i) : ''; }
+  const base = basePath();
+  const meUrl = base + '/src/server/controller/me.php';
+  // Ajusta esta ruta a donde tengas la página de perfil
+  const gestionUrl = base + '/src/server/controller/gestionu.php';
+
+  b.addEventListener('click', async ()=>{
+    try{
+      const r = await fetch(meUrl, { credentials:'include' });
+      const d = await r.json();
+      if (r.ok && d.authenticated) {
+        location.href = gestionUrl;
+      } else {
+        const popup = document.getElementById('session-popup');
+        if (popup) popup.style.display='flex';
+        else location.href = base + '/src/client/pages/login.html';
+      }
+    }catch{
+      location.href = base + '/src/client/pages/login.html';
+    }
+  });
+})();
+</script>
+
 
     <label for="izen" class="labelak">Izen-Abizenak</label>
     <input type="text" id="izen" name="izen" class="formu-input" required>
@@ -80,23 +114,22 @@
 
     <fieldset class="servicios-fieldset">
       <legend class="servicios-legend">Serbitzu Gehigarriak</legend>
-
-      <input type="checkbox" id="serbitzu1" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu1" value="1" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu1" class="checkbox-label">Aseguru osoa</label>
 
-      <input type="checkbox" id="serbitzu2" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu2" value="2" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu2" class="checkbox-label">Auzkorra</label>
 
-      <input type="checkbox" id="serbitzu3" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu3" value="3" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu3" class="checkbox-label">Bidalketa azkarra</label>
 
-      <input type="checkbox" id="serbitzu4" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu4" value="4" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu4" class="checkbox-label">Segurtasun Armatua</label>
 
-      <input type="checkbox" id="serbitzu5" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu5" value="5" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu5" class="checkbox-label">Eko Friendly</label>
 
-      <input type="checkbox" id="serbitzu6" name="zerbitzu_gehigarriak[]" class="checkbox-input">
+      <input type="checkbox" id="serbitzu6" value="6" name="zerbitzu_gehigarriak[]" class="checkbox-input">
       <label for="serbitzu6" class="checkbox-label">Biltegiratzea</label>
     </fieldset>
 
@@ -125,119 +158,202 @@
 
     <button type="submit" class="boton-enviar">BIDALI</button>
   </form>
+  <footer class="grid-container">
+        <div class="grid-item">
+            <!-- Bidalketa atala -->
+            <a class="footer-title">Bidalketa</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text send-button">Bidali Orain</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text send-button">Bidalketaren Aurrekontua</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text send-button">Bidalketaren Jarraipena</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Historia atala -->
+        <div class="grid-item">
+            <a class="footer-title">100 urte zure alboan</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text">Gure Historia</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text">Non Gaude</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Kontaktu atala -->
+        <div class="grid-item">
+            <a class="footer-title">Kontaktua</a>
+            <hr class="separator">
+            <ul class="footer-flex" id="contact">
+
+                <li class="footer-info-text">
+                    <p href="#" class="footer-text">Email: info@netlogix.com</p>
+                    <p href="#" class="footer-text">Tlfno.: 123 12 31 23</p>
+                    <p href="#" class="footer-text">Fax: +34 123 12 31 23</p>
+                </li>
+                <li class="info">
+                    <p class="footer-text"> Bilbao Etorbidea, <br>48250 Zaldibar, Bizkaia</p>
+                </li>
+            </ul>
+        </div>
+        <!-- Copyright atala -->
+        <hr class="separator big">
+        <div class="grid-item" id="first-down">
+            <ul class="footer-flex">
+                <li id="copy">
+                    <p class="copy-text">
+                        <a class="footer-text copy">Copyright © NetLogiX 2025</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Política de privacidad y cookies</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Aviso legal</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Uso fraudulento de la marca</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Condiciones de transporte</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!-- Redes sociales -->
+        <div class="grid-item">
+            <ul class="footer-flex" id="last">
+                <li>
+                    <!-- Twitter -->
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/twitter.png"
+                            alt="Twitter logo">
+                    </a>
+                </li>
+                <li>
+                    <!-- Linkeding -->
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/linkedin.png"
+                            alt="LinkedIn logo">
+                    </a>
+                </li>
+                <li>
+                    <!-- Facebook -->
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/facebook.png"
+                            alt="Facebook logo">
+                    </a>
+                </li>
+                <li>
+                    <!-- Instagram -->
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/instagram.png"
+                            alt="Instagram logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
   <!-- Autocompletar solo datos del registro -->
-<script>
-(async function(){
-  const base = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
-  const meUrl = base + '/src/server/controller/me.php';
-
-  try {
-    const res = await fetch(meUrl, { credentials:'include' });
-    const data = await res.json();
-    if (!res.ok || !data.authenticated) return;
-
-    const p = data.profile || {};
-    const kiz = (p.kizena || '').trim();
-    const eiz = (p.eizena || '').trim();
-    const kab = (p.kabizena || '').trim();
-    let empresa = (p.empresa || '').trim();
-
-    // Lista de palabras que NO son apellidos frecuentes en tu caso y pueden ser empresa
-    const maybeCompany = new Set(['payos', 'zornotza', 'buyo']); // añade más si necesitas
-
-    // Si empresa está vacía pero Eizena/Kabizena parecen empresa, muévelas a empresa
-    const eizIsCompany = eiz && maybeCompany.has(eiz.toLowerCase());
-    const kabIsCompany = kab && maybeCompany.has(kab.toLowerCase());
-    if (!empresa) {
-      if (eizIsCompany) { empresa = eiz; }
-      if (!empresa && kabIsCompany) { empresa = kab; }
-    }
-
-    // Construir nombre SOLO con partes que no sean empresa
-    const parts = [];
-    if (kiz) parts.push(kiz);
-    if (eiz && eiz.toLowerCase() !== empresa.toLowerCase()) parts.push(eiz);
-    if (kab && kab.toLowerCase() !== empresa.toLowerCase()) parts.push(kab);
-    const nombre = parts.join(' ').trim();
-
-    // Pintar y bloquear cuando hay valor
-    setRO('izen', nombre);
-    setRO('emaila', p.emaila);
-    setRO('tlf', p.tlf);
-    setRO('empresa', empresa); // si queda vacío, no se bloquea para que lo completes
-
-  } catch (e) {
-    console.error('No se pudo cargar el perfil', e);
-  }
-
-  function setRO(id, val){
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (val != null && val !== '') {
-      el.value = val;
-      el.readOnly = true;
-      el.classList.add('prefilled');
-      el.setAttribute('aria-readonly','true');
-    }
-  }
-})();
-</script>
-<script>
-(function(){
-  const form = document.querySelector('form.formularioa');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Construye URL absoluta a insert_consulta.php
-    const base = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
-    const url  = base + '/src/server/controller/insert_formulario.php';
-
-    // Recoge valores del formulario por id
-    const payload = {
-      jatorria:  document.getElementById('jatorria')?.value.trim() || '',
-      helmuga:   document.getElementById('helmuga')?.value.trim() || '',
-      biltegia:  document.getElementById('biltegia')?.value?.trim() || '', // crea input si lo necesitas
-      tamaina:   document.getElementById('tamaina')?.value?.trim() || '',  // crea input si lo necesitas
-      pisua:     document.getElementById('pisua')?.value || '',
-      data:      document.getElementById('data')?.value || '' // Eskaera_Data
-    };
-
-    // Validación rápida en cliente
-    if (!payload.jatorria || !payload.helmuga) {
-      alert('Jatorria eta Helmuga derrigorrezkoak dira');
-      return;
-    }
+  <script>
+  (async function(){
+    const base  = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
+    const meUrl = base + '/src/server/controller/me.php';
 
     try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type':'application/json' },
-        credentials: 'include',
-        body: JSON.stringify(payload)
-      });
-      const text = await res.text();
-      let data; try { data = JSON.parse(text); } catch { alert('Erantzun baliogabea:\n' + text); return; }
+      const res = await fetch(meUrl, { credentials:'include' });
+      const data = await res.json();
+      if (!res.ok || !data.authenticated) return;
 
-      if (res.ok && data.success) {
-        alert('Eskaera gehituta. ID: ' + data.id);
-        form.reset(); // si quieres vaciar tras enviar
-      } else {
-        alert(data.message || 'Ezin izan da gehitu');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Ezin izan da konektatu zerbitzarira');
+      const p   = data.profile || {};
+      const kiz = (p.kizena   || '').trim();
+      const eiz = (p.eizena   || '').trim();   // Empresa (Eizena)
+      const kab = (p.kabizena || '').trim();
+
+      // Nombre SIN empresa
+      const parts = [];
+      if (kiz) parts.push(kiz);
+      if (kab) parts.push(kab);
+      const nombre = parts.join(' ').trim();
+
+      // Dirección completa del JSON
+      const jtxt = (p.helbidea && p.helbidea.jatorria_txt)
+                || (p.ult_pedido && p.ult_pedido.jatorria_txt)
+                || '';
+
+      setRO('izen', nombre);
+      setRO('emaila', p.emaila);
+      setRO('tlf', p.tlf);
+      setRO('empresa', eiz);
+      setRO('jatorria', jtxt);
+
+    } catch (e) {
+      console.error('No se pudo cargar el perfil', e);
     }
-  });
-})();
-</script>
 
+    function setRO(id, val){
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (val != null && val !== '') {
+        el.value = val;
+        el.readOnly = true;
+        el.classList.add('prefilled');
+        el.setAttribute('aria-readonly','true');
+      }
+    }
+  })();
+  </script>
 
+  <!-- Envío AJAX con logs y compatibilidad ok/success -->
+  <script>
+  (function(){
+    const form = document.querySelector('form.formularioa');
+    if (!form) return;
 
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
+      const base = location.pathname.replace(/\/src\/client\/pages\/formulario\.html$/, '');
+      const url  = base + '/src/server/controller/insert_formulario.php';
+
+      const zg = Array.from(document.querySelectorAll('input[name="zerbitzu_gehigarriak[]"]:checked')).map(x=>x.value);
+
+      const payload = {
+        jatorria:  document.getElementById('jatorria')?.value.trim() || '',
+        helmuga:   document.getElementById('helmuga')?.value.trim() || '',
+        tamaina:   '',
+        pisua_kg:  document.getElementById('pisua')?.value || '',
+        data:      document.getElementById('data')?.value || '',
+        zerbitzu_gehigarriak: zg
+      };
+
+      if (!payload.jatorria || !payload.helmuga) { alert('Jatorria eta Helmuga derrigorrezkoak dira'); return; }
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(payload)
+        });
+        const text = await res.text();
+        console.log('INSERT STATUS', res.status, text);
+        let data; try { data = JSON.parse(text); } catch { alert('Erantzun baliogabea:\n' + text); return; }
+
+        if (res.ok && (data.ok || data.success)) {
+          alert('Eskaera gehituta. ID: ' + (data.id || data.insert_id));
+          form.reset();
+        } else {
+          alert((data && data.message) || 'Ezin izan da gehitu');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Ezin izan da konektatu zerbitzarira');
+      }
+    });
+  })();
+  </script>
   <script src="../js/main.js"></script>
 </body>
 </html>
+

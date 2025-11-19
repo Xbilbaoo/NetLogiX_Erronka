@@ -11,6 +11,6 @@ if (ini_get('session.use_cookies')) {
 }
 session_destroy();
 
-header('Location: /src/client/index.html?logout=1');
+header('Location: ../../client/index.html?logout=1');
 exit;
 

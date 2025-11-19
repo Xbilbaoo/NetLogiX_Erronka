@@ -1,26 +1,41 @@
-function mostrarImagen() {
+function projectBase(){
+  const p = location.pathname;
+  const i = p.indexOf('/src/');
+  return i >= 0 ? p.slice(0, i) : '';
+}
 
-  const estado = document.getElementById("imagen").value; 
-  const imagenContainer = document.getElementById("imagenContainer");
-  imagenContainer.innerHTML = "";
+const IMG_DESCARGA = projectBase() + '../../client/assets/img/descarga.jpg';
 
+function mostrarImagen(estado){
+  const box = document.getElementById('imagenContainer');
+  if (!box) { console.warn('No existe #imagenContainer'); return; }
 
-  let imagen = "<img src='./assets/img/descarga.jpg' class='imgjarra'>"; 
+  console.log('ESTADO:', estado, 'IMG URL:', IMG_DESCARGA);
+  // prueba directa de carga
+  const test = new Image();
+  test.onload  = () => console.log('OK carga', test.width+'x'+test.height);
+  test.onerror = (e) => console.error('ERROR carga', IMG_DESCARGA, e);
+  test.src = IMG_DESCARGA;
+
+  const imgTag = `<img src="${IMG_DESCARGA}" alt="descarga" class="imgjarra">`;
 
   switch (estado) {
-    case "Pendiente":
-      imagenContainer.innerHTML = imagen;
+    case 'Pendiente':
+      box.innerHTML = imgTag;
       break;
-    case "Enviado":
-      imagenContainer.innerHTML = "<div class='dots'>   </div>" + imagen + "<div class='dots'>   </div>";
+    case 'Enviado':
+      box.innerHTML = `<div class="dots"></div>` + imgTag;
       break;
-    case "Recibido":
-      imagenContainer.innerHTML = "<div class='dots'>   </div>" + imagen;
+    case 'Recibido':
+      box.innerHTML = `<div class="dots"></div>` + imgTag;
       break;
     default:
-      imagenContainer.innerHTML = "";
+      box.innerHTML = '';
   }
 }
+
+
+
 /*Cerrar y abrir menu */
 document.addEventListener('DOMContentLoaded', function() {
     

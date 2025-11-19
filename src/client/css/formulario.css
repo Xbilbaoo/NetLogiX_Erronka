@@ -21,7 +21,9 @@ body {
         width: 800px;
         justify-self: center;
         border: 2px solid #D76719;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-bottom: 80px;
     }
 
     .titulua {
@@ -144,3 +146,13 @@ body {
     }
 
 }
+.mini-acciones{
+  display:flex; justify-content:flex-end; margin:-8px 0 12px;
+}
+.mini-btn{
+  font: 600 12px/1 "Lexend", sans-serif;
+  padding: 6px 10px; border-radius: 8px;
+  border: 1px solid #D76719; background:#fff; color:#D76719;
+  cursor:pointer;
+}
+.mini-btn:hover{ background:#D76719; color:#fff; }

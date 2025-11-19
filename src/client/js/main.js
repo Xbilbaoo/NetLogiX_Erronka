@@ -1,11 +1,9 @@
-/* Contador carrousel */
 var counter = 1
-/* Cards en pantalla pequeña */
 const cardTitles = document.querySelectorAll(".titulo2")
 const cardTexts = document.querySelectorAll(".text")
 const mediaQuery = window.matchMedia("(max-width: 660px)")
 
-/* Funcionamiento carrousel */
+console.log(cardTitles)
 setInterval(function () {
     document.getElementById('radio' + counter).checked = true
     counter++
@@ -74,5 +72,8 @@ function checkMedia(media) {
         })
 
     }
-
 }
+
+
+
+

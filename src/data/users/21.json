@@ -1,0 +1,25 @@
+{
+    "id": 21,
+    "emaila": "kepaizaguirre314@gmail.com",
+    "kizena": "unai",
+    "kabizena": "unai",
+    "eizena": "unai",
+    "izen": "unai unai",
+    "tlf": "666666543",
+    "helbidea": {
+        "helbidea": "durango",
+        "cp": "48450",
+        "hiria": "pajero",
+        "probintzia": "biz",
+        "jatorria_txt": "durango, 48450, pajero, biz"
+    },
+    "ult_pedido": {
+        "jatorria_txt": "durango, 48450, pajero, biz",
+        "helmuga_txt": "abadiño",
+        "zerbitzuak": "",
+        "zg": [
+            "1",
+            "2"
+        ]
+    }
+}
