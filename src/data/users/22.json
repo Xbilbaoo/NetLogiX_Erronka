@@ -1,0 +1,24 @@
+{
+    "id": 22,
+    "emaila": "info@a.com",
+    "kizena": "PAco",
+    "kabizena": "Fiestas",
+    "eizena": "a SL.",
+    "izen": "PAco Fiestas",
+    "tlf": "612382516",
+    "helbidea": {
+        "helbidea": "assdfwe",
+        "cp": "48220",
+        "hiria": "aDa",
+        "probintzia": "DFQEA",
+        "jatorria_txt": "assdfwe, 48220, aDa, DFQEA"
+    },
+    "ult_pedido": {
+        "jatorria_txt": "assdfwe, 48220, aDa, DFQEA",
+        "helmuga_txt": "e wsonwo",
+        "zerbitzuak": "",
+        "zg": [
+            "1"
+        ]
+    }
+}

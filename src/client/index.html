@@ -1,11 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetLogiX S.L</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="">
+        </div>
+        <div class="Iniciarsesion">
+            <a class="saioa-hasi"><img src="../client/assets/img/header/session-logo.png" alt="logo de una persona"></a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+            <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="./index.html">Home</a>
+                <a href="../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../client/pages/formulario.html">Formularioa</a>
+                <a href="../client/pages/AboutUs.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+            </div>
+        </div>
+    </header>
+    <!--Carrousel-->
+    <div class="slider">
+
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <!--Imagenes-->
+            <div class="slide first">
+                <img src="./assets/img/carrousel/slide1.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="./assets/img/carrousel/slide2.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="./assets/img/carrousel/slide3.avif">
+            </div>
+
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+        </div>
+
+        <!--Botones manuales-->
+        <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+
+    </div>
+
+    <br>
+    <!--Marquee(Frase en movimiento)-->
+    <marquee scrollamount="12">
+        Bultzatu zure enpresa txiki edo ertainen arrakasta logistika eta lehen lerroko bidalketa-zerbitzu batzuen bidez.
+    </marquee>
+    <br>
+    <br>
+    <div class="popup-container" id="session-popup">
+  <div class="login-box" id="login-box">
+    <h2 class="popup-title">Saio Hasi</h2>
+
+    <!-- FORM LOGIN ACTUALIZADO -->
+    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-button">Saioa Hasi</button>
+    </form>
+    <!-- FIN FORM LOGIN ACTUALIZADO -->
+
+    <button type="button" class="login-button" id="close">Atzera</button>
+    <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
+    <img class="login-logo" src="./assets/img/logo.png" alt="NetLogiX logo">
+  </div>
+</div>
+
+<script>
+(function(){
+  const p = location.pathname;
+  const first = p.indexOf('/src/');
+  const base  = first >= 0 ? p.slice(0, first) : '';
+
+  const form = document.querySelector('form.session-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    const password = form.password.value;
+
+    const loginUrl = base + '/src/server/controller/login.php';
+    const destino  = base + '/src/client/pages/formulario.html';
+
+    console.log('POST', loginUrl, '->', destino);
+
+    try {
+      const res = await fetch(loginUrl, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        credentials:'include',
+        body: JSON.stringify({ email, password })
+      });
+      const text = await res.text();
+      let data={}; try{ data = JSON.parse(text);}catch{}
+      if (res.ok && data.success) location.href = destino;
+      else alert((data && data.message) || ('Login fallido ('+res.status+')'));
+    } catch (err) {
+      console.error(err);
+      alert('No se pudo conectar con el servidor');
+    }
+  });
+})();
+</script>
+
+
+
+
+    <!--Bloques-->
+    <section class="bloques">
+
+        <div class="bloque1">
+            <a class="send-button" id="send">Bidali Orain ==></a>
+        </div>
+
+        <div class="bloque2">
+            <div class="fondoLink">
+                <a href="./pages/AboutUs.html"><b>Gure Historia</b></a>
+            </div>
+
+        </div>
+
+        <div class="bloque3">
+            <form action="/buscar" method="get">
+                <label for="Bilatu">Bidalketaren Jarraipena:</label>
+                <br>
+                <input type="search" name="zenbaki" placeholder="Pakete zenbakia">
+                <button type="submit" class="boton"><img src="./assets/img/landing/lupa.png"> </button>
+            </form>
+        </div>
+
+    </section>
+
+    <br>
+    <br>
+
+    <!--Cards del main-->
+    <main class="cards">
+
+        <div class="card bat">
+            <figure id="imagen">
+                <img src="./assets/img/landing/Gure_planeta.webp">
+            </figure>
+            <!--Titulo del card en la pantalla Grande/Mediana-->
+            <h3 class="titulo1"><b>
+                    Gure planeta:
+                </b></h3>
+            <a href="#" class="titulo2"><b>
+                    Gure planeta
+                </b></a>
+            <p class="text">
+                Ez galdu karbonoa murrizteko gure ekimenak klima-aldaketari aurre egiteko eta gure hiriak iraunkorragoak
+                izan daitezen
+                <br><br>
+                Badakigu zein garrantzitsua den gure bezeroentzat haien bidalketetatik eratorritako karbono-isuriak
+                ezagutzea.
+                Horregatik jartzen dugu zure eskura Karbonoaren Kalkulagailua, sektorean liderra den eta Smart Freight
+                Centre-k egiaztatutako tresna digitala.
+            </p>
+        </div>
+
+        <div class="card bi">
+            <figure>
+                <img src="./assets/img/landing/berrikuntzaren_abangoardian.jpeg">
+            </figure>
+            <!--Titulo del card en la pantalla Grande/Mediana-->
+            <h3 class="titulo1"><b>
+                    Logistikako berrikuntzaren abangoardian:
+                </b></h3>
+            <!--Titulo del card en la pantalla pequeña-->
+            <a href="#" class="titulo2"><b>
+                    Logistikako berrikuntzaren abangoardian
+                </b></a>
+            <p class="text">
+                Berrikuntza praktikoetan inbertitzea funtsezkoa da buruan mantentzeko eta hain azkar aldatzen den
+                merkatu global lehiakorrean balioa gehitzeko.
+                Bezeroa ardatz duen berrikuntza-ikuspegiaren bidez, gure sektoreak bultzatzen dituzten teknologia,
+                prozesu eta irtenbide aitzindariak garatzen ditugu.
+                Hornidura-kateak optimizatzen ditugu, errentagarritasuna identifikatzen dugu eta etorkizuneko erronkei
+                eta aukerei elkarlanean aurre egiteko prestatzen dugu.
+            </p>
+        </div>
+
+        <div class="card hiru">
+            <figure>
+                <img src="./assets/img/landing/Mugikortasunaren_etorkizuna.png">
+            </figure>
+            <!--Titulo del card en la pantalla Grande/Mediana-->
+            <h3 class="titulo1"><b>
+                    Mugikortasunaren etorkizuna:
+                </b></h3>
+            <!--Titulo del card en la pantalla pequeña-->
+            <a href="#" class="titulo2"><b>
+                    Mugikortasunaren etorkizuna
+                </b></a>
+            <p class="text">
+                Asko inbertitzen dugu ikerketan eta berrikuntzan, gure bezeroei CASEn oinarritutako automobilgintzako
+                logistikaren alderdi guztietan lagun diezaiekegula bermatzeko. Gure esperientziak, ezagutzek eta
+                berrikuntzarekiko konpromisoak automobilaren hornitzaile logistiko nagusi bihurtzen gaituzte.
+                Automobilgintzako eta logistikako sektoreen arteko lankidetza garapena bultzatzen ari da.
+            </p>
+        </div>
+
+        <div class="card lau">
+            <figure>
+                <img src="./assets/img/landing/Gaur_biharko_energia-erronkak.jpg">
+            </figure>
+            <!--Titulo del card en la pantalla Grande/Mediana-->
+            <h3 class="titulo1"><b>
+                    Gaur biharko energia-erronkak konpontzea:
+                </b></h3>
+            <!--Titulo del card en la pantalla pequeña-->
+            <a href="#" class="titulo2"><b>
+                    Gaur biharko energia-erronkak konpontzea
+                </b></a>
+            <p class="text">
+                Gure espezialistek irtenbide globalak eskaintzen dituzte, betiere segurtasunean eta araudia betetzean
+                oinarrituak, bikaintasun operatiboarekin eta zerbitzuak ematearekin dugun konpromisoak babestuta. Gure
+                eragiketa-prozesu estandarizatuei, HSSEri (osasuna, segurtasuna, babesa eta ingurumena) eta txostenak
+                egiteari esker,
+                zerbitzu koherentea eta kalitatezkoa eskain dezakegu mundu osoan.
+            </p>
+        </div>
+
+    </main>
+    <footer class="grid-container">
+        <div class="grid-item">
+            <a class="footer-title">Bidalketa</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text send-button">Bidali Orain</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text send-button">Bidalketaren Aurrekontua</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text send-button">Bidalketaren Jarraipena</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <a class="footer-title">100 urte zure alboan</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text">Gure Historia</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text">Non Gaude</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <a class="footer-title">Kontaktua</a>
+            <hr class="separator">
+            <ul class="footer-flex" id="contact">
+
+                <li class="footer-info-text">
+                    <p href="#" class="footer-text">Email: info@netlogix.com</p>
+                    <p href="#" class="footer-text">Tlfno.: 123 12 31 23</p>
+                    <p href="#" class="footer-text">Fax: +34 123 12 31 23</p>
+                </li>
+                <li class="info">
+                    <p class="footer-text"> Bilbao Etorbidea, <br>48250 Zaldibar, Bizkaia</p>
+                </li>
+            </ul>
+        </div>
+        <hr class="separator big">
+        <div class="grid-item" id="first-down">
+            <ul class="footer-flex">
+                <li id="copy">
+                    <p class="copy-text">
+                        <a class="footer-text copy">Copyright © NetLogiX 2025</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Política de privacidad y cookies</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Aviso legal</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Uso fraudulento de la marca</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Condiciones de transporte</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <ul class="footer-flex" id="last">
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/twitter.png"
+                            alt="Twitter logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/linkedin.png"
+                            alt="LinkedIn logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/facebook.png"
+                            alt="Facebook logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="./components/img/footer/socialMedia/instagram.png"
+                            alt="Instagram logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>NetLogix - About Us</title> <!-- Título que veremos en la pestaña -->
+    
+    <!-- Enlace al documento CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/session.css">
+    <link rel="stylesheet" href="../css/aboutUs.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="NetLogiX Logo">
+        </div>
+        <div class="Iniciarsesion">
+            <a class="saioa-hasi"><img src="../assets/img/header/session-logo.png" alt="logo de una persona"></a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"> 
+                <img src="https://i.gyazo.com/0e5a887b460e9eb1ddd618b56afbd12c.png" alt="Menu" class="img_menu">
+            </button>
+           <div class="dropdown-content" id="myDropdown"> 
+                <a class="ekis" href="#" onclick="toggleDropdown()">X</a> 
+                <a href="../index.html">Home</a>
+                <a href="../../client/pages/JarraipenOrria.html">Jarraipena</a>
+                <a href="../../client/pages/formulario.html">Formularioa</a>
+                <a href="../../client/pages/AboutUs.html">Guri Buruz</a>
+                <div class="iniciarsesionhandi"><a class="saioa-hasi">Iniciar Sesion</a></div>
+            </div>
+        </div>
+    </header>
+    <div class="popup-container" id="session-popup">
+  <div class="login-box" id="login-box">
+    <h2 class="popup-title">Saio Hasi</h2>
+
+    <!-- FORM LOGIN ACTUALIZADO -->
+    <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="login-button">Saioa Hasi</button>
+    </form>
+    <!-- FIN FORM LOGIN ACTUALIZADO -->
+
+    <button type="button" class="login-button" id="close">Atzera</button>
+    <p>Bezero berria zara? <a href="../pages/register.html" class="register_link">Erregistratu</a></p>
+    <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+  </div>
+</div>
+
+    <script src="../js/main.js"></script>
+    <!-- Container que incluira la card de la pagina -->
+    <div class="container">
+
+        <div class="content">
+            <!-- Nuestra bibliografia y la historia de nuestra empresa -->
+            <div class="card-section">
+                <div class="card-history">
+                    <!-- Imagen de nuestro primer dia repartiendo -->
+                    <figure class="card-image">
+                            <img class="camioneta" src="../assets/img/AboutUs/camion-antiguo-de-reparto.jpg" alt="camioneta vintage">
+                    </figure>
+                    
+                    <!-- Texto que relata nuestra historia -->
+                    <div class="card-text">
+                        <h3>Gure Historia</h3>
+                        <p>
+Sarearen bihotzean, non informazioa argiaren abiaduran dabilen eta eraginkortasuna gakoa den, "NetLogiX" eraikitzen da, garraioan eta logistikan mende bateko esperientziaren bidez bere ondarea ehundu duen enpresa. Konexioaren boterea ulertu zuen ameslari batek sortua, konpainiak bilakaera izan du telegrafoaren aroan hasi zenetik aro digitalean lider bihurtu arte.
+
+NetLogiX-en historia berrikuntzaren eta egokitzapenaren narratiba da. Lehen urteetan, informazio-fluxuen kudeaketan espezializatu zen enpresa, eta komunikazio-sareen bidez konektatu zituen enpresak. Interneten etorrerarekin, NetLogiXk iraultza digitala besarkatu zuen, bere eragiketak eraldatuz eta bere zerbitzuak hedatuz. Konpainia aitzindari bihurtu zen hornidura-katearen jarraipen- eta kudeaketa-sistemen inplementazioan, bezeroei eragiketak optimizatzeko eta kostuak murrizteko aukera emanez.</p>
+
+                    </div>
+                </div>
+            </div> 
+
+            <!-- Mapa y contacto -->
+            <div class="map-section">
+                <div class="map-container">
+                    <!-- Mapa que situa nuestra empresa, que es en Zaldibar -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.966660475135!2d-2.5525322232696523!3d43.16822398366175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e2d0061fa08f3%3A0xdf1b40830a8a1b00!2sHospital%20de%20Zaldibar!5e0!3m2!1ses!2ses!4v1759737830352!5m2!1ses!2ses" 
+                        width="600" 
+                        height="450" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Bloques decorativos  -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon location-icon"></div>
+                        <div class="line-connector"></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon email-icon"></div>
+                        <div class="line-connector"></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon phone-icon"></div>
+                        <div class="line-connector"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="grid-container">
+        <div class="grid-item">
+            <a class="footer-title">Bidalketa</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text">Bidali Orain</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text">Bidalketaren Aurrekontua</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text">Bidalketaren Jarraipena</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <a class="footer-title">100 urte zure alboan</a>
+            <hr class="separator">
+            <ul class="footer-flex">
+                <li>
+                    <a href="#" class="footer-text">Gure Historia</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-text">Non Gaude</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <a class="footer-title">Kontaktua</a>
+            <hr class="separator">
+            <ul class="footer-flex" id="contact">
+
+                <li class="footer-info-text">
+                    <p href="#" class="footer-text">Email: info@netlogix.com</p>
+                    <p href="#" class="footer-text">Tlfno.: 123 12 31 23</p>
+                    <p href="#" class="footer-text">Fax: +34 123 12 31 23</p>
+                </li>
+                <li class="info">
+                    <p class="footer-text"> Bilbao Etorbidea, <br>48250 Zaldibar, Bizkaia</p>
+                </li>
+            </ul>
+        </div>
+        <hr class="separator big">
+        <div class="grid-item" id="first-down">
+            <ul class="footer-flex">
+                <li id="copy">
+                    <p class="copy-text">
+                        <a class="footer-text copy">Copyright © NetLogiX 2025</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Política de privacidad y cookies</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Aviso legal</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Uso fraudulento de la marca</a>
+                        <a href="#" class="footer-text copy">&#11049;&nbsp;Condiciones de transporte</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <ul class="footer-flex" id="last">
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/twitter.png" alt="Twitter logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/linkedin.png" alt="LinkedIn logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/facebook.png" alt="Facebook logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="footer-social-media">
+                        <img class="social-media-logo" src="../components/img/footer/socialMedia/instagram.png" alt="Instagram logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Enlace al script JS donde se maneja el menú desplegable -->
+    <script src="../js/header.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

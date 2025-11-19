@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetLogiX · Erregistratu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/formulario.css">
+  
+</head>
+<body>
+  <div class="formularioa">
+    <h1 class="titulua">Erregistratu</h1>
+    <p style="margin-bottom:16px;color:#555">Crea tu cuenta para acceder al formulario</p>
+
+    <form id="register-form" novalidate>
+      <label class="labelak" for="cif">CIF</label>
+      <input class="formu-input" id="cif" name="cif" type="text" placeholder="B12345678" required
+             pattern="^[A-HJNPQRSUVW]\d{7}[0-9A-J]$" title="CIF válido (ej. B12345678)">
+
+      <label class="labelak" for="kizena">Kizena</label>
+      <input class="formu-input" id="kizena" name="kizena" type="text" placeholder="Kepa">
+
+      <label class="labelak" for="kabizena">Kabizena</label>
+      <input class="formu-input" id="kabizena" name="kabizena" type="text" placeholder="Izagirre">
+
+      <label class="labelak" for="eizena">Eizena</label>
+      <input class="formu-input" id="eizena" name="eizena" type="text" placeholder="I.">
+
+      <label class="labelak" for="telefonoa">Telefonoa</label>
+      <input class="formu-input" id="telefonoa" name="telefonoa" type="tel" placeholder="+34 600 123 123"
+             pattern="^[0-9+\-\s]{6,20}$" title="Número de teléfono válido">
+
+      <label class="labelak" for="email">Email</label>
+      <input class="formu-input" id="email" name="email" type="email" placeholder="tu@correo.com" required autocomplete="email">
+
+      <label class="labelak" for="password">Kontraseña</label>
+      <input class="formu-input" id="password" name="password" type="password" placeholder="Min. 8 caracteres" required minlength="8"
+             pattern="^(?=.*[0-9])(?=.*[A-Za-z]).{8,}$" autocomplete="new-password">
+
+      <h3 class="labelak" style="margin-top:20px;color:#D76719">Helbidea (dirección fiscal)</h3>
+
+      <label class="labelak" for="helbidea">Helbidea</label>
+      <input class="formu-input" id="helbidea" name="helbidea" type="text" placeholder="C/ Gran Vía, 1" required>
+
+      <label class="labelak" for="cp">CP</label>
+      <input class="formu-input" id="cp" name="cp" type="text" placeholder="48001" pattern="^\d{4,5}$" required>
+
+      <label class="labelak" for="hiria">Hiria</label>
+      <input class="formu-input" id="hiria" name="hiria" type="text" placeholder="Bilbo" required>
+
+      <label class="labelak" for="probintzia">Probintzia</label>
+      <input class="formu-input" id="probintzia" name="probintzia" type="text" placeholder="Bizkaia" required>
+
+      <button class="boton-enviar" type="submit">Erregistratu</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('register-form');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const body = Object.fromEntries(new FormData(form).entries());
+      try{
+        const res = await fetch('../../server/controller/register.php', {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        if (res.ok && data.success) location.href='formulario.html';
+        else alert(data.message || 'Registro fallido');
+      }catch(err){ alert('No se pudo conectar con el servidor'); }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+

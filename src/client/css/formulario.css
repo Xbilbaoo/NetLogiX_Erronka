@@ -1,0 +1,158 @@
+/* ======== ESTILOS BASE ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    background-color: #f6f1db;
+    color: #2c3e50;
+}
+
+/* ======== PANTALLAS PEQUEÑAS ======== */
+
+    /* Formulario */
+    .formularioa {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        width: 800px;
+        justify-self: center;
+        border: 2px solid #D76719;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-bottom: 80px;
+    }
+
+    .titulua {
+        text-align: center;
+        color: #D76719;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .labelak {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .formu-input, .formu-select, .formu-textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+    
+    input:focus {
+        outline: none;
+        border: 2px solid #D76719;  
+    }
+    
+    .formu-select {
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .formu-textarea {
+        min-height: 100px;
+    }
+
+    /* Servicios */
+    .servicios-fieldset {
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .servicios-legend {
+        color: #D76719;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+
+    /* Checkbox */
+    .checkbox-input {
+        width: auto;
+        margin-right: 8px;
+        cursor: pointer;
+        accent-color: #D76719;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    .checkbox-label {
+        display: inline;
+        color: black;
+        margin-top: 0;
+        margin-right: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    /* Boton */
+    .boton-enviar {
+        width: 100%;
+        padding: 15px;
+        margin-top: 30px;
+        background-color: #D76719;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
+
+    textarea:focus {
+        outline: none;
+        border: 2px solid #D76719;  
+    }
+    
+    .boton-enviar:hover {
+        background-color: #b85414;
+    }
+
+/* ======== PANTALLAS GRANDES ======== */
+@media (max-width: 650px) {
+    /* Formulario */
+    .formularioa {
+        width: 90%;
+    }
+
+    /* Servicios */
+    .servicios-fieldset{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    /* Checkbox */
+    .checkbox-input {
+        margin-left: -80px;
+    }
+
+    .checkbox-label {
+        margin-left: -60px;
+    }
+
+}
+.mini-acciones{
+  display:flex; justify-content:flex-end; margin:-8px 0 12px;
+}
+.mini-btn{
+  font: 600 12px/1 "Lexend", sans-serif;
+  padding: 6px 10px; border-radius: 8px;
+  border: 1px solid #D76719; background:#fff; color:#D76719;
+  cursor:pointer;
+}
+.mini-btn:hover{ background:#D76719; color:#fff; }
