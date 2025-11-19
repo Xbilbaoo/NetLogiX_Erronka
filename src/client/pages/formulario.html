@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario</title>
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/session.css">
   <link rel="stylesheet" href="../css/formulario.css">
   
 </head>
@@ -31,6 +32,29 @@
     </div>
   </header>
 
+  <div class="popup-container" id="session-popup">
+        <div class="login-box" id="login-box">
+            <h2 class="popup-title">Saio Hasi</h2>
+
+            <!-- FORM LOGIN ACTUALIZADO -->
+            <form action="../server/controller/login.php" class="session-form" method="POST" id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label><br>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="login-button">Saioa Hasi</button>
+            </form>
+            <!-- FIN FORM LOGIN ACTUALIZADO -->
+
+            <button type="button" class="login-button" id="close">Atzera</button>
+            <p>Bezero berria zara? <a href="../client/pages/register.html" class="register_link">Erregistratu</a></p>
+            <img class="login-logo" src="../assets/img/logo.png" alt="NetLogiX logo">
+        </div>
+    </div>
   <br>
   <form class="formularioa" method="post" action="../../server/controller/insert_formulario.php">
     <h1 class="titulua">Formularioa</h1>
@@ -214,6 +238,6 @@
 
 
 
-  <script src="index.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
